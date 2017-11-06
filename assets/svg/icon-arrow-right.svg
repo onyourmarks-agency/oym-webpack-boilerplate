@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="16px" viewBox="0 0 18 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Arrow/Open</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Design" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Judobond---Home" transform="translate(-89.000000, -419.000000)" >
+            <g id="Icon/Arrow/Open/Big-Orange" transform="translate(90.000000, 420.000000)">
+                <g id="Arrow">
+                    <path d="M0,7 L14,7" id="Stroke-2" stroke-width="2"></path>
+                    <polyline id="Stroke-4" stroke-width="2" points="9 0 16 7 9 14"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
