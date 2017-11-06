@@ -7,3 +7,7 @@ function check(aap) {
 }
 
 check();
+
+const aap = 'true';
+
+console.log(aap);

@@ -1,1 +1,20 @@
-.test{font-size:12pt}:fullscreen a{display:flex}
+.test {
+  font-size: 12pt; }
+
+:-webkit-full-screen a {
+  display: -webkit-box;
+  display: flex; }
+
+:-moz-full-screen a {
+  display: flex; }
+
+:-ms-fullscreen a {
+  display: -ms-flexbox;
+  display: flex; }
+
+:fullscreen a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjc3MvbWFpbi5idW5kbGUuY3NzIiwic291cmNlUm9vdCI6IiJ9*/

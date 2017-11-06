@@ -92,12 +92,23 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components|(assets\/svg))/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['babel-preset-env']
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['babel-preset-env']
+                        }
+                    },
+                    {
+                        loader: 'eslint-loader',
+                        options: {
+                            eslint: {
+                                configFile: path.join(__dirname, '.eslintrc'),
+                                cache: false
+                            }
+                        }
                     }
-                }
+                ]
             },
             {
                 test: /\.scss$/,
@@ -106,6 +117,8 @@ module.exports = {
                         loader: 'css-loader'
                     }, {
                         loader: 'sass-loader'
+                    }, {
+                        loader: 'postcss-loader'
                     }],
                     fallback: 'style-loader'
                 })

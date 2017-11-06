@@ -1,3 +1,15 @@
 {
-  "extends": "@e-sites/eslint-config"
+	//"extends": "@e-sites/eslint-config"
+	"parser": "babel-eslint",
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"plugins": ["compat"],
+	"ecmaFeatures": {
+		"experimentalObjectRestSpread": true,
+	},
+	"rules": {
+		"compat/compat": 2
+	}
 }
