@@ -71,8 +71,7 @@ module.exports = {
     output: {
         path: paths.DIST_PRIVATE,
         filename: 'js/[name].[hash:6].js',
-        publicPath: paths.DIST_PUBLIC,
-        pathinfo: true
+        publicPath: paths.DIST_PUBLIC
     },
     module: {
         rules: [
