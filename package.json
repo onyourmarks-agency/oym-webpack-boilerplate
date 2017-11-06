@@ -4,7 +4,8 @@
   "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "build": "NODE_ENV=production webpack-dashboard -- webpack -p ",
+    "watch": "NODE_ENV=production webpack-dashboard -- webpack -p --watch"
   },
   "devDependencies": {
     "@e-sites/eslint-config": "^1.0.0",
@@ -18,9 +19,9 @@
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
     "eslint": "^4.10.0",
+    "eslint-config-airbnb": "^16.1.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.8.0",
-    "eslint-config-airbnb": "^16.1.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "glob": "^7.1.2",
@@ -33,15 +34,9 @@
     "svg-sprite-loader": "^3.4.1",
     "uglifyjs-webpack-plugin": "^1.0.1",
     "webpack": "^3.8.1",
-    "webpack-notifier": "^1.5.0"
-  },
-  "dependencies": {
-    "webpack-svg-sprite-plugin": "^1.2.0",
     "webpack-manifest-plugin": "^1.3.2",
     "webpack-notifier": "^1.5.0",
-    "webpack-svgstore-plugin": "^4.0.1"
-  },
-  "scripts": {
-    "build": "NODE_ENV=production webpack -p"
+    "webpack-svg-sprite-plugin": "^1.2.0",
+    "webpack-svgstore-plugin": "^2.0.9"
   }
 }

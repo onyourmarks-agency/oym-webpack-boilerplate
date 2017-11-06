@@ -1,6 +1,6 @@
+/* eslint-disable indent */
 const
     path = require('path'),
-    glob = require('glob'),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
@@ -9,7 +9,6 @@ const
     WebpackNotifierPlugin = require('webpack-notifier'),
     FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin'),
     SvgStore = require('webpack-svgstore-plugin')
-    spriteLoader = require('webpack-svgstore-plugin/src/helpers/svgxhr')
 ;
 
 const paths = {
@@ -36,7 +35,9 @@ const plugins = [
         contentImage: path.join(__dirname, 'ZiggoSport.png')
     }),
     new FriendlyErrorsWebpackPlugin(),
-    new SvgStore.Options({
+    new SvgStore(path.join(paths.SVG, '*.svg'), 'svg', {
+        name: 'sprite.svg',
+        chunk: 'app',
         svgoOptions: {
             plugins: [{
                 removeTitle: true
@@ -71,6 +72,7 @@ module.exports = {
         path: paths.DIST_PRIVATE,
         filename: 'js/[name].[hash:6].js',
         publicPath: paths.DIST_PUBLIC,
+        pathinfo: true
     },
     module: {
         rules: [
@@ -90,7 +92,7 @@ module.exports = {
             // },
             {
                 test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /(node_modules|bower_components|(assets\/svg))/,
                 use: {
                     loader: 'babel-loader',
                     options: {
