@@ -75,20 +75,6 @@ module.exports = {
     },
     module: {
         rules: [
-            // {
-            //     enforce: 'pre',
-            //     test: /\.js$/,
-            //     exclude: /node_modules/,
-            //     loader: 'eslint-loader',
-            //     options: {
-            //         failOnWarning: false,
-            //         failOnError: false,
-            //         eslint: {
-            //             configFile: path.join(__dirname, '.eslintrc'),
-            //             cache: false
-            //         }
-            //     }
-            // },
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components|(assets\/svg))/,
