@@ -8,7 +8,8 @@ const
     ManifestPlugin = require('webpack-manifest-plugin'),
     WebpackNotifierPlugin = require('webpack-notifier'),
     FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin'),
-    SvgStore = require('webpack-svgstore-plugin')
+    SvgStore = require('webpack-svgstore-plugin'),
+    MjmlStore = require('tde-webpack-mjml-plugin')
 ;
 
 const paths = {
@@ -16,6 +17,7 @@ const paths = {
     SRC: path.resolve(__dirname, 'assets'),
     JS: path.resolve(__dirname, 'assets/js'),
     SVG: path.resolve(__dirname, 'assets/svg'),
+    MJML: path.resolve(__dirname, 'assets/mjml'),
     CSS: path.resolve(__dirname, 'assets/css'),
     DIST_PRIVATE: path.resolve(__dirname, 'build'),
     DIST_PUBLIC: '/',
@@ -45,6 +47,10 @@ const plugins = [
             }]
         },
         prefix: ''
+    }),
+    new MjmlStore(paths.MJML, {
+        extension: '.twig',
+        outputPath: paths.DIST_PRIVATE + '/mjml'
     }),
     new WebpackNotifierPlugin({
         alwaysNotify: true,
