@@ -1,5 +1,5 @@
 {
-  "name": "webpack-test",
+  "name": "tde-webpack-boilerplate",
   "version": "1.0.0",
   "main": "app.js",
   "license": "MIT",
