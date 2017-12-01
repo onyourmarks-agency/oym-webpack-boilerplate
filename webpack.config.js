@@ -16,35 +16,47 @@ const paths = {
     SRC: path.resolve(__dirname, 'assets'),
     JS: path.resolve(__dirname, 'assets/js'),
     SVG: path.resolve(__dirname, 'assets/svg'),
-    STYLE: path.resolve(__dirname, 'assets/style'),
-    DIST_PRIVATE: path.resolve(__dirname, 'public/assets'),
+    CSS: path.resolve(__dirname, 'assets/css'),
+    DIST_PRIVATE: path.resolve(__dirname, 'build'),
     DIST_PUBLIC: '/',
 };
 
 const isDebug = process.env.NODE_ENV !== 'production';
 
 const plugins = [
-    new CleanWebpackPlugin([paths.DIST_PRIVATE]),
+    new CleanWebpackPlugin([paths.DIST_PRIVATE] + '/', {
+        exclude: ['svg', 'manifest.json'],
+        watch: true,
+        verbose: true
+    }),
     new ExtractTextPlugin({
         filename: 'css/[name].bundle.css',
-        allChunks: true,
+        allChunks: true
     }),
     new ManifestPlugin(),
-    new WebpackNotifierPlugin({
-        alwaysNotify: true,
-        contentImage: path.join(__dirname, 'ZiggoSport.png')
-    }),
     new FriendlyErrorsWebpackPlugin(),
-    new SvgStore(path.join(paths.SVG, '*.svg'), 'svg', {
-        name: 'sprite.svg',
-        chunk: 'app',
+    new SvgStore({
         svgoOptions: {
             plugins: [{
-                removeTitle: true
+                removeTitle: true,
+                removeDesc: true,
+                removeUselessDefs: false,
+                cleanupIDs: false
             }]
-        }
-    })
+        },
+        prefix: ''
+    }),
+    new WebpackNotifierPlugin({
+        alwaysNotify: true,
+        contentImage: path.join(__dirname, 'webpack.notifierlogo.png')
+    }),
 ];
+
+const entries = {
+    'js-loader': path.join(paths.JS, 'loader.js'),
+    'js-app': path.join(paths.JS, 'app.js'),
+    'css-main': path.join(paths.CSS, 'app.scss')
+};
 
 if (!isDebug) {
     plugins.push(new UglifyJSPlugin({
@@ -53,45 +65,33 @@ if (!isDebug) {
 
     plugins.push(new OptimizeCssAssetsPlugin({
         cssProcessor: require('cssnano'),
-        cssProcessorOptions: { discardComments: {removeAll: true } },
+        cssProcessorOptions: {
+            discardComments: {
+                removeAll: true
+            }
+        },
         canPrint: true
     }));
 }
 
-var entries = [
-    path.join(paths.JS, 'app.js'),
-    path.join(paths.STYLE, 'app.scss')
-];
-
-// entries = entries.concat(glob.sync(paths.SVG + '/*.svg'));
-
 module.exports = {
-    devtool: isDebug ? 'inline-source-map' : false,
+    devtool: isDebug ? 'eval-cheap-source-map' : false,
     entry: entries,
     output: {
         path: paths.DIST_PRIVATE,
-        filename: 'js/[name].[hash:6].js',
+        filename: 'js/[name].bundle.js',
         publicPath: paths.DIST_PUBLIC
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /(node_modules|bower_components|(assets\/svg))/,
+                exclude: /(node_modules|bower_components)/,
                 use: [
                     {
                         loader: 'babel-loader',
                         options: {
                             presets: ['babel-preset-env']
-                        }
-                    },
-                    {
-                        loader: 'eslint-loader',
-                        options: {
-                            eslint: {
-                                configFile: path.join(__dirname, '.eslintrc'),
-                                cache: false
-                            }
                         }
                     }
                 ]
@@ -102,9 +102,9 @@ module.exports = {
                     use: [{
                         loader: 'css-loader'
                     }, {
-                        loader: 'sass-loader'
-                    }, {
                         loader: 'postcss-loader'
+                    }, {
+                        loader: 'sass-loader'
                     }],
                     fallback: 'style-loader'
                 })
