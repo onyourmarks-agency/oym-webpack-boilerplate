@@ -8,7 +8,7 @@ const
     ManifestPlugin = require('webpack-manifest-plugin'),
     WebpackNotifierPlugin = require('webpack-notifier'),
     FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin'),
-    SvgStore = require('webpack-svgstore-plugin'),
+    SvgStore = require('tde-webpack-svg-plugin'),
     MjmlStore = require('tde-webpack-mjml-plugin')
 ;
 
@@ -37,16 +37,13 @@ const plugins = [
     }),
     new ManifestPlugin(),
     new FriendlyErrorsWebpackPlugin(),
-    new SvgStore({
-        svgoOptions: {
-            plugins: [{
-                removeTitle: true,
-                removeDesc: true,
-                removeUselessDefs: false,
-                cleanupIDs: false
-            }]
+    new SvgStore(paths.SVG, {
+        mode: {
+            symbol: {
+                inline: true,
+            },
         },
-        prefix: ''
+        dest: paths.DIST_PRIVATE + '/svg'
     }),
     new MjmlStore(paths.MJML, {
         extension: '.twig',
@@ -59,7 +56,6 @@ const plugins = [
 ];
 
 const entries = {
-    'js-loader': path.join(paths.JS, 'loader.js'),
     'js-app': path.join(paths.JS, 'app.js'),
     'css-main': path.join(paths.CSS, 'app.scss')
 };
