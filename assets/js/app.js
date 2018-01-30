@@ -1,13 +1,17 @@
-function check(aap) {
-	if (aap) {
-		return 1;
-	}
+/* eslint-disable import/first */
+//
+// Add ES5/6/7 polyfills
+// import './polyfills/core-js';
+//
+// Apply SVG polyfill to load external SVG's in unsupported browsers
+import 'svgxuse';
+//
+// /* eslint-enable import/first */
+//
 
-	return 2;
-}
+// Global functions
+require('./global/_global');
 
-check();
+// Helper functions
+require('./helpers/_helpers');
 
-const aap = 'true';
-
-console.log(aap);
