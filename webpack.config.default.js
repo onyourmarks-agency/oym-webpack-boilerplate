@@ -10,18 +10,12 @@ module.exports = function () {
   const WebpackNotifierPlugin = require('webpack-notifier');
   const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
   const SvgPlugin = require('tde-webpack-svg-plugin');
+  const MjmlStore = require('tde-webpack-mjml-plugin');
 
   const { paths } = JSON.parse(fs.readFileSync('./package.json')).config;
   const isDebug = process.env.NODE_ENV !== 'production';
   const source = {};
   const dist = {};
-  // const craft = {};
-
-  // Todo, this can be much better
-  // Build new craft
-  // Object.keys(paths.craft).forEach(function (key) {
-  //   craft[key] = path.resolve(__dirname, paths.craft[key]);
-  // });
 
   // Build new source
   Object.keys(paths.source).forEach(function (key) {
@@ -63,6 +57,10 @@ module.exports = function () {
           }
       },
       dest: path.join(dist.private + '/svg')
+    }),
+    new MjmlStore(paths.source.mjml, {
+        extension: '.twig',
+        outputPath: paths.dist.mjml
     })
   ];
 

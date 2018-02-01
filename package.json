@@ -19,14 +19,15 @@
 	  },
       "dist": {
 		  "private": "./build",
-		  "public": "/"
+		  "public": "/",
+		  "mjml": "./build/mjml/"
 	  },
       "source": {
         "css": "./assets/css",
         "js": "./assets/js",
         "images": "./images",
         "svg": "./assets/svg",
-        "mjml": "./assets/path-to-mail"
+        "mjml": "./assets/mjml"
       }
     }
   },
@@ -60,6 +61,7 @@
 	"sass-loader": "^6.0.6",
 	"style-loader": "^0.19.0",
 	"svg-sprite-loader": "^3.4.1",
+	"tde-webpack-mjml-plugin": "^1.1.0",
 	"tde-webpack-svg-plugin": "^1.0.1",
 	"tiny-slider": "^2.3.2",
 	"uglifyjs-webpack-plugin": "^1.0.1",
