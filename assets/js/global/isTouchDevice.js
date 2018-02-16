@@ -5,8 +5,8 @@
  * @type {Boolean}
  */
 module.exports = function () {
-	var msGesture = window.navigator && window.navigator.msMaxTouchPoints && window.MSGesture,
-		touch = (( 'ontouchstart' in window ) || msGesture || window.DocumentTouch && document instanceof DocumentTouch);
+  const msGesture = window.navigator && window.navigator.msMaxTouchPoints && window.MSGesture;
+  const touch = (( 'ontouchstart' in window ) || msGesture || window.DocumentTouch && document instanceof DocumentTouch);
 
-	return !!touch;
-}
+  return !!touch;
+};

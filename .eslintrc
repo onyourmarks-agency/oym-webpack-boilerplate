@@ -1,5 +1,5 @@
 {
-	//"extends": "@e-sites/eslint-config"
+	"extends": "airbnb-base",
 	"parser": "babel-eslint",
 	"env": {
 		"browser": true,
@@ -10,6 +10,7 @@
 		"experimentalObjectRestSpread": true,
 	},
 	"rules": {
+		"linebreak-style": 0,
 		"compat/compat": 2
 	}
 }

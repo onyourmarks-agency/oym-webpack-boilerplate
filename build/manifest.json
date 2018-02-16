@@ -1,5 +1,5 @@
 {
-  "css-main.css": "css/css-main.dev.css",
-  "css-main.js": "js/css-main.dev.js",
-  "js-app.js": "js/js-app.dev.js"
+  "css-main.css": "css/css-main.build.css?v=6fbbc0",
+  "css-main.js": "js/css-main.build.js?v=6fbbc0",
+  "js-app.js": "js/js-app.build.js?v=6fbbc0"
 }

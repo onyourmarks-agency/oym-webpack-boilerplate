@@ -40,7 +40,7 @@ module.exports = function () {
         }
     ),
     new ExtractTextPlugin({
-      filename: isDebug ? 'css/[name].dev.css' : 'css/[name].[hash:6].css',
+      filename: isDebug ? 'css/[name].dev.css' : 'css/[name].build.css?v=[hash:6]',
       allChunks: true
     }),
     new ManifestPlugin(),
@@ -128,7 +128,7 @@ module.exports = function () {
     entry: entries,
     output: {
       path: dist.private,
-      filename: isDebug ? 'js/[name].dev.js' : 'js/[name].[hash:6].js',
+      filename: isDebug ? 'js/[name].dev.js' : 'js/[name].build.js?v=[hash:6]',
       publicPath: paths.dist.public
     },
     module: buildRules,
