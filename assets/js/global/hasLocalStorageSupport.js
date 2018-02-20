@@ -1,6 +1,6 @@
 module.exports = function () {
-	var testKey = 'test';
-	var storage = window.sessionStorage;
+	const testKey = 'test';
+	const storage = window.sessionStorage;
 
 	try {
 		storage.setItem(testKey, '1');

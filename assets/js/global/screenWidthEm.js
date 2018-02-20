@@ -4,5 +4,5 @@
  * @returns {number}
  */
 module.exports = function () {
-	return window.innerWidth / parseFloat(getComputedStyle(document.querySelector('body'))['font-size']);
+  return window.innerWidth / parseFloat(getComputedStyle(document.querySelector('body'))['font-size']);
 };
