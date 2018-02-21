@@ -1,0 +1,18 @@
+<mjml>
+	<mj-head>
+		<mj-font name="Fira Sans" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,700" />
+		<mj-attributes>
+			<mj-container background-color="#eeeeee" />
+			<mj-text font-size="16px" font-weight="300" line-height="28px" color="#ffffff" />
+			<mj-button background-color="#50AF31" border-radius="1px" font-size="18px" font-weight="700" border-bottom="1px solid rgba(0,0,0,.25)" text-transform="uppercase" />
+			<mj-section background-color="#003692" text-align="left" padding-left="16px" padding-right="16px"/>
+			<mj-column padding="0px" />
+			<mj-all font-family="'Fira Sans', Arial, sans-serif"  />
+			<mj-link text-transform="capitalize" />
+		</mj-attributes>
+	</mj-head>
+	<mj-body>
+		<mj-container>
+		</mj-container>
+	</mj-body>
+</mjml>
