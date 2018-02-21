@@ -4,9 +4,9 @@
   "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config webpack/webpack.config.js -p",
-    "build-prod": "NODE_ENV=prod webpack --config webpack/webpack.config.js -p",
-    "watch": "webpack -p --watch"
+    "build": "webpack -p --config webpack/webpack.config.js",
+    "build-prod": "NODE_ENV=prod webpack -p --config webpack/webpack.config.js",
+    "watch": "webpack -p --watch --config webpack/webpack.config.js"
   },
   "devDependencies": {
     "@e-sites/eslint-config": "^1.0.0",

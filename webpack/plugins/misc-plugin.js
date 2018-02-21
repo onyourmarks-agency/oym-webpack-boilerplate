@@ -6,11 +6,10 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 
 // eslint-disable-next-line no-unused-vars
 module.exports = function (webpack, config) {
-  new WebpackNotifierPlugin({
+  webpack.plugins.push(new WebpackNotifierPlugin({
     alwaysNotify: true,
     contentImage: path.join(__dirname, '../config/external/webpack.notifierlogo.png'),
-  });
-
+  }));
   webpack.plugins.push(new ManifestPlugin());
   webpack.plugins.push(new FriendlyErrorsWebpackPlugin());
 };

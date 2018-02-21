@@ -4,6 +4,7 @@ const ExtraneousFileCleanupPlugin = require('webpack-extraneous-file-cleanup-plu
 
 module.exports = function (webpack, config) {
   webpack.plugins.push(new CleanWebpackPlugin([config.private], {
+    root: process.cwd(),
     exclude: config.components.cleaner.excludes,
     watch: !config.debug,
     verbose: true,

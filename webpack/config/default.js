@@ -35,12 +35,12 @@ const DEFAULT_CONFIG = {
    * Registered and enabled plugins, executed IN order
    */
   enabledPlugins: [
-    'misc',
     'cleaner',
     'css',
     'js',
     'mjml',
     'svg',
+    'misc',
   ],
 
   /**
