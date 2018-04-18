@@ -2,7 +2,7 @@ const path = require('path');
 
 const BASE_PATH = path.resolve(__dirname, '../..');
 
-const PUBLIC_FOLDER = 'web';
+const PUBLIC_FOLDER = 'public';
 
 const DEFAULT_CONFIG = {
   /**
