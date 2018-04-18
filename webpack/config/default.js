@@ -2,6 +2,8 @@ const path = require('path');
 
 const BASE_PATH = path.resolve(__dirname, '../..');
 
+const PUBLIC_FOLDER = 'public';
+
 const DEFAULT_CONFIG = {
   /**
    * Debug mode (true|false). Should be disabled on production builds
@@ -16,7 +18,7 @@ const DEFAULT_CONFIG = {
   /**
    * Private build folder
    */
-  private: `${BASE_PATH}/public/build`,
+  private: `${BASE_PATH}/${PUBLIC_FOLDER}/build`,
 
   /**
    * Manifest file name
@@ -60,7 +62,7 @@ const DEFAULT_CONFIG = {
     mjml: {
       extension: '.twig',
       source: `${BASE_PATH}/assets/mjml/`,
-      dist: `${BASE_PATH}/public/build/mjml/`,
+      dist: `${BASE_PATH}/${PUBLIC_FOLDER}/build/mjml/`,
     },
 
     /**
@@ -68,7 +70,7 @@ const DEFAULT_CONFIG = {
      */
     js: {
       source: `${BASE_PATH}/assets/js/`,
-      dist: `${BASE_PATH}/public/build/js/`,
+      dist: `${BASE_PATH}/${PUBLIC_FOLDER}/build/js/`,
       fileMask: 'js/[name].build.js?v=[hash:6]',
     },
 
@@ -77,7 +79,7 @@ const DEFAULT_CONFIG = {
      */
     css: {
       source: `${BASE_PATH}/assets/css/`,
-      dist: `${BASE_PATH}/public/build/css/`,
+      dist: `${BASE_PATH}/${PUBLIC_FOLDER}/build/css/`,
       fileMask: 'css/[name].build.css?h=[hash:6]',
     },
 
@@ -86,7 +88,7 @@ const DEFAULT_CONFIG = {
      */
     svg: {
       source: `${BASE_PATH}/assets/svg/`,
-      dist: `${BASE_PATH}/public/build/svg/`,
+      dist: `${BASE_PATH}/${PUBLIC_FOLDER}/build/svg/`,
     },
   },
 };
