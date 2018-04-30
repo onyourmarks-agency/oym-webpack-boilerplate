@@ -10,6 +10,7 @@ if (!fs.existsSync(config.private)) {
 }
 
 const webpack = {
+  mode: config.debug ? 'development' : 'production',
   plugins: [],
   module: {
     rules: [],
