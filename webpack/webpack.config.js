@@ -22,6 +22,9 @@ const webpack = {
     filename: config.components.js.fileMask,
     publicPath: config.public,
   },
+  performance: {
+    hints: buildType === 'production' ? 'warning' : false,
+  },
 };
 
 _.forEach(config.enabledPlugins, (plugin) => {
