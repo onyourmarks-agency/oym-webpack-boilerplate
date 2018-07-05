@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const _ = require('lodash');
-const globalConfig = require('./default');
+const GLOBAL_CONFIG = require('./default');
 
 const PROD_CONFIG = {
   /**
@@ -9,4 +9,4 @@ const PROD_CONFIG = {
   debug: false,
 };
 
-module.exports = _.merge({}, globalConfig, PROD_CONFIG);
+module.exports = _.merge({}, GLOBAL_CONFIG, PROD_CONFIG);

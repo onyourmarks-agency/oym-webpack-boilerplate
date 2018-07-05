@@ -4,6 +4,8 @@ const BASE_PATH = path.resolve(__dirname, '../..');
 
 const PUBLIC_FOLDER = 'public';
 
+const THEME_FOLDER = `${process.env.NODE_THEME ? `${process.env.NODE_THEME}/` : ''}`;
+
 const DEFAULT_CONFIG = {
   /**
    * Debug mode (true|false). Should be disabled on production builds
@@ -18,7 +20,7 @@ const DEFAULT_CONFIG = {
   /**
    * Private build folder
    */
-  private: `${BASE_PATH}/${PUBLIC_FOLDER}/build`,
+  private: `${BASE_PATH}/${PUBLIC_FOLDER}/build/${THEME_FOLDER}`,
 
   /**
    * Manifest file name
@@ -29,8 +31,8 @@ const DEFAULT_CONFIG = {
    * The base entry files that have to go through the loader
    */
   entries: {
-    'js-app': `${BASE_PATH}/assets/js/app.js`,
-    'css-main': `${BASE_PATH}/assets/css/styles.scss`,
+    'js-app': `${BASE_PATH}/assets/${THEME_FOLDER}js/app.js`,
+    'css-main': `${BASE_PATH}/assets/${THEME_FOLDER}css/styles.scss`,
   },
 
   /**
@@ -61,16 +63,16 @@ const DEFAULT_CONFIG = {
      */
     mjml: {
       extension: '.twig',
-      source: `${BASE_PATH}/assets/mjml/`,
-      dist: `${BASE_PATH}/${PUBLIC_FOLDER}/build/mjml/`,
+      source: `${BASE_PATH}/assets/${THEME_FOLDER}mjml/`,
+      dist: `${BASE_PATH}/${PUBLIC_FOLDER}/build/${THEME_FOLDER}mjml/`,
     },
 
     /**
      * Javascript (ES6)
      */
     js: {
-      source: `${BASE_PATH}/assets/js/`,
-      dist: `${BASE_PATH}/${PUBLIC_FOLDER}/build/js/`,
+      source: `${BASE_PATH}/assets/${THEME_FOLDER}js/`,
+      dist: `${BASE_PATH}/${PUBLIC_FOLDER}/build/${THEME_FOLDER}js/`,
       fileMask: 'js/[name].build.js?v=[hash:6]',
     },
 
@@ -78,8 +80,8 @@ const DEFAULT_CONFIG = {
      * CSS with SSS
      */
     css: {
-      source: `${BASE_PATH}/assets/css/`,
-      dist: `${BASE_PATH}/${PUBLIC_FOLDER}/build/css/`,
+      source: `${BASE_PATH}/assets/${THEME_FOLDER}css/`,
+      dist: `${BASE_PATH}/${PUBLIC_FOLDER}/build/${THEME_FOLDER}css/`,
       fileMask: 'css/[name].build.css?h=[hash:6]',
     },
 
@@ -87,8 +89,8 @@ const DEFAULT_CONFIG = {
      * SVG sprites
      */
     svg: {
-      source: `${BASE_PATH}/assets/svg/`,
-      dist: `${BASE_PATH}/${PUBLIC_FOLDER}/build/svg/`,
+      source: `${BASE_PATH}/assets/${THEME_FOLDER}svg/`,
+      dist: `${BASE_PATH}/${PUBLIC_FOLDER}/build/${THEME_FOLDER}svg/`,
     },
   },
 };

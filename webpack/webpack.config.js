@@ -2,7 +2,7 @@
 const _ = require('lodash');
 
 const buildType = process.env.NODE_ENV || 'default';
-const config = require(`./config/${buildType}`);
+const config = require(`./config/${buildType.length ? `${buildType}` : ``}`);
 const fs = require('fs');
 
 if (!fs.existsSync(config.private)) {
