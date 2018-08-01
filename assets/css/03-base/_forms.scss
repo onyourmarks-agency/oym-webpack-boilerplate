@@ -24,13 +24,6 @@ label {
 input,
 select,
 textarea {
-  display: block;
-  font-family: $font-family-base;
-  font-size: $font-size-base;
-}
-
-#{$all-text-inputs},
-select {
   display: inline-block;
   vertical-align: top;
   border: $border-base;
@@ -69,11 +62,6 @@ select {
   }
 }
 
-textarea {
-  resize: vertical;
-  min-height: 150px;
-}
-
 [type='search'] {
   appearance: none;
 }
@@ -93,6 +81,15 @@ textarea {
   }
 }
 
+[type='file'] {
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
 select {
   appearance: none;
   background-image: url('/images/icons/dropdown.svg');
@@ -103,10 +100,6 @@ select {
   &::-ms-expand {
     display: none;
   }
-}
-
-[type='file'] {
-  width: 100%;
 }
 
 @include placeholder {
