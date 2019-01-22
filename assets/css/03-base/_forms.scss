@@ -102,6 +102,6 @@ select {
   }
 }
 
-@include placeholder {
+::placeholder {
   color: rgba($color-base-font, 0.7);
 }

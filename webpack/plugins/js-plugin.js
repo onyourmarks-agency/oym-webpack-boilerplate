@@ -4,10 +4,14 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 module.exports = function (webpack, config) {
   const babelPresets = [
     [
-      'env',
+      '@babel/preset-env',
       {
         targets: {
-          browsers: ['last 2 versions', 'ie >= 10'],
+          browsers: [
+            "last 1 version",
+            "> 1%",
+            "not dead",
+          ],
         },
         debug: true,
       },
@@ -23,6 +27,9 @@ module.exports = function (webpack, config) {
         options: {
           babelrc: false,
           presets: babelPresets,
+          plugins: [
+            '@babel/plugin-syntax-dynamic-import'
+          ]
         },
       },
     ],

@@ -2,7 +2,7 @@
  * Hide items on certain breakpoints
  */
 
-@include media($sm-down) {
+@media screen and (max-width: $xs-max-width) {
   .hide-sm-down {
     display: none !important;
   }
@@ -11,7 +11,7 @@
   }
 }
 
-@include media($md-down) {
+@media screen and (max-width: $sm-max-width) {
   .hide-md-down {
     display: none !important;
   }
@@ -20,7 +20,7 @@
   }
 }
 
-@include media($lg-down) {
+@media screen and (max-width: $md-max-width) {
   .hide-lg-down {
     display: none !important;
   }
@@ -29,7 +29,7 @@
   }
 }
 
-@include media($sm-up) {
+@media screen and (min-width: $sm-width) {
   .hide-sm-up {
     display: none !important;
   }
@@ -38,7 +38,7 @@
   }
 }
 
-@include media($md-up) {
+@media screen and (min-width: $sm-width) {
   .hide-md-up {
     display: none !important;
   }
@@ -47,7 +47,7 @@
   }
 }
 
-@include media($lg-up) {
+@media screen and (min-width: $lg-width) {
   .hide-lg-up {
     display: none !important;
   }
@@ -56,7 +56,7 @@
   }
 }
 
-@include media($xl-up) {
+@media screen and (min-width: $xl-width) {
   .hide-xl-up {
     display: none !important;
   }

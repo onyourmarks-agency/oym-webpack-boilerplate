@@ -22,6 +22,18 @@ const webpack = {
     filename: config.components.js.fileMask,
     publicPath: config.public,
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          chunks: 'initial',
+          name: 'vendor',
+          test: 'vendor',
+          enforce: true
+        },
+      }
+    },
+  },
   performance: {
     hints: buildType === 'production' ? 'warning' : false,
   },

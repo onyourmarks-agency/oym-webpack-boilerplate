@@ -1,0 +1,12 @@
+// Breakpoint styles
+$sm-width: 30em;
+$md-width: 40em;
+$lg-width: 60em;
+$xl-width: 73.125em;
+$max-width: $xl-width;
+
+///* Max widths of the various breakpoints */
+$xs-max-width: ($sm-width - 0.01);
+$sm-max-width: ($md-width - 0.01);
+$md-max-width: ($lg-width - 0.01);
+$lg-max-width: ($xl-width - 0.01);

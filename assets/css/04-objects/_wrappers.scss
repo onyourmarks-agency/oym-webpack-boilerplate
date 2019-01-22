@@ -3,20 +3,30 @@
  */
 
 .wrapper-inner {
-  @include row;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: $gutter / 2;
-  padding-right: $gutter / 2;
-  width: 100%;
-  max-width: $max-width;
+  @include wrapper-inner();
+
+  @media screen and (max-width: $md-max-width) {
+    padding-left: $grid-default-gutter / 2;
+    padding-right: $grid-default-gutter / 2;
+  }
 }
 
-.wrapper-inner--vspacing {
-  @include v-spacing($spacing-base);
+.wrapper-inner--relative {
+  position: relative;
+}
 
-  @include media($md-up) {
-    @include v-spacing($spacing-base * 2);
+.wrapper-grid {
+  @include wrapper-inner($grid-wrapper-max-width + 3.75);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.wrapper-grid--collapse {
+  width: calc(100% + 30px);
+  margin-left: -15px;
+  margin-right: -15px;
+
+  @media screen and (min-width: $lg-width) {
+    @include grid-collapse();
   }
 }

@@ -3,6 +3,10 @@
 // Apply SVG polyfill to load external SVG's in unsupported browsers
 import 'svgxuse';
 
+
+// Add promise polyfill
+import 'promise-polyfill/src/polyfill';
+
 /* eslint-enable import/first */
 
 /**
