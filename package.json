@@ -9,8 +9,15 @@
     "watch": "check-node-version --node '>= 8.14' && webpack -p --watch --config webpack/webpack.config.js"
   },
   "dependencies": {
+    "bazinga-translator": "^2.6.6",
+    "bourbon": "^5.1.0",
+    "bourbon-neat": "^3.0.1",
+    "formbouncerjs": "^1.4.5",
+    "normalize.css": "^8.0.1",
     "promise-polyfill": "^8.1.0",
-    "bouncher.js": "git+https://github.com/cferdinandi/bouncer.git"
+    "svgxuse": "^1.2.6",
+    "tiny-slider": "^2.9.1",
+    "xhr": "^2.5.0"
   },
   "devDependencies": {
     "@e-sites/eslint-config": "^2.0.0",
@@ -23,8 +30,6 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-preset-env": "^1.7.0",
-    "bourbon": "^5.1.0",
-    "bourbon-neat": "^3.0.1",
     "check-node-version": "^3.2.0",
     "clean-webpack-plugin": "^1.0.1",
     "css-loader": "^2.1.0",
@@ -40,14 +45,12 @@
     "lodash": "^4.17.11",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
-    "normalize.css": "^8.0.1",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "picturefill": "^3.0.3",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "svg-sprite-loader": "^4.1.3",
-    "svgxuse": "^1.2.6",
     "tde-webpack-mjml-plugin": "^1.3.0",
     "tde-webpack-svg-plugin": "^1.1.1",
     "uglifyjs-webpack-plugin": "^2.1.1",
