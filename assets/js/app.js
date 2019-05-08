@@ -3,9 +3,19 @@
 // Apply SVG polyfill to load external SVG's in unsupported browsers
 import 'svgxuse';
 
-
 // Add promise polyfill
 import 'promise-polyfill/src/polyfill';
+
+// Tests
+import storageTests from './tests/is-storage-supported';
+import touchTests from './tests/is-touch-device';
+
+// Helpers
+import screenWidthHelper from './helpers/screenwidth-in-em';
+import browserStorageHelper from './helpers/browser-storage';
+import setCookieHelper from './helpers/cookies/set-cookie';
+import getCookieHelper from './helpers/cookies/get-cookie';
+import removeCookieHelper from './helpers/cookies/remove-cookie';
 
 /* eslint-enable import/first */
 
@@ -28,21 +38,21 @@ app.config = {
 app.test = {
   isEnvironmentIsDev: window.location.host.indexOf('.ebox') > -1,
   isEnvironmentIsTest: window.location.host.indexOf('.tdebv.nl') > -1,
-  isSessionStorageSupported: require('./tests/is-storage-supported')('session'),
-  isLocalStorageSupported: require('./tests/is-storage-supported')('local'),
-  isTouchDevice: require('./tests/is-touch-device')(),
+  isSessionStorageSupported: storageTests('session'),
+  isLocalStorageSupported: storageTests('local'),
+  isTouchDevice: touchTests(),
 };
 
 /**
  * Add some handy helper functions
  */
 app.helper = {
-  giveScreenWidth: require('./helpers/screenwidth-in-em'),
-  localStorage: require('./helpers/browser-storage')('local'),
-  sessionStorage: require('./helpers/browser-storage')('session'),
-  setCookie: require('./helpers/cookies/set-cookie'),
-  getCookie: require('./helpers/cookies/get-cookie'),
-  removeCookie: require('./helpers/cookies/remove-cookie'),
+  giveScreenWidth: screenWidthHelper(),
+  localStorage: browserStorageHelper('local'),
+  sessionStorage: browserStorageHelper('session'),
+  setCookie: setCookieHelper,
+  getCookie: getCookieHelper,
+  removeCookie: removeCookieHelper,
 };
 
 // Make class attributes in window available

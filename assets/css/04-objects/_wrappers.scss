@@ -16,17 +16,15 @@
 }
 
 .wrapper-grid {
-  @include wrapper-inner($grid-wrapper-max-width + 3.75);
+  @include wrapper-inner($grid-wrapper-max-width + calc(((#{$grid-default-gutter} * 2) / 2)));
   padding-left: 0;
   padding-right: 0;
 }
 
 .wrapper-grid--collapse {
-  width: calc(100% + 30px);
-  margin-left: -15px;
-  margin-right: -15px;
+  @include grid-collapse();
 
   @media screen and (min-width: $lg-width) {
-    @include grid-collapse();
+    @include grid-collapse($neat-grid-lg-min);
   }
 }
