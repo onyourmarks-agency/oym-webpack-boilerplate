@@ -55,7 +55,8 @@ const DEFAULT_CONFIG = {
      * Cleaner: Clean build folder prior to a new build
      */
     cleaner: {
-      excludes: ['svg', 'manifest.json'],
+      pattern: ['**/*', '!svg*', '!manifest.json'],
+      watchPattern: ['!svg*', '!manifest.json'],
     },
 
     /**

@@ -1,12 +1,12 @@
 {
   "name": "tde-webpack-boilerplate",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "build": "check-node-version --node '>= 8.14' && webpack -p --config webpack/webpack.config.js",
-    "build-prod": "check-node-version --node '>= 8.14' && NODE_ENV=prod webpack -p --config webpack/webpack.config.js",
-    "watch": "check-node-version --node '>= 8.14' && webpack -p --watch --config webpack/webpack.config.js"
+    "build": "check-node-version --node '>= 10.15.3' && webpack -p --config webpack/webpack.config.js",
+    "build-prod": "check-node-version --node '>= 10.15.3' && NODE_ENV=prod webpack -p --config webpack/webpack.config.js",
+    "watch": "check-node-version --node '>= 10.15.3' && webpack -p --watch --config webpack/webpack.config.js"
   },
   "dependencies": {
     "bazinga-translator": "^2.6.6",
@@ -31,7 +31,7 @@
     "babel-loader": "^8.0.5",
     "babel-preset-env": "^1.7.0",
     "check-node-version": "^3.3.0",
-    "clean-webpack-plugin": "^1.0.1",
+    "clean-webpack-plugin": "^2.0.0",
     "css-loader": "^2.1.1",
     "cssnano": "^4.1.10",
     "eslint": "^5.16.0",
