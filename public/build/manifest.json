@@ -1,11 +1,5 @@
 {
-<<<<<<< HEAD
   "css-main.css": "/build/css/css-main.build.css?h=39ded6",
   "css-main.js": "/build/js/css-main.build.js?v=39ded6",
   "js-app.js": "/build/js/js-app.build.js?v=39ded6"
-=======
-  "css-main.css": "/build/css/css-main.build.css?h=c0d7f3",
-  "css-main.js": "/build/js/css-main.build.js?v=c0d7f3",
-  "js-app.js": "/build/js/js-app.build.js?v=c0d7f3"
->>>>>>> 98ac2217ba3b464ba71e8d6a7792c79974b7841e
 }
