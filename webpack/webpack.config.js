@@ -29,9 +29,9 @@ const webpack = {
           chunks: 'initial',
           name: 'vendor',
           test: 'vendor',
-          enforce: true
+          enforce: true,
         },
-      }
+      },
     },
   },
   performance: {
