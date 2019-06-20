@@ -22,7 +22,7 @@
   "devDependencies": {
     "@e-sites/eslint-config": "^2.0.0",
     "@e-sites/stylelint-config-esites": "^1.0.1",
-    "autoprefixer": "^9.5.1",
+    "autoprefixer":"^9.6.0",
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",

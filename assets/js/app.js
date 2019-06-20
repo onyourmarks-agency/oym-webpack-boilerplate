@@ -47,7 +47,7 @@ app.test = {
  * Add some handy helper functions
  */
 app.helper = {
-  giveScreenWidth: screenWidthHelper(),
+  giveScreenWidth: screenWidthHelper,
   localStorage: browserStorageHelper('local'),
   sessionStorage: browserStorageHelper('session'),
   setCookie: setCookieHelper,
@@ -57,3 +57,7 @@ app.helper = {
 
 // Make class attributes in window available
 import './helpers/class-attributes/_class-attributes';
+
+// Init Form validation
+import formValidate from './modules/form/form-validation';
+formValidate();

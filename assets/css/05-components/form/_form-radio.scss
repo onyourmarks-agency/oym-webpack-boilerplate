@@ -1,0 +1,63 @@
+$r-size: 25px;                              // Height & Width of box
+$r-background-color: $color-gray-light;     // Background-color of the box
+$r-border: 1px solid $color-gray-medium;    // Border of the box
+$r-icon-width: 12px;                        // Width of the Dot icon
+$r-color: $color-primary;                   // Color of the Dot icon
+
+.form__radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.form__radio input[type="radio"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0.001;
+  z-index: 1;
+
+  &:checked + .form__radio__box:after {
+    opacity: 1;
+  }
+}
+
+.form__radio__box {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $r-size;
+  height: $r-size;
+  min-width: $r-size;
+  min-height: $r-size;
+  border: $r-border;
+  background-color: $r-background-color;
+  border-radius: $r-size;
+  z-index: 2;
+
+  &:after {
+    content: '';
+    height: $r-icon-width;
+    width: $r-icon-width;
+    background-color: $r-color;
+    border-radius: $r-size;
+    opacity: 0;
+  }
+}
+
+.form__radio__label {
+  margin-left: 15px;
+}
+
+.form__input--error + .form__radio__box {
+  border: 2px solid $color-red;
+}
+
+.form__radio + .form__error {
+  margin-top: 5px;
+}

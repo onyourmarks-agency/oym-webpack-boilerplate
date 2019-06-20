@@ -1,28 +1,31 @@
 /**
 * Button mixins
 */
+
 @mixin btn {
-  @include btn-color();
-  display: inline-block;
-  appearance: none;
-  border: 0;
-  border-radius: $border-radius-button;
-  color: #fff;
-  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  background-color: $color-primary;
+  color: white;
+  border-radius: 5px;
   font-family: $font-heading;
-  font-size: $font-size-button;
   font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.625;
-  padding: $spacing-small $spacing-base;
+  font-size: rem(16);
+  line-height: 1;
   text-decoration: none;
-  text-align: center;
+  border: 0;
+  cursor: pointer;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
   transition: background-color $animation-base-duration $animation-base-timing;
   user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  text-transform: uppercase;
   box-shadow: inset 0 -2px rgba(#000, 0.2), 0 1px 2px rgba(#000, 0.3);
+
+  &:hover {
+    background-color: rgba($color-primary, .75);
+  }
 
   &:disabled {
     cursor: not-allowed;
@@ -30,13 +33,12 @@
   }
 
   svg {
-
     &:first-child {
-      margin-right: $spacing-small;
+      margin-right: $spacing-base;
     }
 
     &:last-child {
-      margin-left: $spacing-small;
+      margin-left: $spacing-base;
     }
 
     &:first-child:last-child {
@@ -45,72 +47,16 @@
   }
 }
 
-// Button sizing
+@mixin btn-secondary {
+  background-color: $color-secondary;
+  color: black;
+
+  &:hover {
+    background-color: rgba($color-secondary, .75);
+  }
+}
+
 @mixin btn-sm {
   padding: $spacing-small / 2 $spacing-base;
-  font-size: $font-size-smaller;
-}
-
-@mixin btn-md {
-  font-size: $font-size-small;
-}
-
-// Button skins
-@mixin btn-primary {
-  @include btn-color(background-color, $color-primary);
-}
-
-@mixin btn-secondary {
-  @include btn-color(background-color, $color-secondary);
-}
-
-@mixin btn-tertiary {
-  @include btn-color(background-color, $color-tertiary);
-  @include btn-color(color, $color-base-font);
-}
-
-// Ghost buttons
-@mixin btn-ghost {
-  border: 1px solid currentColor;
-  box-shadow: none;
-  background: #fff;
-
-  &:focus,
-  &:hover {
-    background: #fff;
-  }
-}
-
-@mixin btn-ghost-primary {
-  @include btn-color(color, $color-primary);
-  @include btn-hover-color(background-color, $color-primary);
-  @include btn-hover-color(color, #fff);
-}
-
-@mixin btn-ghost-secondary {
-  @include btn-color(color, $color-secondary);
-  @include btn-hover-color(background-color, $color-secondary);
-  @include btn-hover-color(color, #fff);
-}
-
-@mixin btn-ghost-tertiary {
-  @include btn-color(border-color, $color-tertiary);
-  @include btn-color(color,  $color-secondary);
-  @include btn-hover-color(border-color, $color-secondary);
-  @include btn-hover-color(color, $color-secondary);
-}
-
-@mixin btn-clean {
-  margin: 0;
-  border-radius: 0;
-  padding: 0;
-  font-family: $font-regular;
-  color: $color-base-font;
-  box-shadow: none;
-  background-color: transparent;
-
-  &:focus,
-  &:hover {
-    background-color: transparent;
-  }
+  font-size: rem(14);
 }

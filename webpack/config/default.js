@@ -15,7 +15,7 @@ const DEFAULT_CONFIG = {
   /**
    * Public folder prefix. This is usually the private path prefixed with /web or /public
    */
-  public: '/build/',
+  public: `/build/${THEME_FOLDER}`,
 
   /**
    * Private build folder

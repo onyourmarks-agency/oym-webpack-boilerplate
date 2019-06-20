@@ -15,9 +15,6 @@ label {
   display: inline-block;
   vertical-align: top;
   font-family: $font-regular;
-  margin: 0 $spacing-base $spacing-small / 2 0;
-  padding: $spacing-small 0;
-  width: 180px;
   line-height: 1.5;
 }
 
@@ -33,11 +30,9 @@ textarea {
   font-family: $font-family-base;
   font-size: $font-size-base;
   line-height: 1.5;
-  margin-bottom: $spacing-small;
-  padding: $spacing-small ($spacing-small * 1.5);
+  padding: 10px 20px;
   transition: border-color $animation-base-duration $animation-base-timing;
   width: 100%;
-  max-width: 380px;
   background-color: $color-gray-light;
 
   &:focus,
