@@ -3,9 +3,6 @@
 // Apply SVG polyfill to load external SVG's in unsupported browsers
 import 'svgxuse';
 
-// Add promise polyfill
-import 'promise-polyfill/src/polyfill';
-
 // Tests
 import storageTests from './tests/is-storage-supported';
 import touchTests from './tests/is-touch-device';

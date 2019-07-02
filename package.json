@@ -14,7 +14,6 @@
     "bourbon-neat": "^3.0.1",
     "formbouncerjs": "^1.4.5",
     "normalize.css": "^8.0.1",
-    "promise-polyfill": "^8.1.0",
     "svgxuse": "^1.2.6",
     "tiny-slider": "^2.9.2",
     "xhr": "^2.5.0"

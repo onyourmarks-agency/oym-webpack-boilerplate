@@ -1,5 +1,6 @@
 {
-  "css-main.css": "/build/css/css-main.build.css?h=93aaf3",
-  "css-main.js": "/build/js/css-main.build.js?v=93aaf3",
-  "js-app.js": "/build/js/js-app.build.js?v=93aaf3"
+  "bouncer-validation.js": "/build/js/bouncer-validation.build.js?v=9ca7b2",
+  "css-main.css": "/build/css/css-main.build.css?h=9ca7b2",
+  "css-main.js": "/build/js/css-main.build.js?v=9ca7b2",
+  "js-app.js": "/build/js/js-app.build.js?v=9ca7b2"
 }
