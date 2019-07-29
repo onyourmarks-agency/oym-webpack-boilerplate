@@ -1,7 +1,6 @@
 /**
  * Useful environment variable to see if we're dealing with a touch device
  *
- * @author Boye Oomens <boye@e-sites.nl>
  * @type {Boolean}
  */
 module.exports = function () {

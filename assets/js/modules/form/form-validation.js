@@ -1,10 +1,11 @@
 import loadValidation from './load-validation';
 import validationMessages from './validation-messages';
 
-const newsletterForm = document.querySelector('.js-form-validate');
+const formClassSelector = '.js-form-validate';
+const form = document.querySelector(formClassSelector);
 
 const init = function () {
-  if (!newsletterForm) {
+  if (!form) {
     return;
   }
 
@@ -18,7 +19,7 @@ const init = function () {
  * Validate the form
  */
 function validate() {
-  new Bouncer('.js-form-validate', {
+  new Bouncer(formClassSelector, {
     fieldClass: 'form__input--error',
     errorClass: 'form__error',
     messages: validationMessages,
