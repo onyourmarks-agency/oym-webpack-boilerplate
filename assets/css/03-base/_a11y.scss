@@ -1,13 +1,13 @@
 // a11y stuff
-@media screen and (prefers-reduced-motion) {
-
-  *,
-  *::after,
-  *::before {
-    transition: none !important;
-    animation: none !important;
-  }
-}
+//@media screen and (prefers-reduced-motion) {
+//
+//  *,
+//  *::after,
+//  *::before {
+//    transition: none !important;
+//    animation: none !important;
+//  }
+//}
 
 .sr-only {
   position: absolute;

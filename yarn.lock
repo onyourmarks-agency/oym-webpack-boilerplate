@@ -3129,9 +3129,10 @@ form-data@~2.3.2:
     combined-stream "^1.0.6"
     mime-types "^2.1.12"
 
-formbouncerjs@^1.4.5:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/formbouncerjs/-/formbouncerjs-1.4.5.tgz#0ccb07972354922f16a1eb6c57c0017190d6d8d6"
+formbouncerjs@^1.4.6:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/formbouncerjs/-/formbouncerjs-1.4.6.tgz#f46fa001f834103b7a877ce3673c04fe10e70baa"
+  integrity sha512-uQL/ZFs5w79RPtgtPbmL8HTKrsEK2q7Fph/uBqe4sFNXIszcrVmHcJ3aj5sB4OTsFbV6igQX9819f/f5t5Wjgg==
 
 fragment-cache@^0.2.1:
   version "0.2.1"
