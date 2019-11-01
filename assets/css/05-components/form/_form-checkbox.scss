@@ -1,5 +1,5 @@
-$c-size: 25px;                            // Height & Width of box
-$c-border-radius: 5px;                    // Border-radius of the box
+$c-size: 24px;                            // Height & Width of box
+$c-border-radius: 4px;                    // Border-radius of the box
 $c-background-color: $color-gray-light;   // Background-color of the box
 $c-border: 1px solid $color-gray-medium;  // Border of the box
 $c-icon-width: 4px;                       // Width of the Check icon
@@ -57,7 +57,7 @@ $c-color: $color-primary;                 // Color of the Check icon
 }
 
 .form__checkbox__label {
-  margin-left: 15px;
+  margin-left: 16px;
 }
 
 .form__input--error + .form__checkbox__box {
@@ -65,5 +65,5 @@ $c-color: $color-primary;                 // Color of the Check icon
 }
 
 .form__checkbox +  .form__error {
-  margin-top: 5px;
+  margin-top: 4px;
 }

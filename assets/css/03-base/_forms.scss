@@ -30,7 +30,7 @@ textarea {
   font-family: $font-family-base;
   font-size: $font-size-base;
   line-height: 1.5;
-  padding: 10px 20px;
+  padding: 12px 24px;
   transition: border-color $animation-base-duration $animation-base-timing;
   width: 100%;
   background-color: $color-gray-light;
@@ -82,7 +82,7 @@ textarea {
 
 textarea {
   resize: vertical;
-  min-height: 150px;
+  min-height: 160px;
 }
 
 select {
