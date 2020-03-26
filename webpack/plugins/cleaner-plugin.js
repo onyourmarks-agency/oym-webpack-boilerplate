@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const ExtraneousFileCleanupPlugin = require('webpack-extraneous-file-cleanup-plugin');
 
 module.exports = function (webpack, config) {
