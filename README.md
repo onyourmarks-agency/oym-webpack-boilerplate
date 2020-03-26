@@ -5,7 +5,7 @@ Our own Webpack Boilerplate for new projects.
 ## Requirements
 
 * [Yarn](https://yarnpkg.com) or [NPM](https://www.npmjs.com/get-npm)
-* Node v10.15.3+
+* Node v12.16.0+
 
 ## Installation
 
@@ -13,7 +13,7 @@ To install, follow these instructions.
 
 1: Add all of the files to your project.
 
-2: Change the `public` folder name to the correct name.
+2: Change the `web` folder name to the correct name.
 
 3: Open your terminal and go to your project:
 
@@ -39,22 +39,22 @@ To install the plugin with multiple themes, follow these instructions.
 3: Open the `packages.json` file and find these lines:
 ```
 "scripts": {
-   "build": "webpack -p --config webpack/webpack.config.js",
-   "build-prod": "NODE_ENV=prod webpack -p --config webpack/webpack.config.js",
-   "watch": "webpack -p --watch --config webpack/webpack.config.js"
+   "watch": "check-node-version --node '>= 12' && webpack -p --watch --config webpack/webpack.config.js",
+   "build": "check-node-version --node '>= 12' && NODE_ENV=prod webpack -p --config webpack/webpack.config.js",
+   "build-prod": "npm run build"
 },
 ```
 
 4: Change the lines and add multiple themes. `theme1` and `theme2` should be renamed to your theme names:
 ```
 "scripts": {
-   "theme1-build": "NODE_THEME=theme1 webpack -p --config webpack/webpack.config.js",
-   "theme1-build-prod": "NODE_THEME=theme1 NODE_ENV=prod webpack -p --config webpack/webpack.config.js",
-   "theme1-watch": "NODE_THEME=theme1 webpack -p --watch --config webpack/webpack.config.js",
+   "theme1-watch": "check-node-version --node '>= 12' && NODE_THEME=theme1 webpack -p --watch --config webpack/webpack.config.js",
+   "theme1-build": "check-node-version --node '>= 12' && NODE_THEME=theme1 webpack -p --config webpack/webpack.config.js",
+   "theme1-build-prod": "npm run theme1-build",
    
-   "theme2-build": "NODE_THEME=theme2 webpack -p --config webpack/webpack.config.js",
-   "theme2-build-prod": "NODE_THEME=theme2 NODE_ENV=prod webpack -p --config webpack/webpack.config.js",
-   "theme2-watch": "NODE_THEME=theme2 webpack -p --watch --config webpack/webpack.config.js"
+   "theme2-watch": "check-node-version --node '>= 12' && NODE_THEME=theme2 webpack -p --watch --config webpack/webpack.config.js",
+   "theme2-build": "check-node-version --node '>= 12' && NODE_THEME=theme2 webpack -p --config webpack/webpack.config.js",
+   "theme2-build-prod": "npm run theme2-build",
 },
 ```
 
@@ -73,13 +73,11 @@ To install the plugin with multiple themes, follow these instructions.
 9: Run one of the commands:\
 _Theme 1_
 * `yarn theme1-watch` to watch any changes inside the `assets/theme1` folder
-* `yarn theme1-build` to compile the `build/theme1` folder
-* `yarn theme1-build-prod` to compile the `build/theme1` folder for production
+* `yarn theme1-build` to compile the `build/theme1` folder for production
 
 _Theme 2_
 * `yarn theme2-watch` to watch any changes inside the `assets/theme2` folder
-* `yarn theme2-build` to compile the `build/theme2` folder
-* `yarn theme2-build-prod` to compile the `build/theme2` folder for production
+* `yarn theme2-build` to compile the `build/theme2` folder for production
 
 10: Change the location of the CSS and JS file inside the `index.html`:\
 _Theme 1_
