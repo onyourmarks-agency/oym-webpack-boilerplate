@@ -1,6 +1,8 @@
 {
-  "bouncer-validation.js": "/build/js/bouncer-validation.build.js?v=b505ef",
-  "css-main.css": "/build/css/css-main.build.css?h=b505ef",
-  "css-main.js": "/build/js/css-main.build.js?v=b505ef",
-  "js-app.js": "/build/js/js-app.build.js?v=b505ef"
+  "bouncer-validation.js": "/build/js/bouncer-validation.build.js?v=d10771",
+  "css-main.css": "/build/css/css-main.build.css?h=d10771",
+  "css-main.js": "/build/js/css-main.build.js?v=d10771",
+  "js-app.js": "/build/js/js-app.build.js?v=d10771",
+  "js/bouncer-validation.build.js.LICENSE.txt?v=d10771": "/build/js/bouncer-validation.build.js.LICENSE.txt?v=d10771",
+  "js/js-app.build.js.LICENSE.txt?v=d10771": "/build/js/js-app.build.js.LICENSE.txt?v=d10771"
 }

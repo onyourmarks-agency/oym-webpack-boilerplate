@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = function (webpack, config) {
   const babelPresets = [
@@ -36,7 +36,8 @@ module.exports = function (webpack, config) {
   });
 
   if (!config.debug) {
-    webpack.plugins.push(new UglifyJSPlugin({
+    webpack.optimization.minimize = true;
+    webpack.optimization.minimizer.push(new TerserPlugin({
       test: /\.js($|\?)/i,
     }));
   }

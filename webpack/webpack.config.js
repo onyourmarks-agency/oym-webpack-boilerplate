@@ -23,6 +23,8 @@ const webpack = {
     publicPath: config.public,
   },
   optimization: {
+    minimize: config.debug,
+    minimizer: [],
     splitChunks: {
       cacheGroups: {
         vendor: {
