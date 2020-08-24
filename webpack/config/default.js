@@ -2,7 +2,7 @@ const path = require('path');
 
 const BASE_PATH = path.resolve(__dirname, '../..');
 
-const PUBLIC_FOLDER = 'web';
+const PUBLIC_FOLDER = 'public';
 
 const THEME_FOLDER = `${process.env.NODE_THEME ? `${process.env.NODE_THEME}/` : ''}`;
 
@@ -32,6 +32,7 @@ const DEFAULT_CONFIG = {
    */
   entries: {
     'js-app': `${BASE_PATH}/assets/${THEME_FOLDER}js/app.js`,
+    'js-outdated-browser': `${BASE_PATH}/assets/${THEME_FOLDER}js/outdated.js`,
     'css-main': `${BASE_PATH}/assets/${THEME_FOLDER}css/styles.scss`,
   },
 

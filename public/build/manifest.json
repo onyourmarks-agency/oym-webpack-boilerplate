@@ -1,0 +1,10 @@
+{
+  "bouncer-validation.js": "/build/js/bouncer-validation.build.js?v=12bf97",
+  "css-main.css": "/build/css/css-main.build.css?h=12bf97",
+  "css-main.js": "/build/js/css-main.build.js?v=12bf97",
+  "js-app.js": "/build/js/js-app.build.js?v=12bf97",
+  "js-outdated-browser.js": "/build/js/js-outdated-browser.build.js?v=12bf97",
+  "js/bouncer-validation.build.js.LICENSE.txt?v=12bf97": "/build/js/bouncer-validation.build.js.LICENSE.txt?v=12bf97",
+  "js/js-app.build.js.LICENSE.txt?v=12bf97": "/build/js/js-app.build.js.LICENSE.txt?v=12bf97",
+  "js/js-outdated-browser.build.js.LICENSE.txt?v=12bf97": "/build/js/js-outdated-browser.build.js.LICENSE.txt?v=12bf97"
+}

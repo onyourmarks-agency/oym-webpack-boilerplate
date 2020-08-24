@@ -1,6 +1,6 @@
 {
   "name": "tde-webpack-boilerplate",
-  "version": "2.10.0",
+  "version": "2.11.0",
   "main": "app.js",
   "license": "MIT",
   "scripts": {
@@ -13,6 +13,7 @@
     "bourbon-neat": "^4.0.0",
     "formbouncerjs": "^1.4.6",
     "normalize.css": "^8.0.1",
+    "outdated-browser-rework": "git+https://github.com/tdeNL/outdated-browser-rework.git",
     "svgxuse": "^1.2.6",
     "tiny-slider": "^2.9.2",
     "xhr": "^2.5.0"
