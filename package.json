@@ -9,7 +9,7 @@
   "scripts": {
     "preinstall": "node webpack/preinstall-script.js",
     "watch": "check-node-version --node \">= $(node -p \"require('./package.json').config.node\")\" && webpack -p --watch --config webpack/webpack.config.js",
-    "build-prod": "check-node-version --node \">= $(node -p \"require('./package.json').config.node\")\" && NODE_ENV=prod webpack -p --config webpack/webpack.config.js",
+    "build": "check-node-version --node \">= $(node -p \"require('./package.json').config.node\")\" && NODE_ENV=prod webpack -p --config webpack/webpack.config.js",
     "eslint": "eslint assets --ext .js --ignore-path .gitignore; exit 0"
   },
   "dependencies": {
