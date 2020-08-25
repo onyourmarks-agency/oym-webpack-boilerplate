@@ -4,7 +4,7 @@ Our own Webpack Boilerplate for new projects.
 
 ## Requirements
 
-* [Yarn](https://yarnpkg.com) or [NPM](https://www.npmjs.com/get-npm)
+* [Yarn](https://yarnpkg.com)
 * Node v12.16.0+
 
 ## Installation
@@ -37,24 +37,22 @@ To install the plugin with multiple themes, follow these instructions.
 2: Change the `public` folder name to the correct name.
 
 3: Open the `packages.json` file and find these lines:
-```
+```json
 "scripts": {
-   "watch": "check-node-version --node '>= 12' && webpack -p --watch --config webpack/webpack.config.js",
-   "build": "check-node-version --node '>= 12' && NODE_ENV=prod webpack -p --config webpack/webpack.config.js",
-   "build-prod": "npm run build"
+    "preinstall": "node webpack/preinstall-script.js",
+    "watch": "check-node-version --node '>= $(node -p \"require('./package.json').config.node\")' && webpack -p --watch --config webpack/webpack.config.js",
+    "build": "check-node-version --node '>= $(node -p \"require('./package.json').config.node\") && webpack -p --config webpack/webpack.config.js"
 },
 ```
 
 4: Change the lines and add multiple themes. `theme1` and `theme2` should be renamed to your theme names:
-```
+```json
 "scripts": {
-   "theme1-watch": "check-node-version --node '>= 12' && NODE_THEME=theme1 webpack -p --watch --config webpack/webpack.config.js",
-   "theme1-build": "check-node-version --node '>= 12' && NODE_THEME=theme1 webpack -p --config webpack/webpack.config.js",
-   "theme1-build-prod": "npm run theme1-build",
+   "theme1-watch": "check-node-version --node '>= $(node -p \"require('./package.json').config.node\")' && NODE_THEME=theme1 webpack -p --watch --config webpack/webpack.config.js",
+   "theme1-build": "check-node-version --node '>= $(node -p \"require('./package.json').config.node\")' && NODE_THEME=theme1 webpack -p --config webpack/webpack.config.js",
    
-   "theme2-watch": "check-node-version --node '>= 12' && NODE_THEME=theme2 webpack -p --watch --config webpack/webpack.config.js",
-   "theme2-build": "check-node-version --node '>= 12' && NODE_THEME=theme2 webpack -p --config webpack/webpack.config.js",
-   "theme2-build-prod": "npm run theme2-build",
+   "theme2-watch": "check-node-version --node '>= $(node -p \"require('./package.json').config.node\")' && NODE_THEME=theme2 webpack -p --watch --config webpack/webpack.config.js",
+   "theme2-build": "check-node-version --node '>= $(node -p \"require('./package.json').config.node\")' && NODE_THEME=theme2 webpack -p --config webpack/webpack.config.js",
 },
 ```
 

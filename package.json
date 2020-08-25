@@ -3,9 +3,13 @@
   "version": "2.12.0",
   "main": "app.js",
   "license": "MIT",
+  "config": {
+    "node": "12"
+  },
   "scripts": {
-    "watch": "check-node-version --node '>= 12' && webpack -p --watch --config webpack/webpack.config.js",
-    "build-prod": "check-node-version --node '>= 12' && NODE_ENV=prod webpack -p --config webpack/webpack.config.js"
+    "preinstall": "node webpack/preinstall-script.js",
+    "watch": "check-node-version --node '>= $(node -p \"require('./package.json').config.node\")' && webpack -p --watch --config webpack/webpack.config.js",
+    "build-prod": "check-node-version --node '>= $(node -p \"require('./package.json').config.node\") && NODE_ENV=prod webpack -p --config webpack/webpack.config.js"
   },
   "dependencies": {
     "bazinga-translator": "^3.0.1",

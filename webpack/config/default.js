@@ -79,7 +79,7 @@ const DEFAULT_CONFIG = {
     },
 
     /**
-     * CSS with SSS
+     * CSS with SCSS
      */
     css: {
       source: `${BASE_PATH}/assets/${THEME_FOLDER}css/`,
