@@ -1,3 +1,4 @@
+/* global app */
 /* eslint-disable import/first */
 
 // Apply SVG polyfill to load external SVG's in unsupported browsers
@@ -14,6 +15,12 @@ import setCookieHelper from './helpers/cookies/set-cookie';
 import getCookieHelper from './helpers/cookies/get-cookie';
 import removeCookieHelper from './helpers/cookies/remove-cookie';
 
+// Make class attributes in window available
+import './helpers/class-attributes/_class-attributes';
+
+// Init Form validation
+import formValidate from './modules/form/form-validation';
+
 /* eslint-enable import/first */
 
 /**
@@ -26,7 +33,7 @@ app.config = {
     lg: 60,
     xl: 74,
     hamburger: 60,
-  }
+  },
 };
 
 /**
@@ -52,9 +59,4 @@ app.helper = {
   removeCookie: removeCookieHelper,
 };
 
-// Make class attributes in window available
-import './helpers/class-attributes/_class-attributes';
-
-// Init Form validation
-import formValidate from './modules/form/form-validation';
 formValidate();

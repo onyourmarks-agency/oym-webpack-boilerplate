@@ -3,9 +3,11 @@
  *
  * @type {Boolean}
  */
-module.exports = function () {
+const isTouchDevice = () => {
   const msGesture = window.navigator && window.navigator.msMaxTouchPoints && window.MSGesture;
-  const touch = (( 'ontouchstart' in window ) || msGesture || window.DocumentTouch && document instanceof DocumentTouch);
+  const touch = ((('ontouchstart' in window) || msGesture || window.DocumentTouch) && document instanceof window.DocumentTouch);
 
   return !!touch;
 };
+
+export default isTouchDevice;

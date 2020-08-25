@@ -1,4 +1,9 @@
-module.exports = function (storage) {
+/**
+ * Check if local- or sessionstorage is available
+ * @param storage
+ * @returns {boolean}
+ */
+const isStorageSupported = (storage) => {
   try {
     const storageObject = window[`${storage}Storage`];
     const testKey = 'test';
@@ -11,3 +16,5 @@ module.exports = function (storage) {
     return false;
   }
 };
+
+export default isStorageSupported;

@@ -1,3 +1,3 @@
-module.exports = function (element, classname) {
-  return (' ' + element.className + ' ').indexOf(' ' + classname + ' ') > -1;
-};
+const hasClass = (element, classname) => (` ${element.className} `).indexOf(` ${classname} `) > -1;
+
+export default hasClass;

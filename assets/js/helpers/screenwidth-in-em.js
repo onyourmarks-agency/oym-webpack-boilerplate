@@ -3,6 +3,6 @@
  *
  * @returns {number}
  */
-module.exports = function () {
-  return window.innerWidth / parseFloat(getComputedStyle(document.querySelector('body'))['font-size']);
-};
+const screenWidthEm = () => window.innerWidth / parseFloat(getComputedStyle(document.querySelector('body'))['font-size']);
+
+export default screenWidthEm;

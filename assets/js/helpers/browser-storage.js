@@ -1,28 +1,30 @@
-module.exports = function (method) {
-
+/* global app */
+const storage = (method) => {
   if (method === 'local') {
     if (app.test.isLocalStorageSupported) {
       return window.localStorage;
     }
-  } else {
-    if (app.test.isSessionStorageSupported) {
-      return window.sessionStorage;
-    }
+  } else if (app.test.isSessionStorageSupported) {
+    return window.sessionStorage;
   }
 
   return {
-    _data: {},
-    setItem: function (id, val) {
-      return this._data[id] = String(val);
+    data: {},
+    setItem(id, val) {
+      this.data[id] = String(val);
+      return this.data[id];
     },
-    getItem: function (id) {
-      return this._data.hasOwnProperty(id) ? this._data[id] : undefined;
+    getItem(id) {
+      return Object.prototype.hasOwnProperty.call(this.data, id) ? this.data[id] : undefined;
     },
-    removeItem: function (id) {
-      return delete this._data[id];
+    removeItem(id) {
+      return delete this.data[id];
     },
-    clear: function () {
-      return this._data = {};
-    }
+    clear() {
+      this.data = {};
+      return this.data;
+    },
   };
 };
+
+export default storage;

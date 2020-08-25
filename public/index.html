@@ -14,6 +14,68 @@
 <body>
 	<h1>content</h1>
 	
+	<form class="form js-form-validate">
+		<!-- Single field -->
+		<div class="form__group">
+			<div class="form__item">
+				<label class="form__label" for="field3">field3*</label>
+				<input class="form__input" id="field3" name="field3" type="text" required="required">
+			</div>
+		</div>
+		
+		<!-- Multiple fields -->
+		<div class="form__group">
+			<div class="form__item form__item--6">
+				<label class="form__label" for="field1">field1*</label>
+				<input class="form__input" id="field1" name="field1" type="text" required="required">
+			</div>
+			<div class="form__item form__item--6">
+				<label class="form__label" for="field2">field2*</label>
+				<input class="form__input" id="field2" name="field2" type="text" required="required">
+			</div>
+		</div>
+		
+		<!-- Radio -->
+		<div class="form__group">
+			<div class="form__item form__item--spacing-small">
+				<span class="form__label">field4*</span>
+				<label class="form__radio" for="value1">
+					<input type="radio" id="value1" name="field4" required value="value1">
+					<span class="form__radio__box"></span>
+					<span class="form__radio__label">value1</span>
+				</label>
+			</div>
+		</div>
+		<div class="form__group">
+			<div class="form__item">
+				<label class="form__radio" for="value2">
+					<input type="radio" id="value2" name="field4" required value="value2">
+					<span class="form__radio__box"></span>
+					<span class="form__radio__label">value2</span>
+				</label>
+			</div>
+		</div>
+		
+		<!-- Checkbox -->
+		<div class="form__group">
+			<div class="form__item">
+				<span class="form__label">field5*</span>
+				<label class="form__checkbox" for="field5">
+					<input type="checkbox" id="field5" name="field5" required>
+					<span class="form__checkbox__box"></span>
+					<span class="form__checkbox__label">value1</span>
+				</label>
+			</div>
+		</div>
+		
+		<!-- Submit button -->
+		<div class="form__group">
+			<div class="form__item">
+				<button type="submit">Verzenden</button>
+			</div>
+		</div>
+	</form>
+	
 	<div id="outdated"></div>
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CNodeList.prototype.forEach"></script>
 	<script src="/build/js/js-outdated-browser.build.js"></script>

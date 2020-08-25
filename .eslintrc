@@ -6,9 +6,11 @@
 		"es6": true
 	},
 	"plugins": ["compat"],
-	"ecmaFeatures": {
-		"experimentalObjectRestSpread": true,
-	},
+  "settings": {
+    "polyfills": [
+      "promises"
+    ]
+  },
 	"rules": {
 		"linebreak-style": 0,
 		"compat/compat": 2

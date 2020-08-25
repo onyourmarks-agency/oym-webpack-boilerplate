@@ -1,5 +1,5 @@
-export default new Promise(function(resolve, reject) {
-  import('formbouncerjs' /* webpackChunkName: "bouncer-validation" */ ).then(function (fn) {
+const loadValidation = () => new Promise((resolve, reject) => {
+  import('formbouncerjs' /* webpackChunkName: "bouncer-validation" */).then((fn) => {
     window.Bouncer = fn.default;
 
     if (typeof window.Bouncer === 'function') {
@@ -9,3 +9,5 @@ export default new Promise(function(resolve, reject) {
     }
   });
 });
+
+export default loadValidation;
