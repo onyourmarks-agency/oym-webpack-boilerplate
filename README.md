@@ -13,7 +13,7 @@ To install, follow these instructions.
 
 1: Add all of the files to your project.
 
-2: Change the `web` folder name to the correct name.
+2: Change the `public` folder name to the correct name.
 
 3: Open your terminal and go to your project:
 
