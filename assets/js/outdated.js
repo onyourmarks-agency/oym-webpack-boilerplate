@@ -2,6 +2,7 @@
 import outdatedBrowser from 'outdated-browser-rework';
 
 outdatedBrowser({
+  isUnknownBrowserOK: true,
   requiredCssProperty: 'object-fit',
   language: 'nl',
 });
