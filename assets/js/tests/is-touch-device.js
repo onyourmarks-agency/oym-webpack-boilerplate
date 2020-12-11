@@ -5,7 +5,7 @@
  */
 const isTouchDevice = () => {
   const msGesture = window.navigator && window.navigator.msMaxTouchPoints && window.MSGesture;
-  const touch = ((('ontouchstart' in window) || msGesture || window.DocumentTouch) && document instanceof window.DocumentTouch);
+  const touch = (('ontouchstart' in window) || msGesture || (window.DocumentTouch && document instanceof window.DocumentTouch));
 
   return !!touch;
 };
