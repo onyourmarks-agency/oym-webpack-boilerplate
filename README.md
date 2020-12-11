@@ -149,26 +149,26 @@ Use this markup for the default form styling:
       <div class="form__item">
         <span class="form__label">Optie 1:</span>
         <label class="form__checkbox" for="field5">
-          <input type="checkbox" id="field5" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper">
+          <input type="checkbox" id="field5" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper-multiple">
           <span class="form__checkbox__box"></span>
           <span class="form__checkbox__label">value 1</span>
         </label>
       </div>
       <div class="form__item">
         <label class="form__checkbox" for="field6">
-          <input type="checkbox" id="field6" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper">
+          <input type="checkbox" id="field6" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper-multiple">
           <span class="form__checkbox__box"></span>
           <span class="form__checkbox__label">value 2</span>
         </label>
       </div>
       <div class="form__item">
         <label class="form__checkbox" for="field7">
-          <input type="checkbox" id="field7" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper">
+          <input type="checkbox" id="field7" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper-multiple">
           <span class="form__checkbox__box"></span>
           <span class="form__checkbox__label">value 3</span>
         </label>
       </div>
-      <div class="form__error-wrapper"></div>
+      <div class="form__error-wrapper-multiple"></div>
     </div>
   </div>
 
