@@ -11,8 +11,26 @@
 
   @media screen and (min-width: $sm-width) {
     flex-direction: row;
-    align-items: flex-end;
+    align-items: flex-start;
   }
+}
+
+.form__group--vertical {
+  flex-direction: column;
+}
+
+.form__options {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .form__item {
+    margin-bottom: $spacing-small;
+  }
+}
+
+.form__option:not(:last-child) {
+  margin-bottom: 16px;
 }
 
 .form__item {
@@ -70,3 +88,6 @@
   margin-left: 8px;
 }
 
+.form__error-wrapper {
+  margin-bottom: $spacing-base;
+}

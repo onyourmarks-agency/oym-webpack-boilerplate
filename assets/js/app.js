@@ -18,7 +18,7 @@ import removeCookieHelper from './helpers/cookies/remove-cookie';
 // Make class attributes in window available
 import './helpers/class-attributes/_class-attributes';
 
-import formValidate from './modules/form/form-validation';
+import formvalidation from './modules/formvalidation/init';
 import activeNavigation from './modules/active-navigation';
 
 /* eslint-enable import/first */
@@ -60,7 +60,7 @@ app.helper = {
 };
 
 // Init Form validation
-formValidate();
+formvalidation();
 
 // Active navigation items
 activeNavigation();

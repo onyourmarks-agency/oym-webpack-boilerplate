@@ -1,6 +1,8 @@
 /* global Bouncer */
 import loadValidation from './load-validation';
+import config from './config';
 import validationMessages from './validation-messages';
+// import isAtLeastOneCheckboxChecked from './customvalidations/is-at-least-one-checkbox-checked';
 
 const formClassSelector = '.js-form-validate';
 const form = document.querySelector(formClassSelector);
@@ -9,8 +11,14 @@ const form = document.querySelector(formClassSelector);
  * Validate the form
  */
 const validate = () => new Bouncer(formClassSelector, {
-  fieldClass: 'form__input--error',
-  errorClass: 'form__error',
+  customValidations: {
+    // isAtLeastOneCheckboxChecked: (field) => {
+    //   return isAtLeastOneCheckboxChecked(field);
+    // },
+  },
+  emitEvents: true,
+  fieldClass: config.inputFieldErrorClass,
+  errorClass: config.errorMessageClass,
   messages: validationMessages,
 });
 
