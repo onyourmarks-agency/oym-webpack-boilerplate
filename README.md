@@ -88,7 +88,7 @@ _Theme 2_
 ## Form example
 Use this markup for the default form styling:
 
-```
+```html
 <form class="form js-form-validate">
   <!-- Single field -->
   <div class="form__group">
@@ -143,8 +143,33 @@ Use this markup for the default form styling:
     </div>
   </div>
   
-  <!-- Checkbox: At least one is required -->
-  <div class="form__group form__group--vertical" data-bouncer-at-least-one-checkbox>
+  <!-- Submit button -->
+  <div class="form__group">
+    <div class="form__item">
+      <button type="submit">Verzenden</button>
+    </div>
+  </div>
+</form>
+```
+
+### Input date
+*Make sure `field-hooks/date` and bounded function here is enabled in `modules/formvalidation/init`.*
+```html
+<div class="form__item">
+    <form action="" class="js-form-validate">
+        <label for="birthDate">Geboortedatum:</label>
+        <input type="date" id="birthDate" data-field-birthdate-output="[data-field-birthdate-result]" value="" placeholder="dd-mm-jjjj" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])-(0[1-9]|1[012])-[0-9]{4}|[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" data-bouncer-message="Gebruik de notatie: dd-mm-jjjj" required>
+        <input type="hidden" name="birthDate" data-field-birthdate-result>
+    </form>
+</div>
+```
+
+Second field (hidden) will convert all dates to US date format like YYYY-MM-DD e.g. 1986-20-11.
+
+### At least one checkbox is required
+*Make sure `isAtLeastOneCheckboxChecked` is enabled in the `customValidations` inside `modules/formvalidation/init`.*
+```html
+<div class="form__group form__group--vertical" data-bouncer-at-least-one-checkbox>
     <div class="form__options">
       <div class="form__item">
         <span class="form__label">Optie 1:</span>
@@ -171,13 +196,4 @@ Use this markup for the default form styling:
       <div class="form__error-wrapper-multiple"></div>
     </div>
   </div>
-
-  <!-- Submit button -->
-  <div class="form__group">
-    <div class="form__item">
-      <button type="submit">Verzenden</button>
-    </div>
-  </div>
-</form>
 ```
-

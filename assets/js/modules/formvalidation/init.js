@@ -2,6 +2,7 @@
 import loadValidation from './load-validation';
 import config from './config';
 import validationMessages from './validation-messages';
+// import fieldHookDate from './field-hooks/date';
 // import isAtLeastOneCheckboxChecked from './customvalidations/is-at-least-one-checkbox-checked';
 
 const formClassSelector = '.js-form-validate';
@@ -31,6 +32,9 @@ const init = () => {
   loadValidation().then(() => {
     validate();
   });
+
+  // Field hooks
+  // fieldHookDate();
 };
 
 export default init;
