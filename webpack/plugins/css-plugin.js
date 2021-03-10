@@ -4,24 +4,41 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = function (webpack, config) {
+
+  webpack.module.rules.push({
+    test: /\.svg/,
+    type: 'asset/inline',
+  });
+
   webpack.module.rules.push({
     test: /\.scss$/,
     use: [
-      MiniCssExtractPlugin.loader,
+      {
+        loader: MiniCssExtractPlugin.loader,
+      },
       {
         loader: 'css-loader',
         options: {
           sourceMap: config.debug,
         },
-      }, {
+      },
+      {
         loader: 'postcss-loader',
         options: {
           sourceMap: config.debug,
-          config: {
-            path: path.resolve(__dirname, '../config/external/postcss.config.js'),
+          postcssOptions: {
+            plugins: [
+              [
+                'autoprefixer',
+                {
+                  grid: 'autoplace',
+                },
+              ],
+            ],
           },
         },
-      }, {
+      },
+      {
         loader: 'sass-loader',
         options: {
           sourceMap: config.debug,

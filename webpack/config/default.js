@@ -75,7 +75,7 @@ const DEFAULT_CONFIG = {
     js: {
       source: `${BASE_PATH}/assets/${THEME_FOLDER}js/`,
       dist: `${BASE_PATH}/${PUBLIC_FOLDER}/build/${THEME_FOLDER}js/`,
-      fileMask: 'js/[name].build.js?v=[hash:6]',
+      fileMask: 'js/[name].build.js?v=[contenthash:6]',
     },
 
     /**
@@ -84,7 +84,7 @@ const DEFAULT_CONFIG = {
     css: {
       source: `${BASE_PATH}/assets/${THEME_FOLDER}css/`,
       dist: `${BASE_PATH}/${PUBLIC_FOLDER}/build/${THEME_FOLDER}css/`,
-      fileMask: 'css/[name].build.css?h=[hash:6]',
+      fileMask: 'css/[name].build.css?h=[contenthash:6]',
     },
 
     /**
