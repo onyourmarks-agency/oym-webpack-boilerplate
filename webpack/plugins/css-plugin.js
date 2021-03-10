@@ -1,8 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssNano = require('cssnano');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = function (webpack, config) {
   webpack.module.rules.push({
@@ -35,13 +34,14 @@ module.exports = function (webpack, config) {
     filename: config.components.css.fileMask,
   }));
 
-  if (!config.debug) {
-    webpack.plugins.push(new OptimizeCssAssetsPlugin({
-      cssProcessor: CssNano,
-      cssProcessorOptions: {
-        discardComments: { removeAll: true },
-      },
-      canPrint: true,
-    }));
-  }
+  webpack.optimization.minimizer.push(new CssMinimizerPlugin({
+    minimizerOptions: {
+      preset: [
+        'default',
+        {
+          discardComments: { removeAll: true },
+        },
+      ],
+    },
+  }))
 };
