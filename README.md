@@ -38,20 +38,19 @@ To install the plugin with multiple themes, follow these instructions.
 3: Open the `packages.json` file and find these lines:
 ```json
 "scripts": {
-    "preinstall": "node webpack/preinstall-script.js",
-    "watch": "check-node-version --node \">= $(node -p \"require('./package.json').config.node\")\" && webpack -p --watch --config webpack/webpack.config.js",
-    "build": "check-node-version --node \">= $(node -p \"require('./package.json').config.node\")\" && webpack -p --config webpack/webpack.config.js"
+    "watch": "node webpack/pre-script.js && webpack -p --watch --config webpack/webpack.config.js",
+    "build": "node webpack/pre-script.js && webpack -p --config webpack/webpack.config.js"
 },
 ```
 
 4: Change the lines and add multiple themes. `theme1` and `theme2` should be renamed to your theme names:
 ```json
 "scripts": {
-   "theme1-watch": "check-node-version --node \">= $(node -p \"require('./package.json').config.node\")\" && NODE_THEME=theme1 webpack -p --watch --config webpack/webpack.config.js",
-   "theme1-build": "check-node-version --node \">= $(node -p \"require('./package.json').config.node\")\" && NODE_THEME=theme1 webpack -p --config webpack/webpack.config.js",
+   "theme1-watch": "node webpack/pre-script.js && NODE_THEME=theme1 webpack -p --watch --config webpack/webpack.config.js",
+   "theme1-build": "node webpack/pre-script.js && NODE_THEME=theme1 webpack -p --config webpack/webpack.config.js",
    
-   "theme2-watch": "check-node-version --node \">= $(node -p \"require('./package.json').config.node\")\" && NODE_THEME=theme2 webpack -p --watch --config webpack/webpack.config.js",
-   "theme2-build": "check-node-version --node \">= $(node -p \"require('./package.json').config.node\")\" && NODE_THEME=theme2 webpack -p --config webpack/webpack.config.js",
+   "theme2-watch": "node webpack/pre-script.js && NODE_THEME=theme2 webpack -p --watch --config webpack/webpack.config.js",
+   "theme2-build": "node webpack/pre-script.js && NODE_THEME=theme2 webpack -p --config webpack/webpack.config.js",
 },
 ```
 
