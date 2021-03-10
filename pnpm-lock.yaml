@@ -23,7 +23,7 @@ devDependencies:
   check-node-version: 4.1.0
   clean-webpack-plugin: 3.0.0_webpack@5.24.4
   core-js: 3.9.1
-  css-loader: 5.1.1_webpack@5.24.4
+  css-loader: 5.1.2_webpack@5.24.4
   css-minimizer-webpack-plugin: 1.2.0_webpack@5.24.4
   eslint: 7.21.0
   eslint-config-airbnb: 18.2.1_7c15dd0cfa14fe651ab374dc3d7ac180
@@ -41,12 +41,12 @@ devDependencies:
   sass-loader: 11.0.1_node-sass@5.0.0+webpack@5.24.4
   style-loader: 2.0.0_webpack@5.24.4
   svg-sprite-loader: 5.2.1
-  tde-webpack-mjml-plugin: 1.4.0_webpack@5.24.4
-  tde-webpack-svg-plugin: 1.1.1_webpack@5.24.4
+  tde-webpack-mjml-plugin: 2.0.0_webpack@5.24.4
+  tde-webpack-svg-plugin: 2.0.0_webpack@5.24.4
   webpack: 5.24.4_webpack-cli@4.5.0
   webpack-cli: 4.5.0_webpack@5.24.4
   webpack-extraneous-file-cleanup-plugin: 2.0.0
-  webpack-manifest-plugin: 3.0.0_webpack@5.24.4
+  webpack-manifest-plugin: 3.1.0_webpack@5.24.4
   webpack-notifier: 1.13.0
 lockfileVersion: 5.2
 packages:
@@ -1614,6 +1614,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=
+  /at-least-node/1.0.0:
+    dev: true
+    engines:
+      node: '>= 4.0.0'
+    resolution:
+      integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
   /atob/2.1.2:
     dev: true
     engines:
@@ -2806,7 +2812,7 @@ packages:
       node: '>4'
     resolution:
       integrity: sha512-BcxQSKTSEEQUftYpBVnsH4SF05NTuBokb19/sBt6asXGKZ/6VP7PLG1CBCkFDYOnhXhPh0jMhO6xZ71oYHXHBA==
-  /css-loader/5.1.1_webpack@5.24.4:
+  /css-loader/5.1.2_webpack@5.24.4:
     dependencies:
       camelcase: 6.2.0
       cssesc: 3.0.0
@@ -2827,7 +2833,7 @@ packages:
     peerDependencies:
       webpack: ^4.27.0 || ^5.0.0
     resolution:
-      integrity: sha512-5FfhpjwtuRgxqmusDidowqmLlcb+1HgnEDMsi2JhiUrZUcoc+cqw+mUtMIF/+OfeMYaaFCLYp1TaIt9H6I/fKA==
+      integrity: sha512-T7vTXHSx0KrVEg/xjcl7G01RcVXpcw4OELwDPvkr7izQNny85A84dK3dqrczuEfBcu7Yg7mdTjJLSTibRUoRZg==
   /css-minimizer-webpack-plugin/1.2.0_webpack@5.24.4:
     dependencies:
       cacache: 15.0.5
@@ -3923,14 +3929,17 @@ packages:
     dev: true
     resolution:
       integrity: sha1-zTzl9+fLYUWIP8rjGR6Yd/hYeVA=
-  /fs-extra/5.0.0:
+  /fs-extra/9.1.0:
     dependencies:
+      at-least-node: 1.0.0
       graceful-fs: 4.2.6
-      jsonfile: 4.0.0
-      universalify: 0.1.2
+      jsonfile: 6.1.0
+      universalify: 2.0.0
     dev: true
+    engines:
+      node: '>=10'
     resolution:
-      integrity: sha512-66Pm4RYbjzdyeuqudYqhFiNBbCIuI9kgRqLPSHIlXHidW8NIQtVdkM1yeZ4lXwuhbTETv3EUGMNHAAw6hiundQ==
+      integrity: sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==
   /fs-minipass/2.1.0:
     dependencies:
       minipass: 3.1.3
@@ -4958,12 +4967,14 @@ packages:
       graceful-fs: 4.2.6
     resolution:
       integrity: sha1-NzaitCi4e72gzIO1P6PWM6NcKug=
-  /jsonfile/4.0.0:
+  /jsonfile/6.1.0:
+    dependencies:
+      universalify: 2.0.0
     dev: true
     optionalDependencies:
       graceful-fs: 4.2.6
     resolution:
-      integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
+      integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==
   /jsprim/1.4.1:
     dependencies:
       assert-plus: 1.0.0
@@ -8233,21 +8244,21 @@ packages:
       node: '>= 10'
     resolution:
       integrity: sha512-DUCttfhsnLCjwoDoFcI+B2iJgYa93vBnDUATYEeRx6sntCTdN01VnqsIuTlALXla/LWooNg0yEGeB+Y8WdFxGA==
-  /tde-webpack-mjml-plugin/1.4.0_webpack@5.24.4:
+  /tde-webpack-mjml-plugin/2.0.0_webpack@5.24.4:
     dependencies:
-      fs-extra: 5.0.0
+      fs-extra: 9.1.0
       glob: 7.1.6
       lodash: 4.17.21
       mjml: 4.9.0
       webpack: 5.24.4_webpack-cli@4.5.0
     dev: true
     engines:
-      node: '>=4'
+      node: '>=14'
     peerDependencies:
       webpack: '4'
     resolution:
-      integrity: sha512-dKvnOuaHPUd4tDRLACmLrcqMSUuVxkxGnqWMyU0vcfAvvSzFEaWuUhZehss4VnrH4FudnhQCyklgNJsqKwi+xg==
-  /tde-webpack-svg-plugin/1.1.1_webpack@5.24.4:
+      integrity: sha512-dv6F819NTpyew0o27tmsag3ph9GdNOI/diKuT4bJkgNFWoLK8TJs0npsJcdZQJ+Ezz7ltlbEZCrd2iNxCrhFwQ==
+  /tde-webpack-svg-plugin/2.0.0_webpack@5.24.4:
     dependencies:
       glob: 7.1.6
       mkdirp: 0.5.5
@@ -8255,11 +8266,11 @@ packages:
       webpack: 5.24.4_webpack-cli@4.5.0
     dev: true
     engines:
-      node: '>=4'
+      node: '>=14'
     peerDependencies:
-      webpack: 2 || 3
+      webpack: '5'
     resolution:
-      integrity: sha1-ag2vE9Qb2djLQYZ0jS3CAG+xtek=
+      integrity: sha512-0Ux6qMB0bk10aZusk4l8h9COjaWSi/y0p+vlxLIGyoyxDwLfrmQQSqEBTIPU2Cm6vsAHANqQDe3Gze2UxQSTfA==
   /terser-webpack-plugin/5.1.1_webpack@5.24.4:
     dependencies:
       jest-worker: 26.6.2
@@ -8524,12 +8535,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-zoWr9ObaxALD3DOPfjPSqxt4fnZiWblxHIgeWqW8x7UqDzEtHEQLzji2cuJYQFCU6KmoJikOYAZlrTHHebjx2w==
-  /universalify/0.1.2:
+  /universalify/2.0.0:
     dev: true
     engines:
-      node: '>= 4.0.0'
+      node: '>= 10.0.0'
     resolution:
-      integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
+      integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==
   /unquote/1.1.1:
     dev: true
     resolution:
@@ -8715,7 +8726,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-+tVj2Om+G8Xjow8afyk/4x/Cc1U=
-  /webpack-manifest-plugin/3.0.0_webpack@5.24.4:
+  /webpack-manifest-plugin/3.1.0_webpack@5.24.4:
     dependencies:
       tapable: 2.2.0
       webpack: 5.24.4_webpack-cli@4.5.0
@@ -8726,7 +8737,7 @@ packages:
     peerDependencies:
       webpack: '>=4.44.2'
     resolution:
-      integrity: sha512-nbORTdky2HxD8XSaaT+zrsHb30AAgyWAWgCLWaAeQO21VGCScGb52ipqlHA/njix1Z8OW8IOlo4+XK0OKr1fkw==
+      integrity: sha512-7jgB8Kb0MRWXq3YaDfe+0smv5c7MLMfze8YvG6eBEXZmy6fhwMe/eT47A0KEIF30c0DDEYKbbYTXzaMQETaZ0Q==
   /webpack-merge/5.7.3:
     dependencies:
       clone-deep: 4.0.1
@@ -8828,7 +8839,7 @@ packages:
       integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==
   /wide-align/1.1.3:
     dependencies:
-      string-width: 2.1.1
+      string-width: 1.0.2
     dev: true
     resolution:
       integrity: sha512-QGkOQc8XL6Bt5PwnsExKBPuMKBxnGxWWW3fU55Xt4feHozMUhdUMaBCk290qpm/wG5u/RSKzwdAC4i51YigihA==
@@ -9078,8 +9089,8 @@ specifiers:
   style-loader: ^2.0.0
   svg-sprite-loader: ^5.2.1
   svgxuse: ^1.2.6
-  tde-webpack-mjml-plugin: ^1.4.0
-  tde-webpack-svg-plugin: ^1.1.1
+  tde-webpack-mjml-plugin: ^2.0.0
+  tde-webpack-svg-plugin: ^2.0.0
   tiny-slider: ^2.9.2
   webpack: ^5.24.4
   webpack-cli: ^4.5.0
