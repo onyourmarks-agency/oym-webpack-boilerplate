@@ -4,8 +4,8 @@ Our own Webpack Boilerplate for new projects.
 
 ## Requirements
 
-* [Yarn](https://yarnpkg.com)
-* Node v12.16.0+
+* [Pnpm](https://pnpm.js.org)
+* Node v14.12.0+
 
 ## Installation
 
