@@ -9,6 +9,7 @@ if (!fs.existsSync(config.private)) {
   fs.mkdirSync(config.private);
 }
 
+
 const webpack = {
   mode: config.debug ? 'development' : 'production',
   plugins: [],
@@ -23,11 +24,11 @@ const webpack = {
     publicPath: config.public,
   },
   optimization: {
-    minimize: config.debug,
+    minimize: !config.debug,
     minimizer: [],
     splitChunks: {
       cacheGroups: {
-        vendor: {
+        defaultVendors: {
           chunks: 'initial',
           name: 'vendor',
           test: 'vendor',

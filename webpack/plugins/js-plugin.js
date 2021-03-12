@@ -35,10 +35,7 @@ module.exports = function (webpack, config) {
     ],
   });
 
-  if (!config.debug) {
-    webpack.optimization.minimize = true;
-    webpack.optimization.minimizer.push(new TerserPlugin({
-      test: /\.js($|\?)/i,
-    }));
-  }
+  webpack.optimization.minimizer.push(new TerserPlugin({
+    test: /\.js($|\?)/i,
+  }));
 };

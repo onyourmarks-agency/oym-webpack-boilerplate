@@ -1,20 +1,23 @@
 {
-    "extends": "airbnb-base",
-    "parser": "babel-eslint",
-    "env": {
-        "browser": true,
-        "es6": true
-    },
-    "plugins": [
-        "compat"
-    ],
-    "settings": {
-        "polyfills": [
-            "Promise"
-        ]
-    },
-    "rules": {
-        "linebreak-style": 0,
-        "compat/compat": 2
-    }
+  "extends": "airbnb-base",
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "plugins": [
+    "compat"
+  ],
+  "settings": {
+    "polyfills": [
+      "Promise"
+    ]
+  },
+  "rules": {
+    "linebreak-style": 0,
+    "compat/compat": 2
+  }
 }
