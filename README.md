@@ -62,9 +62,7 @@ To install the plugin with multiple themes, follow these instructions.
 
         cd /path/to/project
         
-8: Run 
-
-to install all of the packages:
+8: Run Pnpm to install all of the packages:
 
         pnpm install
         
