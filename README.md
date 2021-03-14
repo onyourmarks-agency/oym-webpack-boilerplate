@@ -19,13 +19,13 @@ To install, follow these instructions.
 
         cd /path/to/project
         
-4: Run Yarn to install all of the packages:
+4: Run Pnpm to install all of the packages:
 
-        yarn
+        pnpm install
         
 5: Run one of the commands:
-* `yarn watch` to watch any changes inside the `assets` folder
-* `yarn build` to compile the `build` folder
+* `pnpm watch` to watch any changes inside the `assets` folder
+* `pnpm build` to compile the `build` folder
         
 ## Multiple themes
 
@@ -62,18 +62,20 @@ To install the plugin with multiple themes, follow these instructions.
 
         cd /path/to/project
         
-8: Run Yarn to install all of the packages:
+8: Run 
 
-        yarn
+to install all of the packages:
+
+        pnpm install
         
 9: Run one of the commands:\
 _Theme 1_
-* `yarn theme1-watch` to watch any changes inside the `assets/theme1` folder
-* `yarn theme1-build` to compile the `build/theme1` folder for development
+* `pnpm theme1-watch` to watch any changes inside the `assets/theme1` folder
+* `pnpm theme1-build` to compile the `build/theme1` folder for development
 
 _Theme 2_
-* `yarn theme2-watch` to watch any changes inside the `assets/theme2` folder
-* `yarn theme2-build` to compile the `build/theme2` folder for development
+* `pnpm theme2-watch` to watch any changes inside the `assets/theme2` folder
+* `pnpm theme2-build` to compile the `build/theme2` folder for development
 
 10: Change the location of the CSS and JS file inside the `index.html`:\
 _Theme 1_
