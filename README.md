@@ -167,6 +167,8 @@ Second field (hidden) will convert all dates to US date format like YYYY-MM-DD e
 
 ### At least one checkbox is required
 *Make sure `isAtLeastOneCheckboxChecked` is enabled in the `customValidations` inside `modules/formvalidation/init`.*
+
+*If this field is required add `data-bouncer-checkboxes-required` to the same element as `data-bouncer-at-least-one-checkbox`.*
 ```html
 <div class="form__group form__group--vertical" data-bouncer-at-least-one-checkbox>
     <div class="form__options">
