@@ -12,6 +12,12 @@ export default (field) => {
     return false;
   }
 
+  const checkboxesRequired = wrapper.hasAttribute('data-bouncer-checkboxes-required');
+
+  if (!checkboxesRequired) {
+    return false;
+  }
+
   const checkboxes = wrapper.querySelectorAll('[type="checkbox"]');
 
   if (!checkboxes.length) {

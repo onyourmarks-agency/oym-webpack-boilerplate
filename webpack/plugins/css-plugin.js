@@ -4,12 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = function (webpack, config) {
-
-  webpack.module.rules.push({
-    test: /\.svg/,
-    type: 'asset/inline',
-  });
-
   webpack.module.rules.push({
     test: /\.scss$/,
     use: [
@@ -20,6 +14,7 @@ module.exports = function (webpack, config) {
         loader: 'css-loader',
         options: {
           sourceMap: config.debug,
+          url: false,
         },
       },
       {
