@@ -37,6 +37,7 @@ const webpack = {
       },
     },
   },
+  target: ['web', 'es5'],
   performance: {
     hints: buildType === 'production' ? 'warning' : false,
   },
