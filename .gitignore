@@ -3,7 +3,6 @@
 /node_modules/
 yarn-error.log
 npm-debug.log
-ebox.json
 /public/build
 yarn.lock
 
