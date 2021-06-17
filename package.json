@@ -9,8 +9,8 @@
   "scripts": {
     "watch": "node webpack/pre-script.js && webpack --watch --config webpack/webpack.config.js",
     "build": "node webpack/pre-script.js && NODE_ENV=prod webpack --mode production --config webpack/webpack.config.js",
-    "eslint": "node webpack/pre-script.js && eslint assets --ext .js --ignore-path .gitignore; exit 0",
-    "eslint-fix": "node webpack/pre-script.js && eslint assets --fix --ext .js --ignore-path .gitignore; exit 0"
+    "eslint": "node webpack/pre-script.js && eslint assets --ext .js --ignore-path .gitignore;",
+    "eslint-fix": "node webpack/pre-script.js && eslint assets --fix --ext .js --ignore-path .gitignore;"
   },
   "dependencies": {
     "bazinga-translator": "^3.0.1",
