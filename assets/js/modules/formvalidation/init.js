@@ -11,17 +11,18 @@ const form = document.querySelector(formClassSelector);
 /*
  * Validate the form
  */
-const validate = () => new Bouncer(formClassSelector, {
-  customValidations: {
-    // isAtLeastOneCheckboxChecked: (field) => {
-    //   return isAtLeastOneCheckboxChecked(field);
-    // },
-  },
-  emitEvents: true,
-  fieldClass: config.inputFieldErrorClass,
-  errorClass: config.errorMessageClass,
-  messages: validationMessages,
-});
+const validate = () =>
+  new Bouncer(formClassSelector, {
+    customValidations: {
+      // isAtLeastOneCheckboxChecked: (field) => {
+      //   return isAtLeastOneCheckboxChecked(field);
+      // },
+    },
+    emitEvents: true,
+    fieldClass: config.inputFieldErrorClass,
+    errorClass: config.errorMessageClass,
+    messages: validationMessages,
+  });
 
 const init = () => {
   if (!form) {

@@ -1,20 +1,20 @@
 table {
-  border-collapse: collapse;
-  margin: $spacing-small 0;
-  table-layout: fixed;
   width: 100%;
+  margin: $spacing-small 0;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 
 th {
+  padding: $spacing-small 0;
   border-bottom: 1px solid shade($color-base-border, 25%);
   font-weight: 600;
-  padding: $spacing-small 0;
   text-align: left;
 }
 
 td {
-  border-bottom: $border-base;
   padding: $spacing-small 0;
+  border-bottom: $border-base;
 }
 
 tr,

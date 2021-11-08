@@ -1,32 +1,23 @@
 <mjml>
-	<mj-head>
-		<mj-font name="Heebo" href="https://fonts.googleapis.com/css?family=Heebo:300,500,700"/>
-		<mj-attributes>
-			<mj-breakpoint width="360px"/>
-			<mj-body background-color="#ffffff"/>
-			<mj-text font-size="16px" font-weight="300" line-height="22px" color="#000000"/>
-			<mj-section background-color="#ffffff" text-align="left"/>
-			<mj-all padding="0" font-family="Heebo, 'Source Sans Pro', Arial, sans-serif"/>
-		</mj-attributes>
-		<mj-style>
-			h1, h2 {
-				font-weight: 700;
-			}
-
-			a {
-				color: #000000;
-				text-decoration: underline;
-				font-weight: 500;
-			}
-		</mj-style>
-	</mj-head>
-	<mj-body>
-		<mj-section background-color="#eeeeee">
-			<mj-column width="100%" padding="10px">
-				<mj-text>
-	                Content
-	            </mj-text>
-			</mj-column>
-		</mj-section>
-	</mj-body>
+  <mj-head>
+    <mj-font name="Heebo" href="https://fonts.googleapis.com/css?family=Heebo:300,500,700" />
+    <mj-attributes>
+      <mj-breakpoint width="360px" />
+      <mj-body background-color="#ffffff" />
+      <mj-text font-size="16px" font-weight="300" line-height="22px" color="#000000" />
+      <mj-section background-color="#ffffff" text-align="left" />
+      <mj-all padding="0" font-family="Heebo, 'Source Sans Pro', Arial, sans-serif" />
+    </mj-attributes>
+    <mj-style>
+      h1, h2 { font-weight: 700; } a { color: #000000; text-decoration: underline; font-weight: 500;
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body>
+    <mj-section background-color="#eeeeee">
+      <mj-column width="100%" padding="10px">
+        <mj-text> Content </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
 </mjml>

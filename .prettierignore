@@ -1,0 +1,13 @@
+# Ignore artifacts:
+public
+vendor
+config
+storage
+webpack
+*.json
+*.lock
+*.html
+*.html.twig
+*.yaml
+*.yml
+*.md

@@ -23,7 +23,8 @@ export default {
   },
   wrongLength: {
     over: 'Sorry. Je hebt teveel karakters gebruikt. Je gebruikt nu {length} karakters en er is een maximum van {maxLength}.',
-    under: 'In dit veld zijn er minimaal {minLength} karakters nodig. Je gebruikt nu {length} karakters.',
+    under:
+      'In dit veld zijn er minimaal {minLength} karakters nodig. Je gebruikt nu {length} karakters.',
   },
   isAtLeastOneCheckboxChecked: 'Selecteer minstens één optie.',
 };

@@ -1,23 +1,55 @@
-{
-  "extends": "airbnb-base",
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "requireConfigFile": false,
+module.exports = {
+  extends: ['airbnb-base', 'prettier'],
+  parser: '@babel/eslint-parser',
+  parserOptions: {
+    requireConfigFile: false,
   },
-  "env": {
-    "browser": true,
-    "es6": true
+  env: {
+    browser: true,
+    es6: true,
   },
-  "plugins": [
-    "compat"
+  plugins: ['compat', 'svelte3'],
+  overrides: [
+    {
+      files: ['**/*.svelte'],
+      processor: 'svelte3/svelte3',
+    },
   ],
-  "settings": {
-    "polyfills": [
-      "Promise"
-    ]
+  settings: {
+    'svelte3/ignore-styles': () => true,
+    polyfills: [
+      'fetch',
+      'Promise',
+      'Headers',
+      'ResizeObserver',
+      'Object.values',
+      'Object.entries',
+      'Object.assign',
+      'Array.prototype.includes',
+      'IntersectionObserver',
+    ],
   },
-  "rules": {
-    "linebreak-style": 0,
-    "compat/compat": 2
-  }
-}
+  rules: {
+    'compat/compat': 2,
+    'import/prefer-default-export': 'off',
+    'import/first': 'off',
+    'import/no-mutable-exports': 'off',
+    'linebreak-style': 0,
+    'max-len': [
+      'error',
+      {
+        code: 100,
+        tabWidth: 2,
+        comments: 200,
+        ignoreTrailingComments: true,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+        ignoreRegExpLiterals: true,
+      },
+    ],
+    'no-new': 0,
+    'prefer-promise-reject-errors': 0,
+    'no-param-reassign': [2, { props: false }],
+  },
+};

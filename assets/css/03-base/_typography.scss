@@ -1,8 +1,8 @@
 body {
   color: $color-base-font;
-  font-family: $font-family-base;
   font-size: $font-size-base;
   line-height: $line-height-base;
+  font-family: $font-family-base;
 }
 
 h1,
@@ -11,11 +11,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-family-heading;
+  margin: 0 0 $spacing-small;
   font-weight: normal;
   font-size: $font-size-base;
   line-height: $line-height-heading;
-  margin: 0 0 $spacing-small;
+  font-family: $font-family-heading;
 }
 
 h1 {
@@ -64,8 +64,8 @@ strong {
 }
 
 a {
-  color: $color-primary;
   fill: currentColor;
+  color: $color-primary;
   transition: color $animation-base-duration $animation-base-timing;
 
   &:active,
@@ -84,9 +84,9 @@ button {
 }
 
 hr {
+  margin: $spacing-base 0;
+  border-top: 0;
+  border-right: 0;
   border-bottom: $border-base;
   border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  margin: $spacing-base 0;
 }

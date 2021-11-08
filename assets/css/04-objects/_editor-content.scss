@@ -26,16 +26,16 @@
   }
 
   table {
-    table-layout: fixed;
     width: 100%;
+    table-layout: fixed;
   }
 
   img,
   iframe {
     display: block;
-    margin: auto;
     max-width: 100%;
     height: auto;
+    margin: auto;
   }
 
   .align-left {

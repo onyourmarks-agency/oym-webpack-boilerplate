@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "@considonet/stylelint-config-scss",
+    "@considonet/stylelint-config-bem"
+  ],
+  "rules": {
+    "plugin/selector-bem-pattern": false,
+    "selector-pseudo-element-colon-notation": "single",
+    "color-hex-case": "lower",
+    "number-leading-zero": "always",
+    "no-invalid-double-slash-comments": true,
+    "declaration-colon-newline-after": null,
+    "declaration-no-important": null,
+    "indentation": null,
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "first-nested",
+          "after-single-line-comment"
+        ]
+      }
+    ],
+    "no-descending-specificity": [
+      true,
+      {
+        "ignore": ["selectors-within-list"]
+      }
+    ]
+  }
+}

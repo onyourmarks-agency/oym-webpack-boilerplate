@@ -6,8 +6,8 @@
   @include wrapper-inner();
 
   @media screen and (max-width: $md-max-width) {
-    padding-left: $grid-default-gutter / 2;
     padding-right: $grid-default-gutter / 2;
+    padding-left: $grid-default-gutter / 2;
   }
 }
 
@@ -17,8 +17,8 @@
 
 .wrapper-grid {
   @include wrapper-inner(calc(#{$grid-wrapper-max-width} + ((#{$grid-default-gutter} * 2) / 2)));
-  padding-left: 0;
   padding-right: 0;
+  padding-left: 0;
 }
 
 .wrapper-grid--collapse {
