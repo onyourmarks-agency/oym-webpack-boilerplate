@@ -18,6 +18,22 @@ label {
   vertical-align: top;
 }
 
+select {
+  appearance: none;
+  background-image: url('/public/images/icons/dropdown.svg');
+  background-position: right ($spacing-small * 1.5) top 50%;
+  background-repeat: no-repeat;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
 input,
 select,
 textarea {
@@ -78,23 +94,6 @@ textarea {
 
 [type='file'] {
   width: 100%;
-}
-
-textarea {
-  min-height: 160px;
-  resize: vertical;
-}
-
-select {
-  appearance: none;
-  background-image: url('/public/images/icons/dropdown.svg');
-  background-position: 95% 50%;
-  background-position: right ($spacing-small * 1.5) top 50%;
-  background-repeat: no-repeat;
-
-  &::-ms-expand {
-    display: none;
-  }
 }
 
 ::placeholder {

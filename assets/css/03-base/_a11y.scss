@@ -1,21 +1,11 @@
-// a11y stuff
-//@media screen and (prefers-reduced-motion) {
-//
-//  *,
-//  *::after,
-//  *::before {
-//    transition: none !important;
-//    animation: none !important;
-//  }
-//}
-
+/* a11y stuff */
 .sr-only {
+  clip: rect(0 0 0 0);
   position: absolute;
-  margin: -1px;
-  padding: 0;
   width: 1px;
   height: 1px;
+  margin: -1px;
+  padding: 0;
   overflow: hidden;
   border: 0;
-  clip: rect(0 0 0 0);
 }

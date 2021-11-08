@@ -1,9 +1,9 @@
-$c-size: 24px;                            // Height & Width of box
-$c-border-radius: 4px;                    // Border-radius of the box
-$c-background-color: $color-gray-light;   // Background-color of the box
-$c-border: 1px solid $color-gray-medium;  // Border of the box
-$c-icon-width: 4px;                       // Width of the Check icon
-$c-color: $color-primary;                 // Color of the Check icon
+$c-size: 24px; /* Height & Width of box */
+$c-border-radius: 4px; /* Border-radius of the box */
+$c-background-color: $color-gray-light; /* Background-color of the box */
+$c-border: 1px solid $color-gray-medium; /* Border of the box */
+$c-icon-width: 4px; /* Width of the Check icon */
+$c-color: $color-primary; /* Color of the Check icon */
 
 .form__checkbox {
   display: flex;
@@ -12,7 +12,8 @@ $c-color: $color-primary;                 // Color of the Check icon
   user-select: none;
 }
 
-.form__checkbox input[type="checkbox"] {
+.form__checkbox input[type='checkbox'] {
+  z-index: 1;
   position: absolute;
   width: 0;
   height: 0;
@@ -20,39 +21,38 @@ $c-color: $color-primary;                 // Color of the Check icon
   padding: 0;
   overflow: hidden;
   opacity: 0.001;
-  z-index: 1;
-
-  &:checked + .form__checkbox__box:after {
-    opacity: 1;
-  }
 }
 
 .form__checkbox__box {
-  position: relative;
   display: inline-block;
+  z-index: 2;
+  position: relative;
   width: $c-size;
-  height: $c-size;
   min-width: $c-size;
+  height: $c-size;
   min-height: $c-size;
   border: $c-border;
-  background-color: $c-background-color;
   border-radius: $c-border-radius;
-  z-index: 2;
+  background-color: $c-background-color;
 
   &:after {
-    content: '';
-		position: absolute;
+    position: absolute;
     top: calc(50% - 2px);
     left: 50%;
+    width: ($c-size * 0.5);
+    height: ($c-size * 0.25);
     transform: translate(-50%, -50%) rotate(-50deg) scale(1);
-    width: ($c-size * .5);
-    height: ($c-size * .25);
-    background: transparent;
     border: $c-icon-width solid $c-color;
     border-top: none;
     border-right: none;
     border-radius: 1px;
+    background: transparent;
+    content: '';
     opacity: 0;
+  }
+
+  .form__checkbox input[type='checkbox']:checked + &:after {
+    opacity: 1;
   }
 }
 
@@ -64,6 +64,6 @@ $c-color: $color-primary;                 // Color of the Check icon
   border: 2px solid $color-red;
 }
 
-.form__checkbox +  .form__error {
+.form__checkbox + .form__error {
   margin-top: 4px;
 }
