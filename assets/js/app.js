@@ -40,7 +40,7 @@ app.config = {
  * Test some browser options and make them available in app.test
  */
 app.test = {
-  isEnvironmentIsDev: window.location.host.indexOf('.ebox') > -1,
+  isEnvironmentIsDev: window.location.host.indexOf('.tdev.team') > -1,
   isEnvironmentIsTest: window.location.host.indexOf('.tdebv.nl') > -1,
   isSessionStorageSupported: storageTests('session'),
   isLocalStorageSupported: storageTests('local'),
