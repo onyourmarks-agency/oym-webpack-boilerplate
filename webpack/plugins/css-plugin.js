@@ -25,9 +25,6 @@ module.exports = function (webpack, config) {
             plugins: [
               [
                 'autoprefixer',
-                {
-                  grid: 'autoplace',
-                },
               ],
             ],
           },
