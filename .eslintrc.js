@@ -8,7 +8,17 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  plugins: ['compat'],
+  plugins: ['compat', 'svelte3'],
+  overrides: [
+    {
+      files: ['**/*.svelte'],
+      processor: 'svelte3/svelte3',
+    },
+  ],
+  settings: {
+    'svelte3/ignore-styles': () => true,
+    polyfills: ['fetch', 'Promise'],
+  },
   rules: {
     'compat/compat': 2,
     'import/prefer-default-export': 'off',
@@ -30,6 +40,7 @@ module.exports = {
       },
     ],
     'no-new': 0,
+    'no-param-reassign': [2, { props: false }],
     'prefer-promise-reject-errors': 0,
   },
 };

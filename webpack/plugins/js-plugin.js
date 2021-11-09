@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const TerserPlugin = require('terser-webpack-plugin');
+const preprocess = require('svelte-preprocess');
 
 module.exports = function (webpack, config) {
   const babelPresets = [
@@ -19,7 +20,7 @@ module.exports = function (webpack, config) {
   ];
 
   webpack.module.rules.push({
-    test: /\.js$/,
+    test: /(\.js?$)|(\.svelte$)/,
     exclude: /(node_modules|bower_components)/,
     use: [
       {
@@ -33,6 +34,22 @@ module.exports = function (webpack, config) {
         },
       },
     ],
+  }, {
+    test: /\.svelte$/,
+    exclude: /node_modules\/@babel/,
+    use: [
+      {
+        loader: 'svelte-loader',
+        options: {
+          preprocess: preprocess(),
+        },
+      },
+    ],
+  }, {
+    test: /\.mjs$/,
+    resolve: {
+      fullySpecified: false // https://github.com/graphql/graphql-js/issues/2721#issuecomment-723008284
+    },
   });
 
   webpack.optimization.minimizer.push(new TerserPlugin({
