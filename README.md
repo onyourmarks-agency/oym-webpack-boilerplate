@@ -110,37 +110,33 @@ Use this markup for the default form styling:
   </div>
   
   <!-- Radio -->
-  <div class="form__group">
-    <div class="form__item form__item--spacing-small">
-      <span class="form__label">field4*</span>
-      <label class="form__radio" for="value1">
-        <input type="radio" id="value1" name="field4" required value="value1">
-        <span class="form__radio__box"></span>
-        <span class="form__radio__label">value1</span>
-      </label>
+    <div class="form__group">
+        <div class="form__item">
+            <span class="form__label">field4*</span>
+            <label class="input-radio" for="value1">
+                <input type="radio" id="value1" name="field4" required value="value1">
+                <span class="input-radio__box"></span>
+                <span class="input-radio__label">value1</span>
+            </label>
+            <label class="input-radio" for="value2">
+                <input type="radio" id="value2" name="field4" required value="value2">
+                <span class="input-radio__box"></span>
+                <span class="input-radio__label">value2</span>
+            </label>
+        </div>
     </div>
-  </div>
-  <div class="form__group">
-    <div class="form__item">
-      <label class="form__radio" for="value2">
-        <input type="radio" id="value2" name="field4" required value="value2">
-        <span class="form__radio__box"></span>
-        <span class="form__radio__label">value2</span>
-      </label>
-    </div>
-  </div>
   
   <!-- Checkbox -->
-  <div class="form__group">
-    <div class="form__item">
-      <span class="form__label">field5*</span>
-      <label class="form__checkbox" for="field5">
-        <input type="checkbox" id="field5" name="field5" required>
-        <span class="form__checkbox__box"></span>
-        <span class="form__checkbox__label">value1</span>
-      </label>
+    <div class="form__group">
+        <div class="form__item">
+            <span class="form__label">field5*</span>
+            <label class="input-checkbox" for="field5">
+                <input type="checkbox" id="field5" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper-multiple">
+                <span class="input-checkbox__box"></span>
+                <span class="input-checkbox__label">value 3</span>
+            </label>
+        </div>
     </div>
-  </div>
   
   <!-- Submit button -->
   <div class="form__group">

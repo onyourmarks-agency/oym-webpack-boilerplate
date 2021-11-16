@@ -1,0 +1,77 @@
+body {
+  color: $color-base-font;
+  font-size: rem(16);
+  line-height: $line-height-base;
+  font-family: $font-regular;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 16px;
+  font-weight: $font-regular-weight-400;
+  font-size: rem(16);
+  line-height: $line-height-heading;
+  font-family: $font-heading;
+}
+
+h1 {
+  font-size: rem(48);
+
+  @media screen and (max-width: $md-max-width) {
+    font-size: rem(32);
+  }
+}
+
+h2 {
+  font-size: rem(36);
+
+  @media screen and (max-width: $md-max-width) {
+    font-size: rem(32);
+  }
+}
+
+h3 {
+  font-size: rem(28);
+
+  @media screen and (max-width: $md-max-width) {
+    font-size: rem(24);
+  }
+}
+
+h4 {
+  font-size: rem(24);
+}
+
+h5 {
+  font-size: rem(20);
+}
+
+h6 {
+  font-size: rem(18);
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+b,
+strong {
+  font-weight: $font-regular-weight-700;
+}
+
+a {
+  fill: currentColor;
+  color: $color-primary;
+  text-decoration: none;
+  transition: all 200ms ease;
+
+  &:active,
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,41 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__group {
+  @include columns;
+  margin-bottom: 32px;
+}
+
+.form__item {
+  grid-column: span 12;
+}
+
+@media screen and (min-width: $md-width) {
+  .form__item--4 {
+    grid-column: span 4;
+  }
+
+  .form__item--6 {
+    grid-column: span 6;
+  }
+
+  .form__item--8 {
+    grid-column: span 8;
+  }
+}
+
+.form__label {
+  display: inline-block;
+  margin: 0 0 4px 0;
+}
+
+.form__input--error {
+  border-color: $color-red;
+}
+
+.form__error {
+  color: $color-red;
+  font-size: rem(14);
+}

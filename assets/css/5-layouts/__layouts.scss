@@ -1,0 +1,14 @@
+/*
+* This folder contains the stylesheets for the main parts of the site (header, footer, etc.)
+*/
+
+/* Header */
+@import 'header/header';
+
+/* Misc */
+@import 'misc/wrapper-inner';
+@import 'misc/grid';
+@import 'misc/form';
+
+/* Footer */
+@import 'footer/footer';

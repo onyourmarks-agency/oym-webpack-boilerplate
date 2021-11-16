@@ -1,9 +1,0 @@
-@mixin wrapper-inner($width: $grid-wrapper-max-width) {
-  @include grid-container();
-  display: block;
-  max-width: $width;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: $grid-default-gutter;
-  padding-left: $grid-default-gutter;
-}

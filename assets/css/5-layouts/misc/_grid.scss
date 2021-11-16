@@ -1,0 +1,35 @@
+.grid {
+  grid-gap: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.grid--2 {
+  @media screen and (min-width: $md-width) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.grid--3 {
+  @media screen and (min-width: $sm-width) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: $lg-width) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.grid--4 {
+  @media screen and (min-width: $sm-width) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: $md-width) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media screen and (min-width: $lg-width) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

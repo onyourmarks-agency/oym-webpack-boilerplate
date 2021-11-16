@@ -1,0 +1,17 @@
+.wrapper-inner {
+  display: block;
+  max-width: $max-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 16px;
+  padding-left: 16px;
+
+  @media screen and (min-width: $lg-width) {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}
+
+.wrapper-inner--relative {
+  position: relative;
+}
