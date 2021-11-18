@@ -43,7 +43,6 @@ const DEFAULT_CONFIG = {
     'cleaner',
     'css',
     'js',
-    'mjml',
     'svg',
     'misc',
   ],
@@ -58,15 +57,6 @@ const DEFAULT_CONFIG = {
     cleaner: {
       pattern: ['**/*', '!svg*', '!manifest.json'],
       watchPattern: ['!svg*', '!manifest.json'],
-    },
-
-    /**
-     * MJML: Email framework
-     */
-    mjml: {
-      extension: '.twig',
-      source: `${BASE_PATH}/assets/${THEME_FOLDER}mjml/`,
-      dist: `${BASE_PATH}/${PUBLIC_FOLDER}/build/${THEME_FOLDER}mjml/`,
     },
 
     /**

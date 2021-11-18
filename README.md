@@ -56,7 +56,7 @@ To install the plugin with multiple themes, follow these instructions.
 
 5: Create the theme folders inside the `assets` folder (e.g. `theme1` and `theme2`).
 
-6: Copy the `css`, `js`, `mjml` and `svg` folders inside `theme1` and `theme2`.
+6: Copy the `css`, `js` and `svg` folders inside `theme1` and `theme2`.
 
 7: Open your terminal and go to your project:
 
@@ -83,6 +83,79 @@ _Theme 1_
 _Theme 2_
 * `<link rel="stylesheet" href="/build/theme2/css/css-main.build.css">`
 * `<script src="/build/theme2/js/js-app.build.js"></script>`
+
+##Hamburger
+Use this markup for a hamburger menu trigger
+```html
+<div class="js-hamburger"></div>
+```
+
+##Scrollable
+Use this markup as a start for a scrollable element. 
+Make sure the items have a height and a width, and don't forget to set these dimensions in the javascript as well.
+
+```html
+<div class="scrollable js-scrollable">
+    <div class="scrollable__slider dragscroll js-scrollable-items">
+        <div class="scrollable__inner js-scrollable-inner">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            ...
+        </div>
+    </div>
+
+    <div class="scrollable__controls">
+        <button class="scrollable__controls__button js-scrollable-left" type="button"><</button>
+        <button class="scrollable__controls__button js-scrollable-right" type="button">></button>
+    </div>
+</div>
+```
+
+##Image slider
+Use this markup as a start for a simple image slider.
+```html
+<div class="image-slider swiper js-image-slider">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">1</div>
+        <div class="swiper-slide">2</div>
+        <div class="swiper-slide">3</div>
+        ...
+    </div>
+
+    <div class="image-slider__pagination"></div>
+    
+    <div class="image-slider__navigation">
+        <div class="image-slider__button image-slider__button--prev"><</div>
+        <div class="image-slider__button image-slider__button--next">></div>
+    </div>
+</div>
+```
+
+##Accordion
+Use this markup as a start for very simple accordion items
+
+```html
+<div class="accordion">
+    <div class="accordion__item">
+        <input class="accordion__input" type="checkbox" name="accordion1" id="accordion1">
+        <label class="accordion__title" for="accordion1">Accordion item 1</label>
+        <div class="accordion__content">Content for accordion item 1</div>
+    </div>
+
+    <div class="accordion__item">
+        <input class="accordion__input" type="checkbox" name="accordion2" id="accordion2">
+        <label class="accordion__title" for="accordion2">Accordion item 2</label>
+        <div class="accordion__content">Content for accordion item 2</div>
+    </div>
+</div>
+```
+
+##Scroll-to
+Add `data-scroll-to="#target"` on the trigger to scroll to element with `id="target"`
+```html
+<span data-scroll-to="#target"></span>
+```
 
 ## Form example
 Use this markup for the default form styling:

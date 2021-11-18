@@ -6,7 +6,7 @@ fieldset {
 }
 
 legend {
-  margin-bottom: 16px / 2;
+  margin-bottom: 8px;
   padding: 0;
   font-weight: 600;
 }
@@ -18,8 +18,8 @@ label {
 
 select {
   appearance: none;
-  background-image: url('/public/images/icons/dropdown.svg');
-  background-position: right (16px * 1.5) top 50%;
+  background-image: url('/images/icons/dropdown.svg');
+  background-position: right 24px top 50%;
   background-repeat: no-repeat;
 
   &::-ms-expand {

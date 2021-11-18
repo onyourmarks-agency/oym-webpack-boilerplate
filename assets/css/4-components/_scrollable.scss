@@ -1,0 +1,68 @@
+$scrollable-max-width: calc(
+  #{$max-width} + 48px
+); /* This is the max width of the wrapper + the wrappers padding */
+
+.scrollable {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.scrollable__slider {
+  margin-bottom: -18px;
+  padding-bottom: 18px;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+
+  &.disable-scroll-snap {
+    scroll-snap-type: none;
+  }
+}
+
+.scrollable__inner {
+  display: inline-flex;
+}
+
+.scrollable__inner > * {
+  flex-shrink: 0;
+  margin-right: var(--grid-gap);
+  scroll-snap-align: center;
+
+  &:first-child {
+    margin-left: var(--grid-gap);
+
+    @media screen and (min-width: $scrollable-max-width) {
+      margin-left: calc((var(--window-width) - #{$max-width}) / 2);
+    }
+  }
+
+  &:last-child {
+    @media screen and (min-width: $scrollable-max-width) {
+      margin-right: calc((var(--window-width) - #{$max-width}) / 2);
+    }
+  }
+}
+
+.scrollable__controls {
+  display: none;
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+  @media screen and (min-width: $md-width) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.scrollable__controls__button {
+  pointer-events: auto;
+
+  &:disabled {
+    visibility: hidden;
+  }
+}

@@ -64,3 +64,24 @@ formvalidation();
 
 // Active navigation items
 activeNavigation();
+
+// TEMP
+import hamburger from './modules/hamburger/init';
+
+hamburger();
+
+import scrollTo from './modules/scroll-to';
+
+scrollTo();
+
+import windowWidth from './modules/window-width';
+
+windowWidth();
+
+import imageSlider from './modules/image-slider';
+
+imageSlider();
+
+import scrollable from './modules/scrollable';
+
+scrollable();

@@ -1,6 +1,6 @@
-/* Columns mixin. Add for example "grid-column: 2 / 12;" to its child elements */
+/* Columns mixin. Add for example "grid-column: 2 / 12;" or "grid-column: span 4;" to its child elements */
 @mixin columns {
-  grid-gap: 24px;
+  grid-gap: var(--grid-gap);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }
