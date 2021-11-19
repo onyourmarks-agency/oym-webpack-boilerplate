@@ -1,18 +1,16 @@
 /**
  * Get clientWidth of element
  */
-const setWidth = () => {
+const setSizes = () => {
   document.documentElement.style.setProperty('--window-width', `${document.body.clientWidth}px`);
+  document.documentElement.style.setProperty('--window-height', `${window.innerHeight}px`);
 };
 
-/**
- * Kickstart the width and set an eventlistener
- */
 const init = () => {
-  setWidth();
+  setSizes();
 
   window.addEventListener('resize', () => {
-    setWidth();
+    setSizes();
   });
 };
 

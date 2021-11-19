@@ -40,11 +40,12 @@ app.config = {
  * Test some browser options and make them available in app.test
  */
 app.test = {
-  isEnvironmentIsDev: window.location.host.indexOf('.tdev.team') > -1,
-  isEnvironmentIsTest: window.location.host.indexOf('.tdebv.nl') > -1,
   isSessionStorageSupported: storageTests('session'),
   isLocalStorageSupported: storageTests('local'),
   isTouchDevice: touchTests(),
+  isEnvironmentIsDev: window.location.host.indexOf('.tdev.team') > -1,
+  isEnvironmentIsTest:
+    window.location.host.indexOf('.tdebv.nl') > -1 || window.location.host.indexOf('staging') > -1,
 };
 
 /**
@@ -67,21 +68,15 @@ activeNavigation();
 
 // TEMP
 import hamburger from './modules/hamburger/init';
-
-hamburger();
-
+import popup from './modules/popup/init';
 import scrollTo from './modules/scroll-to';
-
-scrollTo();
-
-import windowWidth from './modules/window-width';
-
-windowWidth();
-
+import windowSize from './modules/window-size';
 import imageSlider from './modules/image-slider';
-
-imageSlider();
-
 import scrollable from './modules/scrollable';
 
+hamburger();
+popup();
+scrollTo();
+windowSize();
+imageSlider();
 scrollable();

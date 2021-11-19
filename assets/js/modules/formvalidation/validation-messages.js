@@ -27,4 +27,5 @@ export default {
       'In dit veld zijn er minimaal {minLength} karakters nodig. Je gebruikt nu {length} karakters.',
   },
   isAtLeastOneCheckboxChecked: 'Selecteer minstens één optie.',
+  date: 'Zorg dat je een dag, maand en jaar selecteerd',
 };

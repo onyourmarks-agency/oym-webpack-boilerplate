@@ -1,9 +1,11 @@
 /* global Bouncer */
+
 import loadValidation from './load-validation';
 import config from './config';
 import validationMessages from './validation-messages';
-// import fieldHookDate from './field-hooks/date';
+// import formatDateField from './format-date-field';
 // import isAtLeastOneCheckboxChecked from './customvalidations/is-at-least-one-checkbox-checked';
+// import date from './customvalidations/date';
 
 const formClassSelector = '.js-form-validate';
 const form = document.querySelector(formClassSelector);
@@ -14,6 +16,9 @@ const form = document.querySelector(formClassSelector);
 const validate = () =>
   new Bouncer(formClassSelector, {
     customValidations: {
+      // date: (field) => {
+      //   return date(field);
+      // },
       // isAtLeastOneCheckboxChecked: (field) => {
       //   return isAtLeastOneCheckboxChecked(field);
       // },
@@ -34,8 +39,8 @@ const init = () => {
     validate();
   });
 
-  // Field hooks
-  // fieldHookDate();
+  // Format date field
+  // formatDateField();
 };
 
 export default init;

@@ -151,10 +151,17 @@ Use this markup as a start for very simple accordion items
 </div>
 ```
 
+##Popup
+Add `data-popup-content="#popup-content"` on the trigger to open a popup with the contents of the element with `id="popup-content"`.
+By default this opens a fullscreen popup, but you can also specify a type with `data-popup-type="small"`. This will add a modifier class: `popup--small` to the popup.
+```html
+<button data-popup-content="#popup-content"></button>
+```
+
 ##Scroll-to
 Add `data-scroll-to="#target"` on the trigger to scroll to element with `id="target"`
 ```html
-<span data-scroll-to="#target"></span>
+<button data-scroll-to="#target"></button>
 ```
 
 ## Form example
@@ -162,27 +169,27 @@ Use this markup for the default form styling:
 
 ```html
 <form class="form js-form-validate">
-  <!-- Single field -->
-  <div class="form__group">
-    <div class="form__item">
-      <label class="form__label" for="field3">field3*</label>
-      <input class="form__input" id="field3" name="field3" type="text" required="required">
+    <!-- Single field -->
+    <div class="form__group">
+        <div class="form__item">
+            <label class="form__label" for="field1">field1*</label>
+            <input class="form__input" id="field1" name="field1" type="text" required="required">
+        </div>
     </div>
-  </div>
-  
-  <!-- Multiple fields -->
-  <div class="form__group">
-    <div class="form__item form__item--6">
-      <label class="form__label" for="field1">field1*</label>
-      <input class="form__input" id="field1" name="field1" type="text" required="required">
+    
+    <!-- Multiple fields -->
+    <div class="form__group">
+        <div class="form__item form__item--6">
+            <label class="form__label" for="field2">field2*</label>
+            <input class="form__input" id="field2" name="field2" type="text" required="required">
+        </div>
+        <div class="form__item form__item--6">
+            <label class="form__label" for="field3">field3*</label>
+            <input class="form__input" id="field3" name="field3" type="text" required="required">
+        </div>
     </div>
-    <div class="form__item form__item--6">
-      <label class="form__label" for="field2">field2*</label>
-      <input class="form__input" id="field2" name="field2" type="text" required="required">
-    </div>
-  </div>
-  
-  <!-- Radio -->
+    
+    <!-- Radio -->
     <div class="form__group">
         <div class="form__item">
             <span class="form__label">field4*</span>
@@ -198,8 +205,8 @@ Use this markup for the default form styling:
             </label>
         </div>
     </div>
-  
-  <!-- Checkbox -->
+    
+    <!-- Checkbox -->
     <div class="form__group">
         <div class="form__item">
             <span class="form__label">field5*</span>
@@ -210,60 +217,88 @@ Use this markup for the default form styling:
             </label>
         </div>
     </div>
-  
-  <!-- Submit button -->
-  <div class="form__group">
-    <div class="form__item">
-      <button type="submit">Verzenden</button>
+    
+    <!-- Submit button -->
+    <div class="form__group">
+        <div class="form__item">
+            <button class="btn" type="submit">Verzenden</button>
+        </div>
     </div>
-  </div>
 </form>
 ```
 
 ### Input date
-*Make sure `field-hooks/date` and bounded function here is enabled in `modules/formvalidation/init`.*
+Use this markup for a date select. Make sure all classes prefixed with `js-form-date-` are present. 
+The value from the selects will be placed in the hidden input with the format `YYYY-MM-DD`.
+
+Inside `modules/formvalidation/init`, make sure the customValidation `date` is enabled in the customValidations and `formatDateField()` is enabled in the `init()` function .
 ```html
-<div class="form__item">
-    <form action="" class="js-form-validate">
-        <label for="birthDate">Geboortedatum:</label>
-        <input type="date" id="birthDate" data-field-birthdate-output="[data-field-birthdate-result]" value="" placeholder="dd-mm-jjjj" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])-(0[1-9]|1[012])-[0-9]{4}|[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" data-bouncer-message="Gebruik de notatie: dd-mm-jjjj" required>
-        <input type="hidden" name="birthDate" data-field-birthdate-result>
-    </form>
+<!-- Date -->
+<div class="form__group js-form-date">
+    <input class="js-form-date-result" type="hidden" name="birthDate" required="required" data-bouncer-target="#date-error">
+    
+    <div class="form__item form__item--4">
+        <label class="form__label" for="field6">field6*</label>
+        <select class="form__input js-form-date-day" id="field6" name="field6">
+            <option value="" disabled selected></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            ...
+        </select>
+    
+        <div id="date-error"></div>
+    </div>
+    <div class="form__item form__item--4">
+        <label class="form__label" for="field7">field7*</label>
+        <select class="form__input js-form-date-month" id="field7" name="field7">
+            <option value="" disabled selected></option>
+            <option value="1">Januari</option>
+            <option value="2">Februari</option>
+            ...
+        </select>
+    </div>
+    <div class="form__item form__item--4">
+        <label class="form__label" for="field8">field8*</label>
+        <select class="form__input js-form-date-year" id="field8" name="field8">
+            <option value="" disabled selected></option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            ...
+        </select>
+    </div>
 </div>
 ```
 
-Second field (hidden) will convert all dates to US date format like YYYY-MM-DD e.g. 1986-20-11.
-
 ### At least one checkbox is required
-*Make sure `isAtLeastOneCheckboxChecked` is enabled in the `customValidations` inside `modules/formvalidation/init`.*
+Make sure `isAtLeastOneCheckboxChecked` is enabled in the `customValidations` inside `modules/formvalidation/init`.
 
-*If this field is required add `data-bouncer-checkboxes-required` to the same element as `data-bouncer-at-least-one-checkbox`.*
+If this field is required add `data-bouncer-checkboxes-required` to the same element as `data-bouncer-at-least-one-checkbox`.
 ```html
 <div class="form__group form__group--vertical" data-bouncer-at-least-one-checkbox>
     <div class="form__options">
-      <div class="form__item">
-        <span class="form__label">Optie 1:</span>
-        <label class="form__checkbox" for="field5">
-          <input type="checkbox" id="field5" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper-multiple">
-          <span class="form__checkbox__box"></span>
-          <span class="form__checkbox__label">value 1</span>
-        </label>
-      </div>
-      <div class="form__item">
-        <label class="form__checkbox" for="field6">
-          <input type="checkbox" id="field6" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper-multiple">
-          <span class="form__checkbox__box"></span>
-          <span class="form__checkbox__label">value 2</span>
-        </label>
-      </div>
-      <div class="form__item">
-        <label class="form__checkbox" for="field7">
-          <input type="checkbox" id="field7" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper-multiple">
-          <span class="form__checkbox__box"></span>
-          <span class="form__checkbox__label">value 3</span>
-        </label>
-      </div>
-      <div class="form__error-wrapper-multiple"></div>
+        <div class="form__item">
+            <span class="form__label">Optie 1:</span>
+            <label class="form__checkbox" for="field5">
+                <input type="checkbox" id="field5" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper-multiple">
+                <span class="form__checkbox__box"></span>
+                <span class="form__checkbox__label">value 1</span>
+            </label>
+        </div>
+        <div class="form__item">
+            <label class="form__checkbox" for="field6">
+                <input type="checkbox" id="field6" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper-multiple">
+                <span class="form__checkbox__box"></span>
+                <span class="form__checkbox__label">value 2</span>
+            </label>
+        </div>
+        <div class="form__item">
+            <label class="form__checkbox" for="field7">
+                <input type="checkbox" id="field7" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper-multiple">
+                <span class="form__checkbox__box"></span>
+                <span class="form__checkbox__label">value 3</span>
+            </label>
+        </div>
+        <div class="form__error-wrapper-multiple"></div>
     </div>
-  </div>
+</div>
 ```

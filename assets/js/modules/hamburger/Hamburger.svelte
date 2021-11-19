@@ -9,6 +9,6 @@
 
   const toggleHamburgerMenu = () => {
     menuIsActive.set($menuIsActive !== true);
-    document.body.toggleAttribute('menu-is-active');
+    document.body.toggleAttribute('data-menu-is-active');
   }
 </script>

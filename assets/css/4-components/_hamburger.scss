@@ -33,7 +33,7 @@ $h-icon-border-radius: 0; /* border-radius of the stripes */
     transform: translateY($h-icon-space);
   }
 
-  [menu-is-active] & {
+  [data-menu-is-active] & {
     &:nth-child(1) {
       transform: translateY($h-icon-height) rotate(45deg);
     }

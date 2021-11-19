@@ -1,6 +1,5 @@
-$scrollable-max-width: calc(
-  #{$max-width} + 48px
-); /* This is the max width of the wrapper + the wrappers padding */
+/* This is the max width of the wrapper + the wrappers padding */
+$scrollable-max-width: calc(#{$max-width} + 48px);
 
 .scrollable {
   position: relative;
