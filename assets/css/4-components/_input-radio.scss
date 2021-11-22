@@ -58,7 +58,7 @@ $r-color: $color-primary; /* Color of the Dot icon */
 }
 
 .form__input--error + .input-radio__box {
-  border: 2px solid $color-red;
+  border-color: $color-red;
 }
 
 .input-radio + .form__error {

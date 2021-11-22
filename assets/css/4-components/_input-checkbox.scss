@@ -56,7 +56,7 @@ $c-border: 1px solid $color-gray-medium; /* Border of the box */
 }
 
 .form__input--error + .input-checkbox__box {
-  border: 1px solid $color-red;
+  border-color: $color-red;
 }
 
 .input-checkbox + .form__error {

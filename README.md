@@ -272,33 +272,26 @@ Inside `modules/formvalidation/init`, make sure the customValidation `date` is e
 ### At least one checkbox is required
 Make sure `isAtLeastOneCheckboxChecked` is enabled in the `customValidations` inside `modules/formvalidation/init`.
 
-If this field is required add `data-bouncer-checkboxes-required` to the same element as `data-bouncer-at-least-one-checkbox`.
 ```html
-<div class="form__group form__group--vertical" data-bouncer-at-least-one-checkbox>
-    <div class="form__options">
-        <div class="form__item">
-            <span class="form__label">Optie 1:</span>
-            <label class="form__checkbox" for="field5">
-                <input type="checkbox" id="field5" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper-multiple">
-                <span class="form__checkbox__box"></span>
-                <span class="form__checkbox__label">value 1</span>
-            </label>
-        </div>
-        <div class="form__item">
-            <label class="form__checkbox" for="field6">
-                <input type="checkbox" id="field6" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper-multiple">
-                <span class="form__checkbox__box"></span>
-                <span class="form__checkbox__label">value 2</span>
-            </label>
-        </div>
-        <div class="form__item">
-            <label class="form__checkbox" for="field7">
-                <input type="checkbox" id="field7" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper-multiple">
-                <span class="form__checkbox__box"></span>
-                <span class="form__checkbox__label">value 3</span>
-            </label>
-        </div>
-        <div class="form__error-wrapper-multiple"></div>
+<div class="form__group" data-bouncer-at-least-one-checkbox>
+    <div class="form__item">
+        <span class="form__label">Field 9</span>
+        <label class="input-checkbox" for="field9">
+            <input type="checkbox" id="field9" name="multipleCheckboxes[]" data-bouncer-target="#multipleCheckboxes">
+            <span class="input-checkbox__box"></span>
+            <span class="input-checkbox__label">value 1</span>
+        </label>
+        <label class="input-checkbox" for="field10">
+            <input type="checkbox" id="field10" name="multipleCheckboxes[]" data-bouncer-target="#multipleCheckboxes">
+            <span class="input-checkbox__box"></span>
+            <span class="input-checkbox__label">value 2</span>
+        </label>
+        <label class="input-checkbox" for="field11">
+            <input type="checkbox" id="field11" name="multipleCheckboxes[]" data-bouncer-target="#multipleCheckboxes">
+            <span class="input-checkbox__box"></span>
+            <span class="input-checkbox__label">value 3</span>
+        </label>
+        <div id="multipleCheckboxes"></div>
     </div>
 </div>
 ```

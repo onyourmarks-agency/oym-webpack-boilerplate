@@ -1,4 +1,3 @@
-/* global addClass */
 const selectors = {
   base: '.header__navigation a',
   hasSubs: '.header__navigation__listitem--has-sub',
@@ -8,11 +7,11 @@ const currentUrl = window.location.origin + window.location.pathname;
 let activeItemMatched = false;
 
 /**
- * Addclass from activeClassname
+ * Add class from activeClassname
  * @param item
  */
 const makeNavItemActive = (item) => {
-  addClass(item, activeClassname);
+  item.classList.add(activeClassname);
 };
 
 /**
@@ -23,7 +22,6 @@ const matchActiveNavItems = (item) => {
   const replacedCurrentUrl = currentUrl.replace(window.location.origin, '');
   const replacedUrl = item.href.replace(window.location.origin, '');
 
-  // eslint-disable-next-line no-mixed-operators
   if (replacedUrl === '/' && (replacedCurrentUrl !== replacedUrl || activeItemMatched)) {
     return;
   }

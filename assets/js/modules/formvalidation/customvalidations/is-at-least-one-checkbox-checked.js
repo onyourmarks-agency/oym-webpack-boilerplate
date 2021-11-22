@@ -12,12 +12,6 @@ export default (field) => {
     return false;
   }
 
-  const checkboxesRequired = wrapper.hasAttribute('data-bouncer-checkboxes-required');
-
-  if (!checkboxesRequired) {
-    return false;
-  }
-
   const checkboxes = wrapper.querySelectorAll('[type="checkbox"]');
 
   if (!checkboxes.length) {
@@ -41,7 +35,7 @@ export default (field) => {
 
   if (checkedCount > 0) {
     for (let i = 0; i < checkboxes.length; i += 1) {
-      window.removeClass(checkboxes[i], config.inputFieldErrorClass);
+      checkboxes[i].classList.remove(config.inputFieldErrorClass);
     }
   }
 

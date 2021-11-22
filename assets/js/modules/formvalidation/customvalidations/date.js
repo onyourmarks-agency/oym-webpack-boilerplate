@@ -1,4 +1,4 @@
-/* global hasClass */
+/* global app */
 
 /**
  * Check if day month and year all have a value
@@ -6,7 +6,7 @@
  * @returns {boolean}
  */
 export default (field) => {
-  if (!hasClass(field, 'js-form-date-result')) {
+  if (!app.helper.hasClass(field, 'js-form-date-result')) {
     return false;
   }
 

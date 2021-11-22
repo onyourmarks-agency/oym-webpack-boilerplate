@@ -1,5 +1,3 @@
-/* global addClass, removeClass */
-
 // Width of item + the spacing between the items
 const tileWidth = 374 + 24;
 const uncenteredClass = 'uncentered';
@@ -11,8 +9,7 @@ const detectCenteredCards = (dom) => {
   const { children } = dom.scrollableInner;
   const { scrollable } = dom;
 
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < children.length; i++) {
+  for (let i = 0; i < children.length; i += 1) {
     const child = children[i];
 
     const aRect = child.getBoundingClientRect();
@@ -24,9 +21,9 @@ const detectCenteredCards = (dom) => {
       aRect.y < bRect.y + bRect.height &&
       aRect.height + aRect.y > bRect.y
     ) {
-      removeClass(child, uncenteredClass);
+      child.classList.remove(uncenteredClass);
     } else {
-      addClass(child, uncenteredClass);
+      child.classList.add(uncenteredClass);
     }
   }
 };
@@ -122,7 +119,7 @@ const init = () => {
     };
 
     if (disableScrollSnap()) {
-      addClass(dom.wrapper, 'disable-scroll-snap');
+      dom.wrapper.classList.add('disable-scroll-snap');
     }
 
     detectCenteredCards(dom);
