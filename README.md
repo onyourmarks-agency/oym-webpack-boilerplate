@@ -85,7 +85,7 @@ _Theme 2_
 * `<script src="/build/theme2/js/js-app.build.js"></script>`
 
 ##Hamburger
-Use this markup for a hamburger menu trigger
+Use this markup for a hamburger menu trigger. The data element `data-menu-is-active` will be added to the body when the hanburger is active. The state wil also be stored in the svelte store.
 ```html
 <div class="js-hamburger"></div>
 ```
@@ -114,6 +114,8 @@ Make sure the items have a height and a width, and don't forget to set these dim
 
 ##Image slider
 Use this markup as a start for a simple image slider.
+
+When you import a new module in javascript, dont forget to also include the styles in `css/2-vendor/_swiper.scss`.
 ```html
 <div class="image-slider swiper js-image-slider">
     <div class="swiper-wrapper">
@@ -153,7 +155,7 @@ Use this markup as a start for very simple accordion items
 
 ##Popup
 Add `data-popup-content="#popup-content"` on the trigger to open a popup with the contents of the element with `id="popup-content"`.
-By default this opens a fullscreen popup, but you can also specify a type with `data-popup-type="small"`. This will add a modifier class: `popup--small` to the popup.
+By default this opens a fullscreen popup, but you can also specify a type with `data-popup-type="small"`. This will add a modifier class: `popup--small` to the popup. You can also add new types.
 ```html
 <button data-popup-content="#popup-content"></button>
 ```
@@ -165,7 +167,7 @@ Add `data-scroll-to="#target"` on the trigger to scroll to element with `id="tar
 ```
 
 ## Form example
-Use this markup for the default form styling:
+Use this markup for the default form styling and validation:
 
 ```html
 <form class="form js-form-validate">
@@ -270,7 +272,7 @@ Inside `modules/formvalidation/init`, make sure the customValidation `date` is e
 ```
 
 ### At least one checkbox is required
-Make sure `isAtLeastOneCheckboxChecked` is enabled in the `customValidations` inside `modules/formvalidation/init`.
+Make sure `isAtLeastOneCheckboxChecked` is enabled in the `customValidations` inside `modules/formvalidation/init` and use the following markup.
 
 ```html
 <div class="form__group" data-bouncer-at-least-one-checkbox>
