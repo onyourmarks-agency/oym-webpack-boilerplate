@@ -16,7 +16,7 @@ const webpack = {
   module: {
     rules: [],
   },
-  devtool: config.debug ? 'eval-cheap-source-map' : false,
+  devtool: config.sourceMap,
   entry: config.entries,
   output: {
     path: config.private,
