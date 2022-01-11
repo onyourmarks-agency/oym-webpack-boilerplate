@@ -47,7 +47,6 @@ app.helper = {
   hasClass: hasClassHelper,
 };
 
-// TEMP
 import formvalidation from './modules/formvalidation/init';
 import activeNavigation from './modules/active-navigation';
 import hamburger from './modules/hamburger/init';
