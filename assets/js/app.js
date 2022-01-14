@@ -50,17 +50,29 @@ app.helper = {
 import formvalidation from './modules/formvalidation/init';
 import activeNavigation from './modules/active-navigation';
 import hamburger from './modules/hamburger/init';
-import popup from './modules/popup/init';
 import scrollTo from './modules/scroll-to';
 import windowSize from './modules/window-size';
-import imageSlider from './modules/image-slider';
-import scrollable from './modules/scrollable';
 
 formvalidation();
 activeNavigation();
 hamburger();
-popup();
 scrollTo();
 windowSize();
-imageSlider();
-scrollable();
+
+if (document.querySelector('[data-popup-content]')) {
+  import('./modules/popup/init' /* webpackChunkName: "popup" */).then((fn) => {
+    fn.default();
+  });
+}
+
+if (document.querySelector('.js-image-slider')) {
+  import('./modules/image-slider' /* webpackChunkName: "image-slider" */).then((fn) => {
+    fn.default();
+  });
+}
+
+if (document.querySelector('.js-scrollable')) {
+  import('./modules/scrollable' /* webpackChunkName: "scrollable" */).then((fn) => {
+    fn.default();
+  });
+}

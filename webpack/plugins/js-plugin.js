@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const TerserPlugin = require('terser-webpack-plugin');
 const preprocess = require('svelte-preprocess');
+const { RetryChunkLoadPlugin } = require('webpack-retry-chunk-load-plugin');
 
 module.exports = function (webpack, config) {
   const babelPresets = [
@@ -18,6 +19,14 @@ module.exports = function (webpack, config) {
       },
     ],
   ];
+
+  // Retry chunk load
+  webpack.plugins.push(
+    new RetryChunkLoadPlugin({
+      retryDelay: 2500,
+      maxRetries: 5,
+    }),
+  );
 
   webpack.module.rules.push({
     test: /(\.js?$)|(\.svelte$)/,

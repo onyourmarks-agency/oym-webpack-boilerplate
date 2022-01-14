@@ -62,6 +62,7 @@ specifiers:
   webpack-extraneous-file-cleanup-plugin: ^2.0.0
   webpack-manifest-plugin: ^4.0.2
   webpack-notifier: ^1.14.1
+  webpack-retry-chunk-load-plugin: ^3.0.0
 
 dependencies:
   bazinga-translator: 3.0.1
@@ -72,6 +73,7 @@ dependencies:
   svelte: 3.44.1
   svgxuse: 1.2.6
   swiper: 7.2.0
+  webpack-retry-chunk-load-plugin: 3.0.0_webpack@5.62.1
 
 devDependencies:
   '@babel/cli': 7.16.0_@babel+core@7.16.0
@@ -6900,7 +6902,6 @@ packages:
     resolution: {integrity: sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==}
     engines: {node: '>=10.13.0'}
     hasBin: true
-    dev: true
 
   /pretty-error/4.0.0:
     resolution: {integrity: sha512-AoJ5YMAcXKYxKhuJGdcvse+Voc6v1RgnsR3nWcYU7q4t6z0Q6T86sv5Zq8VIRbOWWFpvdGE83LtdSMNd+6Y0xw==}
@@ -8827,6 +8828,15 @@ packages:
       node-notifier: 9.0.0
       strip-ansi: 6.0.1
     dev: true
+
+  /webpack-retry-chunk-load-plugin/3.0.0_webpack@5.62.1:
+    resolution: {integrity: sha512-MnnBu55A/kPXb+n8QG+7aN0wHOy7n1LOtRn6laynWFtci4X2FqAMzF4G5awKFwu5lOGXWq8ADLHSPA2z3pmUQg==}
+    peerDependencies:
+      webpack: '>=5.0.0'
+    dependencies:
+      prettier: 2.3.0
+      webpack: 5.62.1_webpack-cli@4.9.1
+    dev: false
 
   /webpack-sources/2.2.0:
     resolution: {integrity: sha512-bQsA24JLwcnWGArOKUxYKhX3Mz/nK1Xf6hxullKERyktjNMC4x8koOeaDNTA2fEJ09BdWLbM/iTW0ithREUP0w==}

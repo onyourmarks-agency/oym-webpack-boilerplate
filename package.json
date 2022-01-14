@@ -1,6 +1,6 @@
 {
 	"name": "tde-webpack-boilerplate",
-	"version": "4.0.0-beta.0",
+	"version": "4.0.0-beta.1",
 	"main": "app.js",
 	"license": "MIT",
 	"config": {
@@ -10,7 +10,6 @@
 		"watch": "node webpack/pre-script.js && webpack --watch --config webpack/webpack.config.js --stats-children",
 		"build": "node webpack/pre-script.js && NODE_ENV=prod webpack --mode production --config webpack/webpack.config.js --stats-children",
 		"frontend-cs": "pnpm format && pnpm eslint && pnpm stylelint",
-
 		"lint": "pnpm prettier --check . --plugin-search-dir=. && pnpm eslint && pnpm stylelint",
 		"eslint": "node webpack/pre-script.js && eslint assets --ext .js,.svelte --ignore-path .gitignore",
 		"eslint-fix": "node webpack/pre-script.js && eslint assets --fix --ext .js,.svelte --ignore-path .gitignore",
@@ -82,7 +81,8 @@
 		"webpack-cli": "^4.9.1",
 		"webpack-extraneous-file-cleanup-plugin": "^2.0.0",
 		"webpack-manifest-plugin": "^4.0.2",
-		"webpack-notifier": "^1.14.1"
+		"webpack-notifier": "^1.14.1",
+		"webpack-retry-chunk-load-plugin": "^3.0.0"
 	},
 	"browserslist": {
 		"production": [

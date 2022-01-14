@@ -28,6 +28,11 @@ const DEFAULT_CONFIG = {
   manifestFile: 'manifest.json',
 
   /**
+   * Source map variant
+   */
+  sourceMap: 'eval-cheap-module-source-map',
+
+  /**
    * The base entry files that have to go through the loader
    */
   entries: {
