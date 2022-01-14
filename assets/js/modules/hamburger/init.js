@@ -1,4 +1,4 @@
-import Table from './Hamburger.svelte';
+import Hamburger from './Hamburger.svelte';
 
 const init = () => {
   const hamburger = document.querySelector('.js-hamburger');
@@ -7,7 +7,7 @@ const init = () => {
     return;
   }
 
-  new Table({
+  new Hamburger({
     target: hamburger,
   });
 };

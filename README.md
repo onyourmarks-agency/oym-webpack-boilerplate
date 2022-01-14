@@ -19,11 +19,14 @@ To install, follow these instructions.
 
         cd /path/to/project
         
-4: Run Pnpm to install all of the packages:
+4: Use the correct nvm version:
+```nvm use 16```
+
+5: Run Pnpm to install all of the packages:
 
         pnpm install
         
-5: Run one of the commands:
+6: Run one of the commands:
 * `pnpm watch` to watch any changes inside the `assets` folder
 * `pnpm build` to compile the `build` folder
         
@@ -84,13 +87,13 @@ _Theme 2_
 * `<link rel="stylesheet" href="/build/theme2/css/css-main.build.css">`
 * `<script src="/build/theme2/js/js-app.build.js"></script>`
 
-##Hamburger
+## Hamburger
 Use this markup for a hamburger menu trigger. The data element `data-menu-is-active` will be added to the body when the hanburger is active. The state wil also be stored in the svelte store.
 ```html
 <div class="js-hamburger"></div>
 ```
 
-##Scrollable
+## Scrollable
 Use this markup as a start for a scrollable element. 
 Make sure the items have a height and a width, and don't forget to set these dimensions in the javascript as well.
 
@@ -112,7 +115,7 @@ Make sure the items have a height and a width, and don't forget to set these dim
 </div>
 ```
 
-##Image slider
+## Image slider
 Use this markup as a start for a simple image slider.
 
 When you import a new module in javascript, dont forget to also include the styles in `css/2-vendor/_swiper.scss`.
@@ -134,7 +137,7 @@ When you import a new module in javascript, dont forget to also include the styl
 </div>
 ```
 
-##Accordion
+## Accordion
 Use this markup as a start for very simple accordion items
 
 ```html
@@ -153,14 +156,14 @@ Use this markup as a start for very simple accordion items
 </div>
 ```
 
-##Popup
+## Popup
 Add `data-popup-content="#popup-content"` on the trigger to open a popup with the contents of the element with `id="popup-content"`.
 By default this opens a fullscreen popup, but you can also specify a type with `data-popup-type="small"`. This will add a modifier class: `popup--small` to the popup. You can also add new types.
 ```html
 <button data-popup-content="#popup-content"></button>
 ```
 
-##Scroll-to
+## Scroll-to
 Add `data-scroll-to="#target"` on the trigger to scroll to element with `id="target"`
 ```html
 <button data-scroll-to="#target"></button>
