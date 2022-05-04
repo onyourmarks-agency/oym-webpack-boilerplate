@@ -62,6 +62,7 @@ module.exports = function (webpack, config) {
   });
 
   webpack.optimization.minimizer.push(new TerserPlugin({
+    parallel: 4,
     test: /\.js($|\?)/i,
   }));
 };

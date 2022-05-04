@@ -44,6 +44,7 @@ module.exports = function (webpack, config) {
   }));
 
   webpack.optimization.minimizer.push(new CssMinimizerPlugin({
+    parallel: 4,
     minimizerOptions: {
       preset: [
         'default',
