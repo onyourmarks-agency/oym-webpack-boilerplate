@@ -1,6 +1,6 @@
 {
 	"name": "tde-webpack-boilerplate",
-	"version": "4.0.1",
+	"version": "4.0.2",
 	"main": "app.js",
 	"license": "MIT",
 	"config": {
@@ -76,7 +76,7 @@
 		"svelte-preprocess": "^4.10.4",
 		"svelte-preprocess-sass": "^2.0.1",
 		"svg-sprite-loader": "^6.0.11",
-		"tde-webpack-svg-plugin": "^2.0.0",
+		"tde-webpack-svg-plugin": "^3.0.0",
 		"webpack": "^5.70.0",
 		"webpack-cli": "^4.9.2",
 		"webpack-extraneous-file-cleanup-plugin": "^2.0.0",

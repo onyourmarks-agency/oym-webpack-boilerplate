@@ -56,7 +56,7 @@ specifiers:
   svg-sprite-loader: ^6.0.11
   svgxuse: ^1.2.6
   swiper: ^8.0.7
-  tde-webpack-svg-plugin: ^2.0.0
+  tde-webpack-svg-plugin: ^3.0.0
   webpack: ^5.70.0
   webpack-cli: ^4.9.2
   webpack-extraneous-file-cleanup-plugin: ^2.0.0
@@ -122,7 +122,7 @@ devDependencies:
   svelte-preprocess: 4.10.6_qig5qic2pw3nft4nhov524v2wa
   svelte-preprocess-sass: 2.0.1_sass@1.51.0
   svg-sprite-loader: 6.0.11
-  tde-webpack-svg-plugin: 2.0.0_webpack@5.72.0
+  tde-webpack-svg-plugin: 3.0.0_webpack@5.72.0
   webpack: 5.72.0_webpack-cli@4.9.2
   webpack-cli: 4.9.2_webpack@5.72.0
   webpack-extraneous-file-cleanup-plugin: 2.0.0
@@ -455,6 +455,8 @@ packages:
     resolution: {integrity: sha512-n2Q6i+fnJqzOaq2VkdXxy2TCPCWQZHiCo0XqmrCvDWcZQKRyZzYi4Z0yxlBuN0w+r2ZHmre+Q087DSrw3pbJDQ==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.17.10
     dev: true
 
   /@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression/7.16.7_@babel+core@7.17.10:
@@ -1312,6 +1314,8 @@ packages:
       stylelint: 13.13.1
       stylelint-selector-bem-pattern: 2.1.1
     transitivePeerDependencies:
+      - postcss-jsx
+      - postcss-markdown
       - supports-color
     dev: true
 
@@ -1456,7 +1460,7 @@ packages:
     dependencies:
       '@babel/core': 7.17.10
       postcss: 7.0.39
-      postcss-syntax: 0.36.2_postcss@7.0.39
+      postcss-syntax: 0.36.2_kei4jy7wdgbhc236h4oijypxom
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1469,7 +1473,7 @@ packages:
       postcss-syntax: '>=0.36.2'
     dependencies:
       postcss: 7.0.39
-      postcss-syntax: 0.36.2_postcss@7.0.39
+      postcss-syntax: 0.36.2_kei4jy7wdgbhc236h4oijypxom
       remark: 13.0.0
       unist-util-find-all-after: 3.0.2
     transitivePeerDependencies:
@@ -2018,6 +2022,8 @@ packages:
       babel-helper-explode-assignable-expression: 6.24.1
       babel-runtime: 6.26.0
       babel-types: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-helper-call-delegate/6.24.1:
@@ -2027,6 +2033,8 @@ packages:
       babel-runtime: 6.26.0
       babel-traverse: 6.26.0
       babel-types: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-helper-define-map/6.26.0:
@@ -2036,6 +2044,8 @@ packages:
       babel-runtime: 6.26.0
       babel-types: 6.26.0
       lodash: 4.17.21
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-helper-explode-assignable-expression/6.24.1:
@@ -2044,6 +2054,8 @@ packages:
       babel-runtime: 6.26.0
       babel-traverse: 6.26.0
       babel-types: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-helper-function-name/6.24.1:
@@ -2054,6 +2066,8 @@ packages:
       babel-template: 6.26.0
       babel-traverse: 6.26.0
       babel-types: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-helper-get-function-arity/6.24.1:
@@ -2093,6 +2107,8 @@ packages:
       babel-template: 6.26.0
       babel-traverse: 6.26.0
       babel-types: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-helper-replace-supers/6.24.1:
@@ -2104,6 +2120,8 @@ packages:
       babel-template: 6.26.0
       babel-traverse: 6.26.0
       babel-types: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-loader/8.2.5_rb5fcebzp6kx3hqg3ucus54t3m:
@@ -2193,6 +2211,8 @@ packages:
       babel-helper-remap-async-to-generator: 6.24.1
       babel-plugin-syntax-async-functions: 6.13.0
       babel-runtime: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-transform-es2015-arrow-functions/6.22.0:
@@ -2215,6 +2235,8 @@ packages:
       babel-traverse: 6.26.0
       babel-types: 6.26.0
       lodash: 4.17.21
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-transform-es2015-classes/6.24.1:
@@ -2229,6 +2251,8 @@ packages:
       babel-template: 6.26.0
       babel-traverse: 6.26.0
       babel-types: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-transform-es2015-computed-properties/6.24.1:
@@ -2236,6 +2260,8 @@ packages:
     dependencies:
       babel-runtime: 6.26.0
       babel-template: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-transform-es2015-destructuring/6.23.0:
@@ -2263,6 +2289,8 @@ packages:
       babel-helper-function-name: 6.24.1
       babel-runtime: 6.26.0
       babel-types: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-transform-es2015-literals/6.22.0:
@@ -2277,6 +2305,8 @@ packages:
       babel-plugin-transform-es2015-modules-commonjs: 6.26.2
       babel-runtime: 6.26.0
       babel-template: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-transform-es2015-modules-commonjs/6.26.2:
@@ -2286,6 +2316,8 @@ packages:
       babel-runtime: 6.26.0
       babel-template: 6.26.0
       babel-types: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-transform-es2015-modules-systemjs/6.24.1:
@@ -2294,6 +2326,8 @@ packages:
       babel-helper-hoist-variables: 6.24.1
       babel-runtime: 6.26.0
       babel-template: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-transform-es2015-modules-umd/6.24.1:
@@ -2302,6 +2336,8 @@ packages:
       babel-plugin-transform-es2015-modules-amd: 6.24.1
       babel-runtime: 6.26.0
       babel-template: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-transform-es2015-object-super/6.24.1:
@@ -2309,6 +2345,8 @@ packages:
     dependencies:
       babel-helper-replace-supers: 6.24.1
       babel-runtime: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-transform-es2015-parameters/6.24.1:
@@ -2320,6 +2358,8 @@ packages:
       babel-template: 6.26.0
       babel-traverse: 6.26.0
       babel-types: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-transform-es2015-shorthand-properties/6.24.1:
@@ -2369,6 +2409,8 @@ packages:
       babel-helper-builder-binary-assignment-operator-visitor: 6.24.1
       babel-plugin-syntax-exponentiation-operator: 6.13.0
       babel-runtime: 6.26.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-transform-regenerator/6.26.0:
@@ -2417,6 +2459,8 @@ packages:
       browserslist: 3.2.8
       invariant: 2.2.4
       semver: 5.7.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-runtime/6.26.0:
@@ -2434,6 +2478,8 @@ packages:
       babel-types: 6.26.0
       babylon: 6.18.0
       lodash: 4.17.21
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-traverse/6.26.0:
@@ -2448,6 +2494,8 @@ packages:
       globals: 9.18.0
       invariant: 2.2.4
       lodash: 4.17.21
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-types/6.26.0:
@@ -2537,6 +2585,8 @@ packages:
       snapdragon-node: 2.1.1
       split-string: 3.1.0
       to-regex: 3.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /braces/3.0.2:
@@ -3179,12 +3229,22 @@ packages:
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
     dependencies:
       ms: 2.0.0
     dev: true
 
   /debug/3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
     dependencies:
       ms: 2.1.3
     dev: true
@@ -3535,14 +3595,33 @@ packages:
     dependencies:
       debug: 3.2.7
       resolve: 1.22.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
-  /eslint-module-utils/2.7.3:
+  /eslint-module-utils/2.7.3_ulu2225r2ychl26a37c6o2rfje:
     resolution: {integrity: sha512-088JEC7O3lDZM9xGe0RerkOMd0EjFl+Yvd1jPWIkMT5u3H9+HC34mWWPnqPrN13gieT9pBOO+Qt07Nb/6TresQ==}
     engines: {node: '>=4'}
+    peerDependencies:
+      '@typescript-eslint/parser': '*'
+      eslint-import-resolver-node: '*'
+      eslint-import-resolver-typescript: '*'
+      eslint-import-resolver-webpack: '*'
+    peerDependenciesMeta:
+      '@typescript-eslint/parser':
+        optional: true
+      eslint-import-resolver-node:
+        optional: true
+      eslint-import-resolver-typescript:
+        optional: true
+      eslint-import-resolver-webpack:
+        optional: true
     dependencies:
       debug: 3.2.7
+      eslint-import-resolver-node: 0.3.6
       find-up: 2.1.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /eslint-plugin-compat/4.0.2_eslint@8.14.0:
@@ -3566,7 +3645,11 @@ packages:
     resolution: {integrity: sha512-hYfi3FXaM8WPLf4S1cikh/r4IxnO6zrhZbEGz2b660EJRbuxgpDS5gkCuYgGWg2xxh2rBuIr4Pvhve/7c31koA==}
     engines: {node: '>=4'}
     peerDependencies:
+      '@typescript-eslint/parser': '*'
       eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8
+    peerDependenciesMeta:
+      '@typescript-eslint/parser':
+        optional: true
     dependencies:
       array-includes: 3.1.5
       array.prototype.flat: 1.3.0
@@ -3574,7 +3657,7 @@ packages:
       doctrine: 2.1.0
       eslint: 8.14.0
       eslint-import-resolver-node: 0.3.6
-      eslint-module-utils: 2.7.3
+      eslint-module-utils: 2.7.3_ulu2225r2ychl26a37c6o2rfje
       has: 1.0.3
       is-core-module: 2.9.0
       is-glob: 4.0.3
@@ -3582,6 +3665,10 @@ packages:
       object.values: 1.1.5
       resolve: 1.22.0
       tsconfig-paths: 3.14.1
+    transitivePeerDependencies:
+      - eslint-import-resolver-typescript
+      - eslint-import-resolver-webpack
+      - supports-color
     dev: true
 
   /eslint-plugin-jsx-a11y/6.5.1_eslint@8.14.0:
@@ -3843,6 +3930,8 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /extend-shallow/2.0.1:
@@ -3876,6 +3965,8 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /extract-zip/1.7.0:
@@ -3886,6 +3977,8 @@ packages:
       debug: 2.6.9
       mkdirp: 0.5.6
       yauzl: 2.10.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /extsprintf/1.3.0:
@@ -5279,6 +5372,8 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /micromatch/4.0.5:
@@ -5397,6 +5492,8 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /natural-compare/1.4.0:
@@ -5783,6 +5880,8 @@ packages:
       request: 2.88.2
       request-progress: 2.0.1
       which: 1.3.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /picocolors/0.2.1:
@@ -5922,7 +6021,7 @@ packages:
     dependencies:
       htmlparser2: 3.10.1
       postcss: 7.0.39
-      postcss-syntax: 0.36.2_postcss@7.0.39
+      postcss-syntax: 0.36.2_kei4jy7wdgbhc236h4oijypxom
     dev: true
 
   /postcss-less/3.1.4:
@@ -6243,12 +6342,31 @@ packages:
       svgo: 2.8.0
     dev: true
 
-  /postcss-syntax/0.36.2_postcss@7.0.39:
+  /postcss-syntax/0.36.2_kei4jy7wdgbhc236h4oijypxom:
     resolution: {integrity: sha512-nBRg/i7E3SOHWxF3PpF5WnJM/jQ1YpY9000OaVXlAQj6Zp/kIqJxEDWIZ67tAd7NLuk7zqN4yqe9nc0oNAOs1w==}
     peerDependencies:
       postcss: '>=5.0.0 || 5.2.18'
+      postcss-html: '*'
+      postcss-jsx: '*'
+      postcss-less: '*'
+      postcss-markdown: '*'
+      postcss-scss: '*'
+    peerDependenciesMeta:
+      postcss-html:
+        optional: true
+      postcss-jsx:
+        optional: true
+      postcss-less:
+        optional: true
+      postcss-markdown:
+        optional: true
+      postcss-scss:
+        optional: true
     dependencies:
       postcss: 7.0.39
+      postcss-html: 0.36.0_j55xdkkcxc32kvnyvx3y7casfm
+      postcss-less: 3.1.4
+      postcss-scss: 2.1.1
     dev: true
 
   /postcss-unique-selectors/5.1.1_postcss@8.4.13:
@@ -7008,6 +7126,8 @@ packages:
       source-map: 0.5.7
       source-map-resolve: 0.5.3
       use: 3.1.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /sorcery/0.10.0:
@@ -7324,6 +7444,8 @@ packages:
       postcss-bem-linter: 3.3.0
       stylelint: 13.13.1
     transitivePeerDependencies:
+      - postcss-jsx
+      - postcss-markdown
       - supports-color
     dev: true
 
@@ -7367,7 +7489,7 @@ packages:
       postcss-sass: 0.4.4
       postcss-scss: 2.1.1
       postcss-selector-parser: 6.0.10
-      postcss-syntax: 0.36.2_postcss@7.0.39
+      postcss-syntax: 0.36.2_kei4jy7wdgbhc236h4oijypxom
       postcss-value-parser: 4.2.0
       resolve-from: 5.0.0
       slash: 3.0.0
@@ -7381,6 +7503,8 @@ packages:
       v8-compile-cache: 2.3.0
       write-file-atomic: 3.0.3
     transitivePeerDependencies:
+      - postcss-jsx
+      - postcss-markdown
       - supports-color
     dev: true
 
@@ -7529,6 +7653,8 @@ packages:
       deepmerge: 1.3.2
       mitt: 1.1.2
       svg-baker: 1.7.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /svg-baker/1.7.0:
@@ -7547,6 +7673,8 @@ packages:
       posthtml-svg-mode: 1.0.3
       query-string: 4.3.4
       traverse: 0.6.6
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /svg-sprite-loader/6.0.11:
@@ -7561,6 +7689,8 @@ packages:
       svg-baker: 1.7.0
       svg-baker-runtime: 1.4.7
       url-slug: 2.0.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /svg-sprite/1.5.4:
@@ -7585,6 +7715,8 @@ packages:
       winston: 3.7.2
       xpath: 0.0.32
       yargs: 15.4.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /svg-tags/1.0.0:
@@ -7659,8 +7791,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /tde-webpack-svg-plugin/2.0.0_webpack@5.72.0:
-    resolution: {integrity: sha512-0Ux6qMB0bk10aZusk4l8h9COjaWSi/y0p+vlxLIGyoyxDwLfrmQQSqEBTIPU2Cm6vsAHANqQDe3Gze2UxQSTfA==}
+  /tde-webpack-svg-plugin/3.0.0_webpack@5.72.0:
+    resolution: {integrity: sha512-UCzBh4PW3C39V2NfWsVtxzao2tvTBk0TTuIs4HMDg21QWZ75q2QT/C5VHal5ilvMc9iccEFdpxfRaQHPU8DbGw==}
     engines: {node: '>=14'}
     peerDependencies:
       webpack: '5'
@@ -7669,6 +7801,8 @@ packages:
       mkdirp: 0.5.6
       svg-sprite: 1.5.4
       webpack: 5.72.0_webpack-cli@4.9.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /terser-webpack-plugin/5.3.1_webpack@5.72.0:
