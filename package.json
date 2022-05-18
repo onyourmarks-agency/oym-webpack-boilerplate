@@ -33,7 +33,9 @@
 		"@babel/core": "^7.17.5",
 		"@babel/eslint-parser": "^7.17.0",
 		"@babel/plugin-syntax-dynamic-import": "^7.8.3",
+		"@babel/plugin-transform-runtime": "^7.17.12",
 		"@babel/preset-env": "^7.16.11",
+		"@babel/runtime": "^7.17.9",
 		"@considonet/stylelint-config-bem": "^1.0.1",
 		"@considonet/stylelint-config-scss": "^1.0.1",
 		"@nuxt/friendly-errors-webpack-plugin": "^2.5.2",
@@ -84,13 +86,13 @@
 		"webpack-notifier": "^1.15.0",
 		"webpack-retry-chunk-load-plugin": "^3.0.0"
 	},
-    "pnpm": {
-        "peerDependencyRules": {
-            "allowedVersions": {
-                "postcss": "5.2.18"
-            }
-        }
-    },
+	"pnpm": {
+		"peerDependencyRules": {
+			"allowedVersions": {
+				"postcss": "5.2.18"
+			}
+		}
+	},
 	"browserslist": {
 		"production": [
 			"> 1%",

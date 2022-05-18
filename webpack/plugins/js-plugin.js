@@ -38,7 +38,8 @@ module.exports = function (webpack, config) {
           babelrc: false,
           presets: babelPresets,
           plugins: [
-            '@babel/plugin-syntax-dynamic-import'
+            '@babel/plugin-syntax-dynamic-import',
+            '@babel/plugin-transform-runtime',
           ]
         },
       },
