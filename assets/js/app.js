@@ -21,7 +21,7 @@ app.config = {
     sm: 30,
     md: 40,
     lg: 60,
-    xl: 74,
+    xl: 73.125,
     hamburger: 60,
   },
 };

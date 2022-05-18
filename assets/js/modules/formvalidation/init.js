@@ -19,9 +19,7 @@ const validate = () =>
       // date: (field) => {
       //   return date(field);
       // },
-      // isAtLeastOneCheckboxChecked: (field) => {
-      //   return isAtLeastOneCheckboxChecked(field);
-      // },
+      // isAtLeastOneCheckboxChecked: (field) => isAtLeastOneCheckboxChecked(field),
     },
     emitEvents: true,
     fieldClass: config.inputFieldErrorClass,
