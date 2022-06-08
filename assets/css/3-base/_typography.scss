@@ -19,27 +19,15 @@ h6 {
 }
 
 h1 {
-  font-size: rem(48);
-
-  @media screen and (max-width: $md-max-width) {
-    font-size: rem(32);
-  }
+  font-size: var(--font-size-24-40);
 }
 
 h2 {
-  font-size: rem(36);
-
-  @media screen and (max-width: $md-max-width) {
-    font-size: rem(32);
-  }
+  font-size: var(--font-size-20-32);
 }
 
 h3 {
-  font-size: rem(28);
-
-  @media screen and (max-width: $md-max-width) {
-    font-size: rem(24);
-  }
+  font-size: var(--font-size-18-24);
 }
 
 h4 {

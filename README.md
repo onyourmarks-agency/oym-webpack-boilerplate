@@ -216,7 +216,7 @@ Use this markup for the default form styling and validation:
         <div class="form__item">
             <span class="form__label">field5*</span>
             <label class="input-checkbox" for="field5">
-                <input type="checkbox" id="field5" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper-multiple">
+                <input type="checkbox" id="field5">
                 <span class="input-checkbox__box"></span>
                 <span class="input-checkbox__label">value 3</span>
             </label>

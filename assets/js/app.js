@@ -13,7 +13,6 @@ import browserStorageHelper from './helpers/browser-storage';
 import setCookieHelper from './helpers/cookies/set-cookie';
 import getCookieHelper from './helpers/cookies/get-cookie';
 import removeCookieHelper from './helpers/cookies/remove-cookie';
-import hasClassHelper from './helpers/has-class';
 
 // Set config elements
 app.config = {
@@ -44,10 +43,9 @@ app.helper = {
   setCookie: setCookieHelper,
   getCookie: getCookieHelper,
   removeCookie: removeCookieHelper,
-  hasClass: hasClassHelper,
 };
 
-import formvalidation from './modules/formvalidation/init';
+import formvalidation from './modules/formvalidation/initDefault';
 import activeNavigation from './modules/active-navigation';
 import hamburger from './modules/hamburger/init';
 import scrollTo from './modules/scroll-to';
