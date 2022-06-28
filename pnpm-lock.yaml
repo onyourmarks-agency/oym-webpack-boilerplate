@@ -46,6 +46,7 @@ specifiers:
   postcss-loader: ^6.2.1
   prettier: 2.5.1
   prettier-plugin-css-order: ^1.1.0
+  prettier-plugin-svelte: ^2.7.0
   sass: ^1.49.9
   sass-loader: ^12.6.0
   style-loader: ^3.3.1
@@ -117,6 +118,7 @@ devDependencies:
   postcss-loader: 6.2.1_g4najheu5gwop3kphiif6aqpde
   prettier: 2.5.1
   prettier-plugin-css-order: 1.2.0_6zldj7u7hrks6oiimsklv5a43e
+  prettier-plugin-svelte: 2.7.0_mdz2hq4u754wa3ftpo3lq3k23e
   sass: 1.51.0
   sass-loader: 12.6.0_sass@1.51.0+webpack@5.72.0
   style-loader: 3.3.1_webpack@5.72.0
@@ -6495,6 +6497,16 @@ packages:
       sync-threads: 1.0.1
     transitivePeerDependencies:
       - postcss
+    dev: true
+
+  /prettier-plugin-svelte/2.7.0_mdz2hq4u754wa3ftpo3lq3k23e:
+    resolution: {integrity: sha512-fQhhZICprZot2IqEyoiUYLTRdumULGRvw0o4dzl5jt0jfzVWdGqeYW27QTWAeXhoupEZJULmNoH3ueJwUWFLIA==}
+    peerDependencies:
+      prettier: ^1.16.4 || ^2.0.0
+      svelte: ^3.2.0
+    dependencies:
+      prettier: 2.5.1
+      svelte: 3.48.0
     dev: true
 
   /prettier/2.5.1:
