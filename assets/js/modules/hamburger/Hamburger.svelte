@@ -7,11 +7,11 @@
   };
 </script>
 
-<div class="hamburger" on:click={toggleHamburgerMenu}>
+<button class="hamburger" on:click={toggleHamburgerMenu}>
   <span />
   <span />
   <span />
-</div>
+</button>
 
 <style lang="scss">
   @import '../../../css/1-settings/_settings';

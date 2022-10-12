@@ -48,19 +48,16 @@
       on:click|stopPropagation={() => {
         visible = false;
       }}
+      on:keydown={handleKeydown}
     />
-    <div
-      class="popup-content"
-      on:click|preventDefault
-      transition:fade={{ delay: 200, in: 50, out: 50 }}
-    >
+    <div class="popup-content" transition:fade={{ delay: 200, in: 50, out: 50 }}>
       <button
         class="popup-close"
         type="button"
         on:click={() => {
           visible = false;
         }}
-      />
+	  >x</button>
       {@html sourceHTML.innerHTML}
     </div>
   </div>
