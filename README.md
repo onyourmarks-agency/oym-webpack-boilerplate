@@ -5,7 +5,7 @@ Our own Webpack Boilerplate for new projects.
 ## Requirements
 
 * [Pnpm](https://pnpm.js.org)
-* Node v16.13.0+
+* Node v18.12.0+
 
 ## Installation
 
@@ -17,14 +17,14 @@ To install, follow these instructions.
 
 3: Open your terminal and go to your project:
 
-        cd /path/to/project
+    cd /path/to/project
         
 4: Use the correct nvm version:
-```nvm use 16```
+```nvm use 18```
 
 5: Run Pnpm to install all of the packages:
 
-        pnpm install
+    pnpm install
         
 6: Run one of the commands:
 * `pnpm watch` to watch any changes inside the `assets` folder
