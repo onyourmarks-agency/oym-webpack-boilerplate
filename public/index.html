@@ -10,10 +10,19 @@
 	<title>Default site</title>
 	<script>document.documentElement.className += ' js'; var app = {};</script>
 	<link rel="stylesheet" href="/build/css/css-main.build.css">
+	<link rel="stylesheet" href="/build/css/js-app.build.css">
 </head>
 <body>
 	<div class="wrapper-inner">
 		<h1>content</h1>
+		
+		<div class="js-hamburger"></div>
+		
+		<div id="popup-content" style="display: none;">
+			Hallo, ik ben een popup
+		</div>
+		
+		<button data-popup-content="#popup-content">Klik dan</button>
 	</div>
 
 	<div id="outdated"></div>
