@@ -5,7 +5,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = function (webpack, config) {
   webpack.module.rules.push({
-    test: /\.scss$/,
+    test: /(\.scss?$)|(\.css)/,
     use: [
       {
         loader: MiniCssExtractPlugin.loader,
@@ -39,9 +39,11 @@ module.exports = function (webpack, config) {
     ],
   });
 
-  webpack.plugins.push(new MiniCssExtractPlugin({
-    filename: config.components.css.fileMask,
-  }));
+  webpack.plugins.push(
+    new MiniCssExtractPlugin({
+      filename: config.components.css.fileMask,
+    })
+  );
 
   webpack.optimization.minimizer.push(new CssMinimizerPlugin({
     parallel: 4,

@@ -1,4 +1,4 @@
-import config from '../config';
+import { formClassNames } from '../config';
 
 /**
  * Validate field. At leaste one checkbox is checked
@@ -35,7 +35,7 @@ export default (field) => {
 
   if (checkedCount > 0) {
     for (let i = 0; i < checkboxes.length; i += 1) {
-      checkboxes[i].classList.remove(config.inputFieldErrorClass);
+      checkboxes[i].classList.remove(formClassNames.errorClass);
     }
   }
 

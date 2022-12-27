@@ -46,8 +46,8 @@ const DEFAULT_CONFIG = {
    */
   enabledPlugins: [
     'cleaner',
-    'css',
     'js',
+    'css',
     'svg',
     'misc',
   ],

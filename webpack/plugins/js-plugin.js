@@ -38,7 +38,8 @@ module.exports = function (webpack, config) {
           babelrc: false,
           presets: babelPresets,
           plugins: [
-            '@babel/plugin-syntax-dynamic-import'
+            '@babel/plugin-syntax-dynamic-import',
+            '@babel/plugin-transform-runtime',
           ]
         },
       },
@@ -51,6 +52,7 @@ module.exports = function (webpack, config) {
         loader: 'svelte-loader',
         options: {
           preprocess: preprocess(),
+          emitCss: true,
         },
       },
     ],
@@ -61,8 +63,10 @@ module.exports = function (webpack, config) {
     },
   });
 
-  webpack.optimization.minimizer.push(new TerserPlugin({
-    parallel: 4,
-    test: /\.js($|\?)/i,
-  }));
+  webpack.optimization.minimizer.push(
+    new TerserPlugin({
+      parallel: 4,
+      test: /\.js($|\?)/i,
+    })
+  );
 };

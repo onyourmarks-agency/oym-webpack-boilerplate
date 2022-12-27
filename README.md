@@ -5,7 +5,7 @@ Our own Webpack Boilerplate for new projects.
 ## Requirements
 
 * [Pnpm](https://pnpm.js.org)
-* Node v16.13.0+
+* Node v18.12.0+
 
 ## Installation
 
@@ -17,14 +17,14 @@ To install, follow these instructions.
 
 3: Open your terminal and go to your project:
 
-        cd /path/to/project
+    cd /path/to/project
         
 4: Use the correct nvm version:
-```nvm use 16```
+```nvm use 18```
 
 5: Run Pnpm to install all of the packages:
 
-        pnpm install
+    pnpm install
         
 6: Run one of the commands:
 * `pnpm watch` to watch any changes inside the `assets` folder
@@ -216,7 +216,7 @@ Use this markup for the default form styling and validation:
         <div class="form__item">
             <span class="form__label">field5*</span>
             <label class="input-checkbox" for="field5">
-                <input type="checkbox" id="field5" name="multipleCheckboxes[]" data-bouncer-target=".form__error-wrapper-multiple">
+                <input type="checkbox" id="field5">
                 <span class="input-checkbox__box"></span>
                 <span class="input-checkbox__label">value 3</span>
             </label>

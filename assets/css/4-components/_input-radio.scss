@@ -35,7 +35,7 @@ $r-color: $color-primary; /* Color of the Dot icon */
   justify-content: center;
   width: $r-size;
   height: $r-size;
-  border: 1px solid $color-gray-medium;
+  border: $r-border;
   border-radius: $r-size;
   background-color: $r-background-color;
 

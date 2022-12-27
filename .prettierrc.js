@@ -1,5 +1,6 @@
 module.exports = {
-  singleQuote: true,
-  printWidth: 100,
+  bracketSameLine: true,
   order: process.env.ORDER ? process.env.ORDER : 'smacss',
+  printWidth: 100,
+  singleQuote: true,
 };

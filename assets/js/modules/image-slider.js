@@ -11,7 +11,7 @@ const init = () => {
     navigation: {
       nextEl: '.image-slider__button--next',
       prevEl: '.image-slider__button--prev',
-      disabledClass: '.image-slider__button--disabled',
+      disabledClass: 'image-slider__button--disabled',
     },
   });
 };

@@ -1,7 +1,34 @@
 :root {
+  /* Spacings */
   --grid-gap: 16px;
+  --spacing-between-elements-small: 40px;
+  --spacing-between-elements-medium: 48px;
+  --spacing-between-elements-large: 56px;
+
+  /* Fonts */
+  --font-size-24-40: #{rem(24)};
+  --font-size-20-32: #{rem(20)};
+  --font-size-18-24: #{rem(18)};
 
   @media screen and (min-width: $md-width) {
+    /* Spacings */
     --grid-gap: 24px;
+
+    /* Fonts */
+    --font-size-24-40: #{rem(32)};
+    --font-size-20-32: #{rem(24)};
+    --font-size-18-24: #{rem(20)};
+  }
+
+  @media screen and (min-width: $lg-width) {
+    /* Spacings */
+    --spacing-between-elements-small: 48px;
+    --spacing-between-elements-medium: 64px;
+    --spacing-between-elements-large: 96px;
+
+    /* Fonts */
+    --font-size-24-40: #{rem(40)};
+    --font-size-20-32: #{rem(32)};
+    --font-size-18-24: #{rem(24)};
   }
 }

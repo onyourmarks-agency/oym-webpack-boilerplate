@@ -4,14 +4,14 @@
   const toggleHamburgerMenu = () => {
     hamburgerIsActive.set($hamburgerIsActive !== true);
     document.body.toggleAttribute('data-hamburger-is-active');
-  }
+  };
 </script>
 
-<div class="hamburger" on:click={toggleHamburgerMenu}>
-	<span></span>
-	<span></span>
-	<span></span>
-</div>
+<button class="hamburger" on:click={toggleHamburgerMenu}>
+  <span />
+  <span />
+  <span />
+</button>
 
 <style lang="scss">
   @import '../../../css/1-settings/_settings';

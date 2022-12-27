@@ -29,6 +29,7 @@ $c-border: 1px solid $color-gray-medium; /* Border of the box */
   display: inline-block;
   z-index: 2;
   position: relative;
+  flex-shrink: 0;
   width: $c-size;
   height: $c-size;
   border: $c-border;
