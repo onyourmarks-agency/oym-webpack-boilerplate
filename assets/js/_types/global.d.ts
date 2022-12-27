@@ -1,5 +1,3 @@
-/// <reference types="svelte" />
-
 export type BreakPointType = 'sm' | 'md' | 'lg' | 'xl' | 'hamburger';
 
 export interface BreakPointConfigInterface {
