@@ -1,9 +1,4 @@
-/**
- * Read cookie value from given cookiename
- * @param name
- * @returns {string|null}
- */
-const getCookie = (name) => {
+const getCookie = (name: string): string | null => {
   const nameEQ = `${name}=`;
   const ca = document.cookie.split(';');
 

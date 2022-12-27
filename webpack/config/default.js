@@ -36,8 +36,8 @@ const DEFAULT_CONFIG = {
    * The base entry files that have to go through the loader
    */
   entries: {
-    'js-app': `${BASE_PATH}/assets/${THEME_FOLDER}js/app.js`,
-    'js-outdated-browser': `${BASE_PATH}/assets/${THEME_FOLDER}js/outdated.js`,
+    'js-app': `${BASE_PATH}/assets/${THEME_FOLDER}js/app.ts`,
+    'js-outdated-browser': `${BASE_PATH}/assets/${THEME_FOLDER}js/outdated.ts`,
     'css-main': `${BASE_PATH}/assets/${THEME_FOLDER}css/styles.scss`,
   },
 

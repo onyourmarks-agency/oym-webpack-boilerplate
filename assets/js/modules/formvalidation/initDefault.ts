@@ -13,7 +13,7 @@ const initDefault = () => {
 
   // Init the validation after loading bouncer
   loadValidation().then(() => {
-    new Bouncer(formClassSelector, bouncerDefaultConfig);
+    new window.Bouncer(formClassSelector, bouncerDefaultConfig);
   });
 
   // Format date field

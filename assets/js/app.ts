@@ -1,5 +1,3 @@
-/* global app */
-
 // Apply SVG polyfill to load external SVG's in unsupported browsers
 import 'svgxuse';
 
@@ -15,7 +13,7 @@ import getCookieHelper from './helpers/cookies/get-cookie';
 import removeCookieHelper from './helpers/cookies/remove-cookie';
 
 // Set config elements
-app.config = {
+globalThis.app.config = {
   breakpoints: {
     sm: 30,
     md: 40,
@@ -26,7 +24,7 @@ app.config = {
 };
 
 // Test some browser options and make them available in app.test
-app.test = {
+globalThis.app.test = {
   isSessionStorageSupported: storageTests('session'),
   isLocalStorageSupported: storageTests('local'),
   isTouchDevice: touchTests(),
@@ -36,7 +34,7 @@ app.test = {
 };
 
 // Add some handy helper functions and make them available in app.helper
-app.helper = {
+globalThis.app.helper = {
   giveScreenWidth: screenWidthHelper,
   localStorage: browserStorageHelper('local'),
   sessionStorage: browserStorageHelper('session'),
@@ -51,26 +49,14 @@ import hamburger from './modules/hamburger/init';
 import scrollTo from './modules/scroll-to';
 import windowSize from './modules/window-size';
 
-formvalidation();
-activeNavigation();
-hamburger();
-scrollTo();
-windowSize();
+(async () => {
+  formvalidation();
+  activeNavigation();
+  hamburger();
+  scrollTo();
+  windowSize();
 
-if (document.querySelector('[data-popup-content]')) {
-  import('./modules/popup/init' /* webpackChunkName: "popup" */).then((fn) => {
-    fn.default();
-  });
-}
-
-if (document.querySelector('.js-image-slider')) {
-  import('./modules/image-slider' /* webpackChunkName: "image-slider" */).then((fn) => {
-    fn.default();
-  });
-}
-
-if (document.querySelector('.js-scrollable')) {
-  import('./modules/scrollable' /* webpackChunkName: "scrollable" */).then((fn) => {
-    fn.default();
-  });
-}
+  (await import('./modules/popup/init' /* webpackChunkName: "popup" */)).default();
+  (await import('./modules/image-slider' /* webpackChunkName: "image-slider" */)).default();
+  (await import('./modules/scrollable' /* webpackChunkName: "scrollable" */)).default();
+})();

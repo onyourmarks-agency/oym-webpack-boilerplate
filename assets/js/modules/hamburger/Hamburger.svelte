@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { hamburgerIsActive } from '../../svelte-store/hamburger-is-active';
 
   const toggleHamburgerMenu = () => {

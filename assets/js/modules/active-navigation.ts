@@ -10,7 +10,7 @@ let activeItemMatched = false;
  * Add class from activeClassname
  * @param item
  */
-const makeNavItemActive = (item) => {
+const makeNavItemActive = (item: HTMLLinkElement): void => {
   item.classList.add(activeClassname);
 };
 
@@ -18,7 +18,7 @@ const makeNavItemActive = (item) => {
  * Give a link and match the first one who's active
  * @param item
  */
-const matchActiveNavItems = (item) => {
+const matchActiveNavItems = (item: HTMLLinkElement): void => {
   const replacedCurrentUrl = currentUrl.replace(window.location.origin, '');
   const replacedUrl = item.href.replace(window.location.origin, '');
 
@@ -30,9 +30,8 @@ const matchActiveNavItems = (item) => {
     return;
   }
 
-  makeNavItemActive(item.parentElement);
-
-  const closestParent = item.closest(selectors.hasSubs);
+  makeNavItemActive((item.parentElement as HTMLLinkElement));
+  const closestParent = item.closest(selectors.hasSubs) as HTMLLinkElement;
 
   if (closestParent) {
     makeNavItemActive(closestParent);
@@ -45,9 +44,10 @@ const matchActiveNavItems = (item) => {
 /**
  * Loop over all base-matched elements
  */
-const init = () => {
-  document.querySelectorAll(selectors.base).forEach((item) => {
-    matchActiveNavItems(item);
+const init = (): void => {
+  const linkElements = document.querySelectorAll(selectors.base) as NodeListOf<HTMLLinkElement>;
+  linkElements.forEach((linkElement: HTMLLinkElement) => {
+    matchActiveNavItems(linkElement);
   });
 };
 

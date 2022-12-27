@@ -1,0 +1,13 @@
+// prettier-ignore
+{
+    "extends": "@tsconfig/svelte/tsconfig.json",
+    "include": ["assets/**/*"],
+    "exclude": [
+        "node_modules", "babel.config.js"
+    ],
+    "compilerOptions": {
+        "target": "es6",
+        "module": "esnext", // 👈️ set to esnext
+        // ... your other options
+    }
+}
