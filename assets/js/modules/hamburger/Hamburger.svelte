@@ -1,7 +1,7 @@
 <script lang="ts">
   import { hamburgerIsActive } from '../../svelte-store/hamburger-is-active';
 
-  const toggleHamburgerMenu = () => {
+  const toggleHamburgerMenu = (): void => {
     hamburgerIsActive.set($hamburgerIsActive !== true);
     document.body.toggleAttribute('data-hamburger-is-active');
   };

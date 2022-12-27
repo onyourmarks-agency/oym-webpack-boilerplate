@@ -13,7 +13,7 @@
   /**
    * Stop scrolling on body when open
    */
-  const checkBodyScroll = () => {
+  const checkBodyScroll = (): void => {
     document.body.style.overflow = visible ? 'hidden' : 'inherit';
   };
 
@@ -21,7 +21,7 @@
    * Handle key down and close overlay when press Escape
    * @param e
    */
-  const handleKeydown = (e) => {
+  const handleKeydown = (e: KeyboardEvent): void => {
     if (!visible) {
       return;
     }
@@ -31,7 +31,7 @@
     }
   };
 
-  onMount(() => {
+  onMount((): void => {
     if (!sourceHTML) {
       return;
     }
