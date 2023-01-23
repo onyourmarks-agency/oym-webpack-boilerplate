@@ -1,7 +1,9 @@
 import jump from 'jump.js';
 
 const init = (): void => {
-  const scrollToItem = document.querySelectorAll('[data-scroll-to]') as unknown as Array<HTMLElement>;
+  const scrollToItem = document.querySelectorAll(
+    '[data-scroll-to]'
+  ) as unknown as Array<HTMLElement>;
 
   scrollToItem.forEach((element: HTMLElement) => {
     element.addEventListener('click', () => {

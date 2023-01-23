@@ -1,4 +1,4 @@
-import type {StorageMethodType} from '../helpers/browser-storage';
+import type { StorageMethodType } from '../helpers/browser-storage';
 
 /**
  * Check if local- or sessionstorage is available

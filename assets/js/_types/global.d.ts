@@ -13,14 +13,14 @@ export interface HelperConfigInterface {
 }
 
 export type AppConfigType = {
-  breakpoints?: BreakPointConfigInterface,
-}
+  breakpoints?: BreakPointConfigInterface;
+};
 
 export type AppType = {
   config: AppConfigType;
-  test: TestHelperConfigInterface,
-  helper: HelperConfigInterface,
-}
+  test: TestHelperConfigInterface;
+  helper: HelperConfigInterface;
+};
 
 declare global {
   var app: AppType;

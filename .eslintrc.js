@@ -3,6 +3,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     requireConfigFile: false,
+    project: './tsconfig.json',
   },
   env: {
     browser: true,
@@ -27,14 +28,14 @@ module.exports = {
     'import/no-mutable-exports': 'off',
     'linebreak-style': 0,
     'no-continue': 0,
-    "import/extensions": [
-      "error",
-      "ignorePackages",
+    'import/extensions': [
+      'error',
+      'ignorePackages',
       {
-        "js": "never",
-        "ts": "never",
-        "svelte": "never",
-      }
+        js: 'never',
+        ts: 'never',
+        svelte: 'never',
+      },
     ],
     'max-len': [
       'error',

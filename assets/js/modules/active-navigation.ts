@@ -30,7 +30,7 @@ const matchActiveNavItems = (item: HTMLLinkElement): void => {
     return;
   }
 
-  makeNavItemActive((item.parentElement as HTMLLinkElement));
+  makeNavItemActive(item.parentElement as HTMLLinkElement);
   const closestParent = item.closest(selectors.hasSubs) as HTMLLinkElement;
 
   if (closestParent) {

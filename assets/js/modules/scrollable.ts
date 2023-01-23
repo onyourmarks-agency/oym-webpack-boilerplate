@@ -3,17 +3,17 @@ const TILE_WIDTH = 374 + 24;
 const UNCENTERED_CLASS = 'uncentered';
 
 export enum ScrollableDirection {
-    LEFT,
-    RIGHT,
+  LEFT,
+  RIGHT,
 }
 
 type DomElementsType = {
-  left: HTMLButtonElement,
-  right: HTMLButtonElement,
-  wrapper: HTMLElement,
-  scrollable: Element,
-  scrollableInner: HTMLElement,
-}
+  left: HTMLButtonElement;
+  right: HTMLButtonElement;
+  wrapper: HTMLElement;
+  scrollable: Element;
+  scrollableInner: HTMLElement;
+};
 
 /*
  * Add a class if the cards are visible

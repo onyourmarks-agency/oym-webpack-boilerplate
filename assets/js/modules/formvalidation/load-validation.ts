@@ -4,7 +4,7 @@ const loadValidation = async () => {
   window.Bouncer = fn.default;
 
   if (typeof window.Bouncer !== 'function') {
-    throw Error('Can\'t load Bouncer...');
+    throw Error("Can't load Bouncer...");
   }
 
   return this;
