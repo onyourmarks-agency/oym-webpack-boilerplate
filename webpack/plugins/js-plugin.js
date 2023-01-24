@@ -4,6 +4,21 @@ const preprocess = require('svelte-preprocess');
 const {RetryChunkLoadPlugin} = require('webpack-retry-chunk-load-plugin');
 const SvelteCheckPlugin = require('svelte-check-plugin');
 
+const scssAliases = (aliases) => {
+  return (url) => {
+    for (const [alias, aliasPath] of Object.entries(aliases)) {
+      console.log('test', alias, aliasPath, url, url.indexOf(alias));
+      if (url.indexOf(alias) === 0) {
+        return {
+          file: url.replace(alias, aliasPath),
+        };
+      }
+    }
+    return url;
+  };
+};
+
+
 module.exports = function (webpack, config) {
   const babelPresets = [
     [
@@ -54,7 +69,12 @@ module.exports = function (webpack, config) {
         {
           loader: 'svelte-loader',
           options: {
-            preprocess: preprocess(),
+              preprocess: preprocess({
+                scss: {
+                  importer: [scssAliases(config.aliases)],
+                },
+              }),
+
             emitCss: true,
           },
         },

@@ -1,4 +1,4 @@
-const loadValidation = async () => {
+const loader = async () => {
   const fn = await import('formbouncerjs' /* webpackChunkName: "bouncer-validation" */);
 
   window.Bouncer = fn.default;
@@ -10,4 +10,4 @@ const loadValidation = async () => {
   return this;
 };
 
-export default loadValidation;
+export default loader;

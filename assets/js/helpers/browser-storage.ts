@@ -1,16 +1,21 @@
-/* global app */
+import { isLocalStorageSupported, isSessionStorageSupported } from '@tests/is-storage-supported';
+
 export type StorageMethodType = 'local' | 'session';
 
-const storage = (method: StorageMethodType) => {
-  if (method === 'local') {
-    if (app.test.isLocalStorageSupported) {
-      return window.localStorage;
-    }
-  } else if (app.test.isSessionStorageSupported) {
+const constructStorage = (method: StorageMethodType): Storage => {
+  if (method === 'local' && isLocalStorageSupported()) {
+    return window.localStorage;
+  }
+
+  if (isSessionStorageSupported()) {
     return window.sessionStorage;
   }
 
   return {
+    key(): string | null {
+      throw new Error('Key is not implemented in mock polyfill');
+    },
+    length: 0,
     data: {},
     setItem(id: string, val: string) {
       this.data[id] = val;
@@ -29,4 +34,15 @@ const storage = (method: StorageMethodType) => {
   };
 };
 
-export default storage;
+const getBrowserStorage = (storageMethod: StorageMethodType): Storage => {
+  if (!globalThis.app.storage[storageMethod]) {
+    globalThis.app.storage[storageMethod] = constructStorage(storageMethod);
+  }
+
+  return globalThis.app.storage[storageMethod];
+};
+
+export const getLocalStorage = (): Storage => getBrowserStorage('local');
+export const getSessionStorage = (): Storage => getBrowserStorage('session');
+
+export default getBrowserStorage;

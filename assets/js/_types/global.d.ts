@@ -4,10 +4,6 @@ export interface BreakPointConfigInterface {
   [key: BreakPointType]: number;
 }
 
-export interface TestHelperConfigInterface {
-  [key: string]: boolean;
-}
-
 export interface HelperConfigInterface {
   [key: string]: any;
 }
@@ -18,8 +14,10 @@ export type AppConfigType = {
 
 export type AppType = {
   config: AppConfigType;
-  test: TestHelperConfigInterface;
-  helper: HelperConfigInterface;
+  storage: {
+    local: Storage;
+    session: Storage;
+  };
 };
 
 declare global {

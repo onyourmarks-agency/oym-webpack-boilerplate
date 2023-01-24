@@ -1,10 +1,5 @@
-import type { StorageMethodType } from '../helpers/browser-storage';
+import type { StorageMethodType } from '@helpers/browser-storage';
 
-/**
- * Check if local- or sessionstorage is available
- * @param storage
- * @returns {boolean}
- */
 const isStorageSupported = (storage: StorageMethodType): boolean => {
   try {
     const storageObject = window[`${storage}Storage`];
@@ -18,5 +13,9 @@ const isStorageSupported = (storage: StorageMethodType): boolean => {
     return false;
   }
 };
+
+export const isSessionStorageSupported = () => isStorageSupported('session');
+
+export const isLocalStorageSupported = () => isStorageSupported('local');
 
 export default isStorageSupported;

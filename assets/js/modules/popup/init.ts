@@ -1,10 +1,5 @@
 import Popup from './Popup.svelte';
 
-/**
- * Open popup with given target
- * @param target
- * @param type
- */
 const openPopup = (target: string, type: string | boolean) => {
   new Popup({
     target: document.body,

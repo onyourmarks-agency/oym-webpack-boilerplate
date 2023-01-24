@@ -26,7 +26,10 @@ const webpack = {
   },
   resolve: {
     alias: {
-      svelte: path.dirname(require.resolve('svelte/package.json'))
+      ...{
+        svelte: path.dirname(require.resolve('svelte/package.json'))
+      },
+      ...config.aliases
     },
     extensions: ['.js', '.ts', '.svelte', '.mjs'],
     mainFields: ['svelte', 'browser', 'module', 'main'],

@@ -1,6 +1,7 @@
 const isTouchDevice = (): boolean => {
   const msGesture =
     window.navigator && (window as any).navigator.msMaxTouchPoints && (window as any).MSGesture;
+
   const touch =
     'ontouchstart' in window ||
     msGesture ||
