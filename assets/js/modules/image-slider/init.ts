@@ -1,6 +1,6 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
 
-const init = () => {
+const init = (): void => {
   Swiper.use([Navigation, Pagination]);
 
   new Swiper('.js-image-slider', {

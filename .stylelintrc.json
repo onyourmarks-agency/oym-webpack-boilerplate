@@ -1,7 +1,7 @@
 {
   "extends": [
-    "@considonet/stylelint-config-scss",
-    "@considonet/stylelint-config-bem"
+    "tde-stylelint-config",
+    "stylelint-config-html/svelte"
   ],
   "rules": {
     "plugin/selector-bem-pattern": false,

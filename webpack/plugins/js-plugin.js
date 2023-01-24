@@ -1,12 +1,28 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const TerserPlugin = require('terser-webpack-plugin');
 const preprocess = require('svelte-preprocess');
-const { RetryChunkLoadPlugin } = require('webpack-retry-chunk-load-plugin');
+const {RetryChunkLoadPlugin} = require('webpack-retry-chunk-load-plugin');
+const SvelteCheckPlugin = require('svelte-check-plugin');
+
+const scssAliases = (aliases) => {
+  return (url) => {
+    for (const [alias, aliasPath] of Object.entries(aliases)) {
+      console.log('test', alias, aliasPath, url, url.indexOf(alias));
+      if (url.indexOf(alias) === 0) {
+        return {
+          file: url.replace(alias, aliasPath),
+        };
+      }
+    }
+    return url;
+  };
+};
+
 
 module.exports = function (webpack, config) {
   const babelPresets = [
     [
-      '@babel/preset-env',
+      '@babel/preset-typescript',
       {
         targets: {
           browsers: [
@@ -28,45 +44,58 @@ module.exports = function (webpack, config) {
     }),
   );
 
-  webpack.module.rules.push({
-    test: /(\.js?$)|(\.svelte$)/,
-    exclude: /(node_modules|bower_components)/,
-    use: [
-      {
-        loader: 'babel-loader',
-        options: {
-          babelrc: false,
-          presets: babelPresets,
-          plugins: [
-            '@babel/plugin-syntax-dynamic-import',
-            '@babel/plugin-transform-runtime',
-          ]
+  webpack.module.rules.push(
+    {
+      test: /(\.(t|j)s?$)|(\.svelte$)/,
+      exclude: /(node_modules|bower_components)/,
+      use: [
+        {
+          loader: 'babel-loader',
+          options: {
+            babelrc: false,
+            presets: babelPresets,
+            plugins: [
+              '@babel/plugin-syntax-dynamic-import',
+              '@babel/plugin-transform-runtime',
+            ]
+          },
         },
-      },
-    ],
-  }, {
-    test: /\.svelte$/,
-    exclude: /node_modules\/@babel/,
-    use: [
-      {
-        loader: 'svelte-loader',
-        options: {
-          preprocess: preprocess(),
-          emitCss: true,
-        },
-      },
-    ],
-  }, {
-    test: /\.mjs$/,
-    resolve: {
-      fullySpecified: false // https://github.com/graphql/graphql-js/issues/2721#issuecomment-723008284
+      ],
     },
-  });
+    {
+      test: /\.svelte$/,
+      exclude: /node_modules\/@babel/,
+      use: [
+        {
+          loader: 'svelte-loader',
+          options: {
+              preprocess: preprocess({
+                scss: {
+                  importer: [scssAliases(config.aliases)],
+                },
+              }),
+
+            emitCss: true,
+          },
+        },
+      ],
+    }, {
+      test: /\.mjs$/,
+      resolve: {
+        fullySpecified: false // https://github.com/graphql/graphql-js/issues/2721#issuecomment-723008284
+      },
+    });
 
   webpack.optimization.minimizer.push(
     new TerserPlugin({
       parallel: 4,
-      test: /\.js($|\?)/i,
+      test: /\.[tj]s($|\?)/i,
     })
   );
+
+  if (config.debug) {
+    webpack.plugins.push(
+      new SvelteCheckPlugin({}),
+    );
+  }
 };

@@ -1,7 +1,7 @@
-<script>
-  import { hamburgerIsActive } from '../../svelte-store/hamburger-is-active';
+<script lang="ts">
+  import { hamburgerIsActive } from '@js/svelte-store/hamburger-is-active';
 
-  const toggleHamburgerMenu = () => {
+  const toggleHamburgerMenu = (): void => {
     hamburgerIsActive.set($hamburgerIsActive !== true);
     document.body.toggleAttribute('data-hamburger-is-active');
   };
@@ -14,7 +14,7 @@
 </button>
 
 <style lang="scss">
-  @import '../../../css/1-settings/_settings';
+  @import '@css/1-settings/__settings.scss';
 
   $h-height: 40px; /* height of the wrapper */
   $h-width: 40px; /* width of the wrapper */

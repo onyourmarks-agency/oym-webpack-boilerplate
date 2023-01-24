@@ -1,4 +1,5 @@
-<script>
+<!-- Popup.svelte -->
+<script lang="ts">
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
 
@@ -11,7 +12,7 @@
   /**
    * Stop scrolling on body when open
    */
-  const checkBodyScroll = () => {
+  const checkBodyScroll = (): void => {
     document.body.style.overflow = visible ? 'hidden' : 'inherit';
   };
 
@@ -19,7 +20,7 @@
    * Handle key down and close overlay when press Escape
    * @param e
    */
-  const handleKeydown = (e) => {
+  const handleKeydown = (e: KeyboardEvent): void => {
     if (!visible) {
       return;
     }
@@ -29,7 +30,7 @@
     }
   };
 
-  onMount(() => {
+  onMount((): void => {
     if (!sourceHTML) {
       return;
     }
@@ -37,7 +38,7 @@
     visible = true;
   });
 
-  $: checkBodyScroll(visible);
+  $: checkBodyScroll();
 </script>
 
 <svelte:window on:keydown={handleKeydown} />
@@ -64,7 +65,7 @@
 {/if}
 
 <style lang="scss">
-  @import '../assets/css/1-settings/_settings';
+  @import '@css/1-settings/__settings.scss';
 
   .popup,
   .popup-background {

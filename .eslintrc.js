@@ -1,14 +1,18 @@
+const aliases = require('./.aliases');
+const aliasHelper = require('./webpack/helpers/aliases');
+
 module.exports = {
-  extends: ['airbnb-base', 'prettier'],
-  parser: '@babel/eslint-parser',
+  extends: ['airbnb-base', 'airbnb-typescript/base', 'prettier'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     requireConfigFile: false,
+    project: './tsconfig.json',
   },
   env: {
     browser: true,
     es6: true,
   },
-  plugins: ['compat', 'svelte3'],
+  plugins: ['compat', 'svelte3', '@typescript-eslint'],
   overrides: [
     {
       files: ['**/*.svelte'],
@@ -16,8 +20,12 @@ module.exports = {
     },
   ],
   settings: {
+    'svelte3/typescript': () => require('typescript'),
     'svelte3/ignore-styles': () => true,
     polyfills: ['fetch', 'Promise'],
+    'import/resolver': {
+      alias: aliasHelper.formatEslintAliases(aliases),
+    },
   },
   rules: {
     'compat/compat': 2,
@@ -26,6 +34,15 @@ module.exports = {
     'import/no-mutable-exports': 'off',
     'linebreak-style': 0,
     'no-continue': 0,
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        ts: 'never',
+        svelte: 'never',
+      },
+    ],
     'max-len': [
       'error',
       {

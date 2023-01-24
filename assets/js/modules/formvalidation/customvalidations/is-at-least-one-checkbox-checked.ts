@@ -5,20 +5,22 @@ import { formClassNames } from '../config';
  * @param field
  * @returns {boolean}
  */
-export default (field) => {
+export default (field: HTMLElement): boolean => {
   const wrapper = field.closest('[data-bouncer-at-least-one-checkbox]');
 
   if (!wrapper) {
     return false;
   }
 
-  const checkboxes = wrapper.querySelectorAll('[type="checkbox"]');
+  const checkboxes = wrapper.querySelectorAll('[type="checkbox"]') as NodeListOf<HTMLInputElement>;
 
   if (!checkboxes.length) {
     return false;
   }
 
-  const errorWrapper = wrapper.querySelector(checkboxes[0].dataset.bouncerTarget);
+  const errorWrapper = wrapper.querySelector(
+    checkboxes[0].dataset.bouncerTarget as string
+  ) as HTMLElement;
   let checkedCount = 0;
 
   for (let i = 0; i < checkboxes.length; i += 1) {
@@ -29,7 +31,7 @@ export default (field) => {
 
   if (errorWrapper) {
     while (errorWrapper.childNodes.length > 0) {
-      errorWrapper.removeChild(errorWrapper.lastChild);
+      errorWrapper.removeChild(errorWrapper.lastChild!);
     }
   }
 

@@ -1,11 +1,6 @@
 import Popup from './Popup.svelte';
 
-/**
- * Open popup with given target
- * @param target
- * @param type
- */
-const openPopup = (target, type) => {
+const openPopup = (target: string, type: string | boolean) => {
   new Popup({
     target: document.body,
     props: {
@@ -16,7 +11,7 @@ const openPopup = (target, type) => {
 };
 
 const init = () => {
-  const popup = document.querySelectorAll('[data-popup-content]');
+  const popup = document.querySelectorAll('[data-popup-content]') as NodeListOf<HTMLElement>;
 
   if (!popup.length) {
     return;
@@ -26,7 +21,7 @@ const init = () => {
     element.addEventListener('click', (e) => {
       e.preventDefault();
 
-      openPopup(element.dataset.popupContent, element.dataset.popupType);
+      openPopup(element.dataset.popupContent as string, element.dataset.popupType as string);
     });
   });
 };

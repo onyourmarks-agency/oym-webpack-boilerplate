@@ -1,6 +1,6 @@
 import Hamburger from './Hamburger.svelte';
 
-const init = () => {
+const init = (): void => {
   const hamburger = document.querySelector('.js-hamburger');
 
   if (!hamburger) {
