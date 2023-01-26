@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { hamburgerIsActive } from '@js/svelte-store/hamburger-is-active';
+  import { hamburgerIsActive } from '@svelte/store/hamburger-is-active';
 
   const toggleHamburgerMenu = (): void => {
     hamburgerIsActive.set($hamburgerIsActive !== true);

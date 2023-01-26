@@ -4,7 +4,7 @@ import { bouncerDefaultConfig } from './config';
 
 const formClassSelector = '.js-form-validate';
 
-const init = () => {
+const init = (): void => {
   if (!document.querySelector(formClassSelector)) {
     return;
   }

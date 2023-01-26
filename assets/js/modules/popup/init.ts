@@ -10,7 +10,7 @@ const openPopup = (target: string, type: string | boolean) => {
   });
 };
 
-const init = () => {
+const init = (): void => {
   const popup = document.querySelectorAll('[data-popup-content]') as NodeListOf<HTMLElement>;
 
   if (!popup.length) {

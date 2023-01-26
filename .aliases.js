@@ -1,9 +1,9 @@
 const ALIASES = {
   '@css': 'assets/css',
-  '@js': 'assets/js',
   '@helpers': 'assets/js/helpers',
   '@tests': 'assets/js/tests',
   '@modules': 'assets/js/modules',
+  '@svelte': 'assets/js/svelte',
   '@types': 'assets/js/_types',
 };
 

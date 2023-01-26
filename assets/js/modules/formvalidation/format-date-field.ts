@@ -10,7 +10,7 @@ const updateDate = (element: HTMLElement) => {
   fieldResult.value = valueResult;
 };
 
-const init = () => {
+const init = (): void => {
   const dateField = document.querySelectorAll('.js-form-date') as NodeListOf<HTMLElement>;
 
   if (!dateField) {
