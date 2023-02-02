@@ -49,7 +49,7 @@
         visible = false;
       }}
       on:keydown={handleKeydown} />
-    <div class="popup-content" transition:fade={{ delay: 200, in: 50, out: 50 }}>
+    <div class="popup-content" transition:fade={{ delay: 200, duration: 100 }}>
       <button
         class="popup-close"
         type="button"
@@ -64,7 +64,7 @@
 {/if}
 
 <style lang="scss">
-  @import '@css/1-settings/__settings.scss';
+  @import '../../../css/1-settings/__settings.scss';
 
   .popup,
   .popup-background {
