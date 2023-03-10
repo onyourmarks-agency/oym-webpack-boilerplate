@@ -1,0 +1,5 @@
+.btn--secondary {
+  --btn-background-color: #{$color-secondary};
+  --btn-background-color-hover: #{rgba($color-secondary, 0.75)};
+  --btn-color: #000;
+}

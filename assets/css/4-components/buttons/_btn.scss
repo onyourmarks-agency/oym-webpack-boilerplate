@@ -4,22 +4,24 @@
   appearance: none;
   align-items: center;
   justify-content: center;
-  padding: 16px 24px;
+  padding: var(--btn-padding, 16px 24px);
   border: 0;
-  background-color: $color-primary;
-  color: $color-white;
+  background-color: var(--btn-background-color, #{$color-primary});
+  color: var(--btn-color, #{$color-white});
   font-weight: $font-heading-weight-500;
-  font-size: rem(16);
+  font-size: var(--btn-font-size, #{rem(16)});
   line-height: 1;
   font-family: $font-heading;
   cursor: pointer;
   transition: background-color 200ms ease;
   user-select: none;
 
-  &:hover,
-  &:focus {
-    background-color: rgba($color-primary, 0.75);
-    text-decoration: none;
+  @media (hover: hover) {
+    &:hover,
+    &:focus {
+      background-color: var(--btn-background-color-hover, #{rgba($color-primary, 0.75)});
+      text-decoration: none;
+    }
   }
 
   &:disabled {
@@ -40,18 +42,4 @@
   &:first-child:last-child {
     margin: 0;
   }
-}
-
-.btn--secondary {
-  background-color: $color-secondary;
-  color: #000;
-
-  &:hover {
-    background-color: rgba($color-secondary, 0.75);
-  }
-}
-
-.btn--sm {
-  padding: 8px 16px;
-  font-size: rem(14);
 }

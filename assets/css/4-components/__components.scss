@@ -5,7 +5,11 @@
 * Each stylesheet contains all component styles, variations and states of one component
 */
 
-@import 'btn';
+/* Buttons */
+@import 'buttons/btn';
+@import 'buttons/btn--secondary';
+@import 'buttons/btn--small';
+
 @import 'input-checkbox';
 @import 'input-radio';
 @import 'scrollable';
