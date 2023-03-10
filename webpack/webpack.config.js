@@ -31,6 +31,7 @@ const webpack = {
       },
       ...config.aliases
     },
+    conditionNames: ['svelte', 'node', 'require'],
     extensions: ['.js', '.ts', '.svelte', '.mjs'],
     mainFields: ['svelte', 'browser', 'module', 'main'],
   },
