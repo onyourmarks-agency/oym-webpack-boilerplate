@@ -1,5 +1,3 @@
-import 'svgxuse';
-
 import formvalidation from '@modules/formvalidation/init';
 import activeNavigation from '@modules/active-navigation';
 import hamburger from '@modules/hamburger/init';
@@ -25,6 +23,8 @@ activeNavigation();
 hamburger();
 scrollTo();
 windowSize();
+
+// Chunks
 popupLoader();
 imageSliderLoader();
 scrollableLoader();

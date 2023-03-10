@@ -1,6 +1,6 @@
 {
 	"name": "tde-webpack-boilerplate",
-	"version": "5.0.2",
+	"version": "5.0.3",
 	"main": "app.ts",
 	"license": "MIT",
 	"config": {
@@ -27,7 +27,6 @@
 		"normalize.css": "^8.0.1",
 		"outdated-browser-rework": "github:tdeNL/outdated-browser-rework",
 		"svelte": "^3.56.0",
-		"svgxuse": "^1.2.6",
 		"swiper": "^8.4.7"
 	},
 	"devDependencies": {

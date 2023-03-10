@@ -66,7 +66,6 @@ specifiers:
   svelte-preprocess: ^4.10.7
   svelte-preprocess-sass: ^2.0.1
   svg-sprite-loader: ^6.0.11
-  svgxuse: ^1.2.6
   swiper: ^8.4.7
   tde-stylelint-config: github:tdeNL/tde-stylelint-config
   tde-webpack-svg-plugin: ^3.0.0
@@ -87,7 +86,6 @@ dependencies:
   normalize.css: 8.0.1
   outdated-browser-rework: github.com/tdeNL/outdated-browser-rework/475b404f40bc4d7e7091ecad15e0eee899460b10
   svelte: 3.56.0
-  svgxuse: 1.2.6
   swiper: 8.4.7
 
 devDependencies:
@@ -8506,10 +8504,6 @@ packages:
       picocolors: 1.0.0
       stable: 0.1.8
     dev: true
-
-  /svgxuse/1.2.6:
-    resolution: {integrity: sha512-0KC0I24LDskC2vaVjUQfFmdtKJk8wFwMYOjCci0HlhBRSc0F86dZRqNBHf6BoS5bibQ7chgnBQWyJCTYkzVuSA==}
-    dev: false
 
   /swiper/8.4.7:
     resolution: {integrity: sha512-VwO/KU3i9IV2Sf+W2NqyzwWob4yX9Qdedq6vBtS0rFqJ6Fa5iLUJwxQkuD4I38w0WDJwmFl8ojkdcRFPHWD+2g==}
