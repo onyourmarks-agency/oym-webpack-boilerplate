@@ -8,6 +8,7 @@ module.exports = {
   compilerOptions: {
     target: 'es6',
     module: 'esnext',
+    resolveJsonModule: true,
     paths: aliasHelper.formatTypescriptAliases(aliases),
   },
 };
