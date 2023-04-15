@@ -39,7 +39,7 @@ export const setCookie = (
 };
 
 export const removeCookie = (name: string): void => {
-  setCookie(name, '', -1);
+  document.cookie = `${name}=;expires=${new Date(0).toUTCString()}`;
 };
 
 export default getCookie;
