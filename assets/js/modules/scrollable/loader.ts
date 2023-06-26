@@ -4,7 +4,7 @@ const asyncLoader = async () => {
 };
 
 export default () => {
-  if (!document.querySelector('.js-image-slider')) {
+  if (!document.querySelector('.js-scrollable')) {
     return;
   }
 
