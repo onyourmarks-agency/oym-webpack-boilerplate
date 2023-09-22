@@ -90,6 +90,9 @@ module.exports = function (webpack, config) {
     new TerserPlugin({
       parallel: 4,
       test: /\.[tj]s($|\?)/i,
+      terserOptions: {
+        keep_classnames: true,
+      },
     })
   );
 
