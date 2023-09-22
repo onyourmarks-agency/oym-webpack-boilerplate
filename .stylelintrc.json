@@ -26,6 +26,12 @@
       {
         "ignore": ["selectors-within-list"]
       }
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
     ]
   }
 }
