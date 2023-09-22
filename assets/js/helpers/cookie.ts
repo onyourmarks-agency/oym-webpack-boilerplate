@@ -12,7 +12,7 @@ export const setCookie = (
   name: string,
   value: string,
   maxAge?: number,
-  url?: string,
+  domain?: string,
   path?: string,
   sameSite?: SameSiteType
 ): void => {
@@ -20,7 +20,7 @@ export const setCookie = (
     [name]: value,
     'Max-Age': maxAge || null,
     Path: path || '/',
-    Domain: url || null,
+    Domain: domain || null,
     Secure: '',
     SameSite: sameSite || 'Lax',
   };
@@ -38,8 +38,10 @@ export const setCookie = (
     .join('; ');
 };
 
-export const removeCookie = (name: string): void => {
-  document.cookie = `${name}=;expires=${new Date(0).toUTCString()}`;
+export const removeCookie = (name: string, path?: string, domain?: string): void => {
+  document.cookie = `${name}=${path ? `;path=${path}` : ''}${
+    domain ? `;domain=${domain}` : ''
+  };expires=${new Date(0).toUTCString()}`;
 };
 
 export default getCookie;
