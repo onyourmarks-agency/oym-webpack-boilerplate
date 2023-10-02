@@ -1,6 +1,6 @@
 {
 	"name": "tde-webpack-boilerplate",
-	"version": "5.0.4",
+	"version": "5.0.6",
 	"main": "app.ts",
 	"license": "MIT",
 	"config": {
@@ -12,8 +12,8 @@
 		"build": "node webpack/pre-script.js && NODE_ENV=prod webpack --mode production --config webpack/webpack.config.js --stats-children",
 		"frontend-cs": "pnpm format && pnpm eslint && pnpm stylelint && pnpm svelte-check",
 		"lint": "pnpm prettier --check . --plugin-search-dir=. && pnpm eslint && pnpm stylelint",
-		"eslint": "node webpack/pre-script.js && eslint assets --cache --ext .js,.svelte --ignore-path .gitignore",
-		"eslint-fix": "node webpack/pre-script.js && eslint assets --cache --fix --ext .js,.svelte --ignore-path .gitignore",
+		"eslint": "node webpack/pre-script.js && eslint assets --cache --ext .js,.ts,.svelte",
+		"eslint-fix": "node webpack/pre-script.js && eslint assets --cache --fix --ext .js,.ts,.svelte",
 		"format": "node webpack/pre-script.js && prettier --write . --plugin-search-dir=.",
 		"format-az": "node webpack/pre-script.js && ORDER=alphabetical prettier --write . --plugin-search-dir=",
 		"stylelint": "stylelint -f verbose --cache 'assets/**/*.{css,scss,svelte}'",
