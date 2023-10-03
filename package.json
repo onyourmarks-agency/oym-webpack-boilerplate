@@ -71,7 +71,7 @@
 		"html-webpack-plugin": "^5.5.0",
 		"lodash": "^4.17.21",
 		"mini-css-extract-plugin": "^2.7.3",
-		"postcss": "^8.4.21",
+		"postcss": "^8.4.31",
 		"postcss-html": "^1.5.0",
 		"postcss-loader": "^7.0.2",
 		"prettier": "^2.8.4",
