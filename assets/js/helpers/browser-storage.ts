@@ -35,13 +35,6 @@ const constructStorage = (method: StorageMethodType): Storage => {
 };
 
 const getBrowserStorage = (storageMethod: StorageMethodType): Storage => {
-  if (!globalThis.app.storage) {
-    globalThis.app.storage = {
-      local: null,
-      session: null,
-    };
-  }
-
   if (!globalThis.app.storage[storageMethod]) {
     globalThis.app.storage[storageMethod] = constructStorage(storageMethod);
   }

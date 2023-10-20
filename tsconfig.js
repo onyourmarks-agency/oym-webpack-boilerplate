@@ -10,5 +10,7 @@ module.exports = {
     module: 'esnext',
     resolveJsonModule: true,
     paths: aliasHelper.formatTypescriptAliases(aliases),
+    verbatimModuleSyntax: false,
+    ignoreDeprecations: '5.0',
   },
 };

@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
 
-  export let source;
-  export let type;
+  export let source: string;
+  export let type: string | boolean;
 
   const sourceHTML = document.querySelector(source);
   let visible = false;
@@ -58,7 +58,7 @@
         }}>
         <span>x</span>
       </button>
-      {@html sourceHTML.innerHTML}
+      {@html sourceHTML?.innerHTML}
     </div>
   </div>
 {/if}
