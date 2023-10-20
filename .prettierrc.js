@@ -1,8 +1,9 @@
 module.exports = {
   bracketSameLine: true,
+  cssDeclarationSorterOrder: process.env.ORDER ? process.env.ORDER : 'smacss',
   htmlWhitespaceSensitivity: 'ignore',
-  order: process.env.ORDER ? process.env.ORDER : 'smacss',
+  plugins: ['prettier-plugin-css-order'],
   printWidth: 100,
-  singleQuote: true,
   semi: true,
+  singleQuote: true,
 };

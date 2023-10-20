@@ -19,7 +19,7 @@ dependencies:
     version: 8.0.1
   outdated-browser-rework:
     specifier: github:tdeNL/outdated-browser-rework
-    version: git/github.com+tdeNL/outdated-browser-rework/475b404f40bc4d7e7091ecad15e0eee899460b10
+    version: github.com/tdeNL/outdated-browser-rework/475b404f40bc4d7e7091ecad15e0eee899460b10
   svelte:
     specifier: ^3.56.0
     version: 3.56.0
@@ -123,7 +123,7 @@ devDependencies:
     version: 6.7.1(eslint@8.35.0)
   eslint-plugin-prettier:
     specifier: ^4.2.1
-    version: 4.2.1(eslint-config-prettier@8.7.0)(eslint@8.35.0)(prettier@2.8.4)
+    version: 4.2.1(eslint-config-prettier@8.7.0)(eslint@8.35.0)(prettier@3.0.3)
   eslint-plugin-react:
     specifier: ^7.32.2
     version: 7.32.2(eslint@8.35.0)
@@ -161,14 +161,14 @@ devDependencies:
     specifier: ^7.0.2
     version: 7.0.2(postcss@8.4.31)(webpack@5.76.0)
   prettier:
-    specifier: ^2.8.4
-    version: 2.8.4
+    specifier: ^3.0.3
+    version: 3.0.3
   prettier-plugin-css-order:
-    specifier: ^1.3.0
-    version: 1.3.0(postcss@8.4.31)(prettier@2.8.4)
+    specifier: ^2.0.1
+    version: 2.0.1(postcss@8.4.31)(prettier@3.0.3)
   prettier-plugin-svelte:
-    specifier: ^2.9.0
-    version: 2.9.0(prettier@2.8.4)(svelte@3.56.0)
+    specifier: ^3.0.3
+    version: 3.0.3(prettier@3.0.3)(svelte@3.56.0)
   sass:
     specifier: ^1.58.3
     version: 1.58.3
@@ -207,7 +207,7 @@ devDependencies:
     version: 6.0.11
   tde-stylelint-config:
     specifier: github:tdeNL/tde-stylelint-config
-    version: git/github.com+tdeNL/tde-stylelint-config/442a2866e3e483ac62dc6a62c6c48f8a6e3d3366(stylelint@13.13.1)
+    version: github.com/tdeNL/tde-stylelint-config/442a2866e3e483ac62dc6a62c6c48f8a6e3d3366(stylelint@13.13.1)
   tde-webpack-svg-plugin:
     specifier: ^3.0.0
     version: 3.0.0(webpack@5.76.0)
@@ -3542,6 +3542,15 @@ packages:
       postcss: 8.4.31
     dev: true
 
+  /css-declaration-sorter@7.1.1(postcss@8.4.31):
+    resolution: {integrity: sha512-dZ3bVTEEc1vxr3Bek9vGwfB5Z6ESPULhcRvO472mfjVnj8jRcTnKO8/JTczlvxM10Myb+wBM++1MtdO76eWcaQ==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss: ^8.0.9 || 5.2.18
+    dependencies:
+      postcss: 8.4.31
+    dev: true
+
   /css-loader@6.7.3(webpack@5.76.0):
     resolution: {integrity: sha512-qhOH1KlBMnZP8FzRO6YCH9UHXQhVMcEGLyNdb7Hv2cpcmJbW0YrddO+tG1ab5nT41KpHIYGsbeHqxB9xPu1pKQ==}
     engines: {node: '>= 12.13.0'}
@@ -4362,7 +4371,7 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-plugin-prettier@4.2.1(eslint-config-prettier@8.7.0)(eslint@8.35.0)(prettier@2.8.4):
+  /eslint-plugin-prettier@4.2.1(eslint-config-prettier@8.7.0)(eslint@8.35.0)(prettier@3.0.3):
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -4375,7 +4384,7 @@ packages:
     dependencies:
       eslint: 8.35.0
       eslint-config-prettier: 8.7.0(eslint@8.35.0)
-      prettier: 2.8.4
+      prettier: 3.0.3
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -7267,34 +7276,39 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier-plugin-css-order@1.3.0(postcss@8.4.31)(prettier@2.8.4):
-    resolution: {integrity: sha512-wOS4qlbUARCoiiuOG0TiB/j751soC3+gUnMMva5HVWKvHJdLNYqh+jXK3MvvixR6xkJVPxHSF7rIIhkHIuHTFg==}
-    engines: {node: '>=14'}
+  /prettier-plugin-css-order@2.0.1(postcss@8.4.31)(prettier@3.0.3):
+    resolution: {integrity: sha512-Y+wZ0wI7/qFUritirJksQn13KqbcNC3OZXSxGh1ui/X39hAeMW9md+Mp7fjk8H4ZQQ8c5CTYZxShoBfAal/79A==}
+    engines: {node: '>=16'}
     peerDependencies:
-      prettier: 2.x
+      prettier: 3.x
     dependencies:
-      css-declaration-sorter: 6.3.1(postcss@8.4.31)
+      css-declaration-sorter: 7.1.1(postcss@8.4.31)
       postcss-less: 6.0.0(postcss@8.4.31)
       postcss-scss: 4.0.6(postcss@8.4.31)
-      prettier: 2.8.4
-      sync-threads: 1.0.1
+      prettier: 3.0.3
     transitivePeerDependencies:
       - postcss
     dev: true
 
-  /prettier-plugin-svelte@2.9.0(prettier@2.8.4)(svelte@3.56.0):
-    resolution: {integrity: sha512-3doBi5NO4IVgaNPtwewvrgPpqAcvNv0NwJNflr76PIGgi9nf1oguQV1Hpdm9TI2ALIQVn/9iIwLpBO5UcD2Jiw==}
+  /prettier-plugin-svelte@3.0.3(prettier@3.0.3)(svelte@3.56.0):
+    resolution: {integrity: sha512-dLhieh4obJEK1hnZ6koxF+tMUrZbV5YGvRpf2+OADyanjya5j0z1Llo8iGwiHmFWZVG/hLEw/AJD5chXd9r3XA==}
     peerDependencies:
-      prettier: ^1.16.4 || ^2.0.0
-      svelte: ^3.2.0
+      prettier: ^3.0.0
+      svelte: ^3.2.0 || ^4.0.0-next.0
     dependencies:
-      prettier: 2.8.4
+      prettier: 3.0.3
       svelte: 3.56.0
     dev: true
 
   /prettier@2.8.4:
     resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
     engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
+
+  /prettier@3.0.3:
+    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
@@ -8689,10 +8703,6 @@ packages:
       ssr-window: 4.0.2
     dev: false
 
-  /sync-threads@1.0.1:
-    resolution: {integrity: sha512-hIdwt/c/e1ONnr2RJmfBxEAj/J6KQQWKdToF3Qw8ZNRsTNNteGkOe63rQy9I7J5UNlr8Yl0wkzIr9wgLY94x0Q==}
-    dev: true
-
   /table@6.8.1:
     resolution: {integrity: sha512-Y4X9zqrCftUhMeH2EptSSERdVKt/nEdijTOacGD/97EKjhQ/Qs8RTlEGABSJNNN8lac9kheH+af7yAkEWlgneA==}
     engines: {node: '>=10.0.0'}
@@ -9462,17 +9472,17 @@ packages:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
     dev: true
 
-  git/github.com+tdeNL/outdated-browser-rework/475b404f40bc4d7e7091ecad15e0eee899460b10:
-    resolution: {commit: 475b404f40bc4d7e7091ecad15e0eee899460b10, repo: git@github.com:tdeNL/outdated-browser-rework.git, type: git}
+  github.com/tdeNL/outdated-browser-rework/475b404f40bc4d7e7091ecad15e0eee899460b10:
+    resolution: {tarball: https://codeload.github.com/tdeNL/outdated-browser-rework/tar.gz/475b404f40bc4d7e7091ecad15e0eee899460b10}
     name: outdated-browser-rework
     version: 2.11.1
     dependencies:
       ua-parser-js: 0.7.34
     dev: false
 
-  git/github.com+tdeNL/tde-stylelint-config/442a2866e3e483ac62dc6a62c6c48f8a6e3d3366(stylelint@13.13.1):
-    resolution: {commit: 442a2866e3e483ac62dc6a62c6c48f8a6e3d3366, repo: git@github.com:tdeNL/tde-stylelint-config.git, type: git}
-    id: git@github.com+tdeNL/tde-stylelint-config/442a2866e3e483ac62dc6a62c6c48f8a6e3d3366
+  github.com/tdeNL/tde-stylelint-config/442a2866e3e483ac62dc6a62c6c48f8a6e3d3366(stylelint@13.13.1):
+    resolution: {tarball: https://codeload.github.com/tdeNL/tde-stylelint-config/tar.gz/442a2866e3e483ac62dc6a62c6c48f8a6e3d3366}
+    id: github.com/tdeNL/tde-stylelint-config/442a2866e3e483ac62dc6a62c6c48f8a6e3d3366
     name: tde-stylelint-config
     version: 1.0.0
     peerDependencies:

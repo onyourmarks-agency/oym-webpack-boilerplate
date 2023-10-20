@@ -14,7 +14,7 @@ export const setCookie = (
   maxAge?: number,
   domain?: string,
   path?: string,
-  sameSite?: SameSiteType
+  sameSite?: SameSiteType,
 ): void => {
   const cookieProperties = {
     [name]: value,

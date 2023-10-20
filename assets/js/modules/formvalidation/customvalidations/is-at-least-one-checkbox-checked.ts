@@ -19,7 +19,7 @@ export default (field: HTMLElement): boolean => {
   }
 
   const errorWrapper = wrapper.querySelector(
-    checkboxes[0].dataset.bouncerTarget as string
+    checkboxes[0].dataset.bouncerTarget as string,
   ) as HTMLElement;
   let checkedCount = 0;
 
