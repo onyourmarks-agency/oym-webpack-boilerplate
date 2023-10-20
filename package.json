@@ -28,7 +28,7 @@
 		"stylelint-config-recommended": "^13.0.0",
 		"stylelint-config-standard": "^34.0.0",
 		"stylelint-selector-bem-pattern": "^3.0.1",
-		"svelte": "^3.56.0",
+		"svelte": "^4.2.2",
 		"swiper": "^10.3.1"
 	},
 	"devDependencies": {
@@ -79,10 +79,10 @@
 		"sass-loader": "^13.3.2",
 		"stylelint": "^15.11.0",
 		"stylelint-config-html": "^1.1.0",
-		"svelte-check": "^3.1.0",
+		"svelte-check": "^3.5.2",
 		"svelte-check-plugin": "^1.0.4",
-		"svelte-loader": "^3.1.7",
-		"svelte-preprocess": "^4.10.7",
+		"svelte-loader": "^3.1.9",
+		"svelte-preprocess": "^5.0.4",
 		"svelte-preprocess-sass": "^2.0.1",
 		"svg-sprite-loader": "^6.0.11",
 		"tde-webpack-svg-plugin": "^3.0.0",

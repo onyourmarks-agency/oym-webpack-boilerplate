@@ -45,12 +45,16 @@
   <div class="popup {type ? `popup--${type}` : ''}" transition:fade>
     <div
       class="popup-background"
+	  role="button"
+	  tabindex="-1"
       on:click|stopPropagation={() => {
         visible = false;
       }}
-      on:keydown={handleKeydown} />
+	  on:keydown={handleKeydown}
+	/>
     <div class="popup-content" transition:fade={{ delay: 200, duration: 100 }}>
       <button
+		aria-label="Sluiten"
         class="popup-close"
         type="button"
         on:click={() => {

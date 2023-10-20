@@ -27,7 +27,7 @@ const webpack = {
   resolve: {
     alias: {
       ...{
-        svelte: path.dirname(require.resolve('svelte/package.json'))
+        svelte: path.resolve('node_modules', 'svelte/src/runtime'),
       },
       ...config.aliases
     },
