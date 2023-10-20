@@ -146,8 +146,8 @@ devDependencies:
     specifier: ^1.5.0
     version: 1.5.0
   postcss-loader:
-    specifier: ^7.0.2
-    version: 7.0.2(postcss@8.4.31)(webpack@5.76.0)
+    specifier: ^7.3.3
+    version: 7.3.3(postcss@8.4.31)(typescript@4.9.5)(webpack@5.76.0)
   prettier:
     specifier: ^3.0.3
     version: 3.0.3
@@ -3080,6 +3080,22 @@ packages:
       yaml: 1.10.2
     dev: true
 
+  /cosmiconfig@8.3.6(typescript@4.9.5):
+    resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      typescript: '>=4.9.5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      import-fresh: 3.3.0
+      js-yaml: 4.1.0
+      parse-json: 5.2.0
+      path-type: 4.0.0
+      typescript: 4.9.5
+    dev: true
+
   /cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
@@ -5451,6 +5467,11 @@ packages:
       supports-color: 8.1.1
     dev: true
 
+  /jiti@1.20.0:
+    resolution: {integrity: sha512-3TV69ZbrvV6U5DfQimop50jE9Dl6J8O1ja1dvBbMba/sZ3YBEQqJ2VZRoQPVnhlzjNtU1vaXRZVrVjU4qtm8yA==}
+    hasBin: true
+    dev: true
+
   /js-base64@2.6.4:
     resolution: {integrity: sha512-pZe//GGmwJndub7ZghVHz7vjb2LgC1m8B07Au3eYqeqv9emhESByMXxaEgkUkEqJe87oBbSniGYoQNIBklc7IQ==}
     dev: true
@@ -6626,18 +6647,20 @@ packages:
       postcss: 8.4.31
     dev: true
 
-  /postcss-loader@7.0.2(postcss@8.4.31)(webpack@5.76.0):
-    resolution: {integrity: sha512-fUJzV/QH7NXUAqV8dWJ9Lg4aTkDCezpTS5HgJ2DvqznexTbSTxgi/dTECvTZ15BwKTtk8G/bqI/QTu2HPd3ZCg==}
+  /postcss-loader@7.3.3(postcss@8.4.31)(typescript@4.9.5)(webpack@5.76.0):
+    resolution: {integrity: sha512-YgO/yhtevGO/vJePCQmTxiaEwER94LABZN0ZMT4A0vsak9TpO+RvKRs7EmJ8peIlB9xfXCsS7M8LjqncsUZ5HA==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       postcss: ^7.0.0 || ^8.0.1 || 5.2.18
       webpack: ^5.0.0
     dependencies:
-      cosmiconfig: 7.1.0
-      klona: 2.0.6
+      cosmiconfig: 8.3.6(typescript@4.9.5)
+      jiti: 1.20.0
       postcss: 8.4.31
-      semver: 7.3.8
+      semver: 7.5.4
       webpack: 5.76.0(webpack-cli@4.10.0)
+    transitivePeerDependencies:
+      - typescript
     dev: true
 
   /postcss-media-query-parser@0.2.3:
