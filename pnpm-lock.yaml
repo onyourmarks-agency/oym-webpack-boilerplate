@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   bazinga-translator:
-    specifier: ^5.0.0
-    version: 5.0.0
+    specifier: ^5.1.0
+    version: 5.1.0
   formbouncerjs:
     specifier: ^1.4.6
     version: 1.4.6
@@ -2585,8 +2585,8 @@ packages:
       pascalcase: 0.1.1
     dev: true
 
-  /bazinga-translator@5.0.0:
-    resolution: {integrity: sha512-kvmqgsNqo/PMuyynQdVmkSaZB59F+ZHYqXw4KNcyl0XqUjHxQeWS7J0GGydXH6vtQTOAIHd6DqfByAlIJ/2iqA==}
+  /bazinga-translator@5.1.0:
+    resolution: {integrity: sha512-bNS/C5FLkU+BJhGp0kFIh+0U336eHwskMeJqa/+vj+4tCxFU3EJa+X+XZxzIqXb2zAwckEYL5dwy2i1qAewtyA==}
     dev: false
 
   /bcrypt-pbkdf@1.0.2:
