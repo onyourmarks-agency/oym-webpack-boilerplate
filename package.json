@@ -63,7 +63,6 @@
 		"eslint-plugin-svelte3": "^4.0.0",
 		"eslint-webpack-plugin": "^4.0.1",
 		"fsevents": "^2.3.3",
-		"glob": "^8.1.0",
 		"html-webpack-plugin": "^5.5.0",
 		"lodash": "^4.17.21",
 		"mini-css-extract-plugin": "^2.7.6",
