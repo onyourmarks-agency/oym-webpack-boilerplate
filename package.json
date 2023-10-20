@@ -86,7 +86,7 @@
 		"svelte-preprocess-sass": "^2.0.1",
 		"svg-sprite-loader": "^6.0.11",
 		"tde-webpack-svg-plugin": "^3.0.0",
-		"terser-webpack-plugin": "^5.3.7",
+		"terser-webpack-plugin": "^5.3.9",
 		"ts-loader": "^9.4.2",
 		"typescript": "^4.9.5",
 		"webpack": "^5.76.0",
