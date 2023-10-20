@@ -1,5 +1,5 @@
-@use '1-settings';
-@use '2-vendor';
-@use '3-base';
-@use '4-components';
-@use '5-layouts';
+@use '1-settings' as *;
+@use '2-vendor' as *;
+@use '3-base' as *;
+@use '4-components' as *;
+@use '5-layouts' as *;

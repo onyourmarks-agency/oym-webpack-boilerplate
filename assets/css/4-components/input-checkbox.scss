@@ -1,3 +1,5 @@
+@use '../1-settings' as *;
+
 $c-size: 24px; /* Height & Width of box */
 $c-border-radius: 4px; /* Border-radius of the box */
 $c-background-color: $color-gray-light; /* Background-color of the box */

@@ -1,3 +1,5 @@
+@use '../1-settings' as *;
+
 body {
   color: $color-base-font;
   font-size: rem(16);

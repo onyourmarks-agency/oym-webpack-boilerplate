@@ -1,3 +1,5 @@
+@use '../../1-settings' as *;
+
 .btn--secondary {
   --btn-background-color: #{$color-secondary};
   --btn-background-color-hover: #{rgba($color-secondary, 0.75)};

@@ -1,3 +1,5 @@
+@use '../1-settings' as *;
+
 $r-size: 24px; /* Height & Width of box */
 $r-background-color: $color-gray-light; /* Background-color of the box */
 $r-border: 1px solid $color-gray-medium; /* Border of the box */

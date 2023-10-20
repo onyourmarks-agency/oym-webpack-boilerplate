@@ -1,3 +1,5 @@
+@use '../../1-settings' as *;
+
 .wrapper-inner {
   display: block;
   max-width: $max-width;

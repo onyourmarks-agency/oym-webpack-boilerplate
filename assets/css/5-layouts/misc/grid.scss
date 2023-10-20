@@ -1,3 +1,5 @@
+@use '../../1-settings' as *;
+
 .grid {
   grid-gap: var(--grid-gap);
   display: grid;
