@@ -43,5 +43,3 @@ export const removeCookie = (name: string, path?: string, domain?: string): void
     domain ? `;domain=${domain}` : ''
   };expires=${new Date(0).toUTCString()}`;
 };
-
-export default getCookie;
