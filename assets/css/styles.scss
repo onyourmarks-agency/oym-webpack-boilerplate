@@ -1,5 +1,5 @@
-@import '1-settings/_settings';
-@import '2-vendor/_vendor';
-@import '3-base/_base';
-@import '4-components/_components';
-@import '5-layouts/_layouts';
+@use '1-settings';
+@use '2-vendor';
+@use '3-base';
+@use '4-components';
+@use '5-layouts';

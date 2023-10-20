@@ -6,11 +6,11 @@
 */
 
 /* Buttons */
-@import 'buttons/btn';
-@import 'buttons/btn--secondary';
-@import 'buttons/btn--small';
+@use 'buttons/btn';
+@use 'buttons/btn--secondary';
+@use 'buttons/btn--small';
 
-@import 'input-checkbox';
-@import 'input-radio';
-@import 'scrollable';
-@import 'accordion';
+@use 'input-checkbox';
+@use 'input-radio';
+@use 'scrollable';
+@use 'accordion';

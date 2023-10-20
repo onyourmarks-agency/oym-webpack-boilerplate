@@ -3,12 +3,12 @@
 */
 
 /* Header */
-@import 'header/header';
+@use 'header/header';
 
 /* Misc */
-@import 'misc/wrapper-inner';
-@import 'misc/grid';
-@import 'misc/form';
+@use 'misc/wrapper-inner';
+@use 'misc/grid';
+@use 'misc/form';
 
 /* Footer */
-@import 'footer/footer';
+@use 'footer/footer';

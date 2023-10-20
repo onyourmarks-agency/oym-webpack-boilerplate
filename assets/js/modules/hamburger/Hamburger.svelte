@@ -14,7 +14,7 @@
 </button>
 
 <style lang="scss">
-  @import '../../../css/1-settings/__settings.scss';
+  @use '../../../css/1-settings' as *;
 
   $h-height: 40px; /* height of the wrapper */
   $h-width: 40px; /* width of the wrapper */

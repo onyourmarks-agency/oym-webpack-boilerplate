@@ -64,7 +64,7 @@
 {/if}
 
 <style lang="scss">
-  @import '../../../css/1-settings/__settings.scss';
+  @use '../../../css/1-settings' as *;
 
   .popup,
   .popup-background {

@@ -3,6 +3,6 @@
 * They have no direct output.
 */
 
-@import 'sass-variables';
-@import 'functions';
-@import 'mixins';
+@forward 'sass-variables';
+@forward 'functions';
+@forward 'mixins';
