@@ -59,8 +59,8 @@ devDependencies:
     specifier: ^3.0.0
     version: 3.0.0
   '@types/jump.js':
-    specifier: ^1.0.4
-    version: 1.0.4
+    specifier: ^1.0.5
+    version: 1.0.5
   '@typescript-eslint/eslint-plugin':
     specifier: ^5.54.1
     version: 5.54.1(@typescript-eslint/parser@5.54.1)(eslint@8.35.0)(typescript@4.9.5)
@@ -1791,8 +1791,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
-  /@types/jump.js@1.0.4:
-    resolution: {integrity: sha512-qhDD1WvrwsKhH22gWF+duJrNLJ2xqAm3RNLl48hSDTzTVQPsZETkyD4KGmTc53GiYoTqcGjdZvkZD5cxZR5Yxw==}
+  /@types/jump.js@1.0.5:
+    resolution: {integrity: sha512-N7tg1A8C1UjYrjic9M/JtxdOJ2kZG98DcD+dUamohgAjPbuGH1IyxVck6fJXpX+LzRQ+MBbECoHEl6eInzu7JA==}
     dev: true
 
   /@types/mdast@3.0.10:
