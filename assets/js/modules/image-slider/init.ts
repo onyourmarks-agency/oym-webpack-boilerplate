@@ -1,9 +1,13 @@
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const init = (): void => {
-  Swiper.use([Navigation, Pagination]);
-
   new Swiper('.js-image-slider', {
+    modules: [Navigation, Pagination],
     loop: false,
     pagination: {
       el: '.image-slider__pagination',
