@@ -4,7 +4,7 @@
 	"main": "app.ts",
 	"license": "MIT",
 	"config": {
-		"node": "18"
+		"node": "20"
 	},
 	"scripts": {
 		"watch": "node webpack/pre-script.js && webpack --watch --config webpack/webpack.config.js --stats-children",
