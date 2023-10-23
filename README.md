@@ -20,7 +20,7 @@ To install, follow these instructions.
     cd /path/to/project
         
 4: Use the correct nvm version:
-```nvm use 18```
+```nvm use 20```
 
 5: Run Pnpm to install all of the packages:
 
@@ -69,7 +69,7 @@ To install the plugin with multiple themes, follow these instructions.
 
         pnpm install
         
-9: Run one of the commands:\
+9: Run one of the commands:
 _Theme 1_
 * `pnpm theme1-watch` to watch any changes inside the `assets/theme1` folder
 * `pnpm theme1-build` to compile the `build/theme1` folder for development
@@ -131,8 +131,8 @@ When you import a new module in javascript, dont forget to also include the styl
     <div class="image-slider__pagination"></div>
     
     <div class="image-slider__navigation">
-        <div class="image-slider__button image-slider__button--prev"><</div>
-        <div class="image-slider__button image-slider__button--next">></div>
+        <button class="image-slider__button image-slider__button--prev"><</button>
+        <button class="image-slider__button image-slider__button--next">></button>
     </div>
 </div>
 ```

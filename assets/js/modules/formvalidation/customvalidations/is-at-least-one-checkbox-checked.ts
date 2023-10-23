@@ -1,11 +1,4 @@
-import { formClassNames } from '../config';
-
-/**
- * Validate field. At leaste one checkbox is checked
- * @param field
- * @returns {boolean}
- */
-export default (field: HTMLElement): boolean => {
+export default (field: HTMLElement, errorClass: string): boolean => {
   const wrapper = field.closest('[data-bouncer-at-least-one-checkbox]');
 
   if (!wrapper) {
@@ -37,7 +30,7 @@ export default (field: HTMLElement): boolean => {
 
   if (checkedCount > 0) {
     for (let i = 0; i < checkboxes.length; i += 1) {
-      checkboxes[i].classList.remove(formClassNames.errorClass);
+      checkboxes[i].classList.remove(errorClass);
     }
   }
 

@@ -2,23 +2,16 @@
 // import date from './customvalidations/date';
 import validationMessages from './validation-messages';
 
-/**
- * Classnames used in Bouncer
- */
 const formClassNames = {
   fieldClass: 'form__error',
   errorClass: 'form__input--error',
 };
 
-/**
- * Our default config
- */
 const bouncerDefaultConfig = {
   customValidations: {
-    // date: (field) => {
-    //   return date(field);
-    // },
-    // isAtLeastOneCheckboxChecked: (field) => isAtLeastOneCheckboxChecked(field),
+    // date: (field: any) => date(field),
+    // isAtLeastOneCheckboxChecked: (field: any) =>
+    //   isAtLeastOneCheckboxChecked(field, formClassNames.errorClass),
   },
   emitEvents: true,
   fieldClass: formClassNames.fieldClass,
