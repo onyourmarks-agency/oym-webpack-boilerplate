@@ -1,7 +1,7 @@
 import jump from 'jump.js';
 
-const init = (): void => {
-  const scrollToItem = document.querySelectorAll(
+export const scrollTo = (): void => {
+  const scrollToItem: HTMLElement[] = document.querySelectorAll(
     '[data-scroll-to]',
   ) as unknown as Array<HTMLElement>;
 
@@ -14,5 +14,3 @@ const init = (): void => {
     });
   });
 };
-
-export default init;

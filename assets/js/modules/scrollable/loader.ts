@@ -1,9 +1,9 @@
-const asyncLoader = async () => {
-  const scrollableModule = await import('./init' /* webpackChunkName: "scrollable" */);
-  scrollableModule.default();
+const asyncLoader = async (): Promise<void> => {
+  const { scrollable } = await import('./index' /* webpackChunkName: "scrollable" */);
+  scrollable();
 };
 
-export default () => {
+export default (): void => {
   if (!document.querySelector('.js-scrollable')) {
     return;
   }

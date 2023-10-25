@@ -8,17 +8,10 @@
   const sourceHTML = document.querySelector(source);
   let visible = false;
 
-  /**
-   * Stop scrolling on body when open
-   */
   const checkBodyScroll = (): void => {
     document.body.style.overflow = visible ? 'hidden' : 'inherit';
   };
 
-  /**
-   * Handle key down and close overlay when press Escape
-   * @param e
-   */
   const handleKeydown = (e: KeyboardEvent): void => {
     if (!visible) {
       return;

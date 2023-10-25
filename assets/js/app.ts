@@ -1,13 +1,12 @@
-import formvalidation from '@modules/formvalidation/init';
-import activeNavigation from '@modules/active-navigation';
-import hamburger from '@modules/hamburger/init';
-import scrollTo from '@modules/scroll-to';
-import windowSize from '@modules/window-size';
-import popupLoader from '@modules/popup/loader';
+import { activeNavigation } from '@modules/active-navigation';
+import { formValidation } from '@modules/formvalidation';
+import { hamburger } from '@modules/hamburger';
+import { scrollTo } from '@modules/scroll-to';
+import { windowSize } from '@modules/window-size';
 import imageSliderLoader from '@modules/image-slider/loader';
+import popupLoader from '@modules/popup/loader';
 import scrollableLoader from '@modules/scrollable/loader';
 
-// Set config elements
 globalThis.app.config = {
   breakpoints: {
     sm: 30,
@@ -18,13 +17,13 @@ globalThis.app.config = {
   },
 };
 
-formvalidation();
 activeNavigation();
+formValidation().catch();
 hamburger();
 scrollTo();
 windowSize();
 
 // Chunks
-popupLoader();
 imageSliderLoader();
+popupLoader();
 scrollableLoader();

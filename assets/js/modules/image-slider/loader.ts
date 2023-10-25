@@ -1,9 +1,9 @@
-const asyncLoader = async () => {
-  const imageSliderModule = await import('./init' /* webpackChunkName: "image-slider" */);
-  imageSliderModule.default();
+const asyncLoader = async (): Promise<void> => {
+  const { imageSlider } = await import('./index' /* webpackChunkName: "image-slider" */);
+  imageSlider();
 };
 
-export default () => {
+export default (): void => {
   if (!document.querySelector('.js-image-slider')) {
     return;
   }

@@ -4,8 +4,11 @@ export enum ENVIRONMENT {
   PRODUCTION,
 }
 
-export const getEnvironment = () => {
-  if (window.location.host.indexOf('.tdev.team') > -1) {
+export const getEnvironment = (): ENVIRONMENT => {
+  if (
+    window.location.host.indexOf('.tdev.team') > -1 ||
+    window.location.host.indexOf('.local') > -1
+  ) {
     return ENVIRONMENT.DEVELOPMENT;
   }
 

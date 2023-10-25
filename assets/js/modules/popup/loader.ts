@@ -1,9 +1,9 @@
-const asyncLoader = async () => {
-  const popupModule = await import('./init' /* webpackChunkName: "popup" */);
-  popupModule.default();
+const asyncLoader = async (): Promise<void> => {
+  const { popup } = await import('./index' /* webpackChunkName: "popup" */);
+  popup();
 };
 
-export default () => {
+export default (): void => {
   if (!document.querySelectorAll('[data-popup-content]')) {
     return;
   }

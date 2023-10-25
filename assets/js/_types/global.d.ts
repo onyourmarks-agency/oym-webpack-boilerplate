@@ -4,10 +4,6 @@ export interface BreakPointConfigInterface {
   [key: BreakPointType]: number;
 }
 
-export interface HelperConfigInterface {
-  [key: string]: any;
-}
-
 export type AppConfigType = {
   breakpoints?: BreakPointConfigInterface;
 };

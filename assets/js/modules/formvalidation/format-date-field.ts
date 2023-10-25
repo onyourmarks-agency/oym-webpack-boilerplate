@@ -1,26 +1,30 @@
-let valueDay = '';
-let valueMonth = '';
-let valueYear = '';
-let valueResult = '';
+let valueDay: string = '';
+let valueMonth: string = '';
+let valueYear: string = '';
+let valueResult: string = '';
 
-const updateDate = (element: HTMLElement) => {
-  const fieldResult = element.querySelector('.js-form-date-result') as HTMLInputElement;
+const updateDate = (element: HTMLElement): void => {
+  const fieldResult: HTMLInputElement | null = element.querySelector('.js-form-date-result');
+
+  if (!fieldResult) {
+    return;
+  }
 
   valueResult = `${valueYear}-${valueMonth}-${valueDay}`;
   fieldResult.value = valueResult;
 };
 
-const init = (): void => {
-  const dateField = document.querySelectorAll('.js-form-date') as NodeListOf<HTMLElement>;
+export const formatDateField = (): void => {
+  const dateField: NodeListOf<HTMLElement> | null = document.querySelectorAll('.js-form-date');
 
   if (!dateField) {
     return;
   }
 
-  dateField.forEach((element: HTMLElement) => {
-    const fieldDay = element.querySelector('.js-form-date-day') as HTMLInputElement;
-    const fieldMonth = element.querySelector('.js-form-date-month') as HTMLInputElement;
-    const fieldYear = element.querySelector('.js-form-date-year') as HTMLInputElement;
+  dateField.forEach((element: HTMLElement): void => {
+    const fieldDay: HTMLInputElement | null = element.querySelector('.js-form-date-day');
+    const fieldMonth: HTMLInputElement | null = element.querySelector('.js-form-date-month');
+    const fieldYear: HTMLInputElement | null = element.querySelector('.js-form-date-year');
 
     if (!fieldDay || !fieldMonth || !fieldYear) {
       throw new Error('Make sure you have Day, Month and Year selects');
@@ -42,5 +46,3 @@ const init = (): void => {
     });
   });
 };
-
-export default init;

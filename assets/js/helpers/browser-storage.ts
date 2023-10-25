@@ -17,24 +17,24 @@ const constructStorage = (method: StorageMethodType): Storage => {
     },
     length: 0,
     data: {},
-    setItem(id: string, val: string) {
+    setItem(id: string, val: string): void {
       this.data[id] = val;
       return this.data[id];
     },
-    getItem(id: string) {
+    getItem(id: string): string | null {
       return Object.prototype.hasOwnProperty.call(this.data, id) ? this.data[id] : undefined;
     },
-    removeItem(id: string) {
+    removeItem(id: string): boolean {
       return delete this.data[id];
     },
-    clear() {
+    clear(): void {
       this.data = {};
       return this.data;
     },
   };
 };
 
-const getBrowserStorage = (storageMethod: StorageMethodType): Storage => {
+export const getBrowserStorage = (storageMethod: StorageMethodType): Storage => {
   if (!globalThis.app.storage[storageMethod]) {
     globalThis.app.storage[storageMethod] = constructStorage(storageMethod);
   }
@@ -44,5 +44,3 @@ const getBrowserStorage = (storageMethod: StorageMethodType): Storage => {
 
 export const getLocalStorage = (): Storage => getBrowserStorage('local');
 export const getSessionStorage = (): Storage => getBrowserStorage('session');
-
-export default getBrowserStorage;

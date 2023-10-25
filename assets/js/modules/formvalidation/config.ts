@@ -1,22 +1,20 @@
-// import isAtLeastOneCheckboxChecked from './customvalidations/is-at-least-one-checkbox-checked';
-// import date from './customvalidations/date';
+// import {isAtLeastOneCheckboxCheckedValidation} from './customvalidations/is-at-least-one-checkbox-checked';
+// import {dateValidation} from './customvalidations/date';
 import validationMessages from './validation-messages';
 
-const formClassNames = {
+export const formClassNames = {
   fieldClass: 'form__error',
   errorClass: 'form__input--error',
 };
 
-const bouncerDefaultConfig = {
+export const bouncerDefaultConfig = {
   customValidations: {
-    // date: (field: any) => date(field),
+    // date: (field: any) => dateValidation(field),
     // isAtLeastOneCheckboxChecked: (field: any) =>
-    //   isAtLeastOneCheckboxChecked(field, formClassNames.errorClass),
+    //   isAtLeastOneCheckboxCheckedValidation(field, formClassNames.errorClass),
   },
   emitEvents: true,
   fieldClass: formClassNames.fieldClass,
   errorClass: formClassNames.errorClass,
   messages: validationMessages,
 };
-
-export { formClassNames, bouncerDefaultConfig };

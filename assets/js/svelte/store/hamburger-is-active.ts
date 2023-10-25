@@ -1,4 +1,3 @@
-import type { Writable } from 'svelte/store';
-import { writable } from 'svelte/store';
+import { writable, type Writable } from 'svelte/store';
 
-export const hamburgerIsActive = writable(false) as Writable<boolean>;
+export const hamburgerIsActive: Writable<boolean> = writable(false);

@@ -1,9 +1,9 @@
 import type { StorageMethodType } from '@helpers/browser-storage';
 
-const isStorageSupported = (storage: StorageMethodType): boolean => {
+export const isStorageSupported = (storage: StorageMethodType): boolean => {
   try {
-    const storageObject = window[`${storage}Storage`];
-    const testKey = 'test';
+    const storageObject: Storage = window[`${storage}Storage`];
+    const testKey: string = 'test';
 
     storageObject.setItem(testKey, '1');
     storageObject.removeItem(testKey);
@@ -17,5 +17,3 @@ const isStorageSupported = (storage: StorageMethodType): boolean => {
 export const isSessionStorageSupported = () => isStorageSupported('session');
 
 export const isLocalStorageSupported = () => isStorageSupported('local');
-
-export default isStorageSupported;

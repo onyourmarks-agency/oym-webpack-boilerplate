@@ -1,9 +1,11 @@
 export type SameSiteType = 'Lax' | 'Strict' | 'None' | null;
 
 export const getCookie = (name: string): string | null => {
-  const escapedCookieName = name.replace(/([.*+?^$(){}|[\]/\\])/g, '\\$1');
+  const escapedCookieName: string = name.replace(/([.*+?^$(){}|[\]/\\])/g, '\\$1');
 
-  const matchedCookie = document.cookie.match(RegExp(`(?:^|;\\s*)${escapedCookieName}=([^;]*)`));
+  const matchedCookie: RegExpMatchArray | null = document.cookie.match(
+    RegExp(`(?:^|;\\s*)${escapedCookieName}=([^;]*)`),
+  );
 
   return matchedCookie ? matchedCookie[1] : null;
 };
@@ -26,15 +28,15 @@ export const setCookie = (
   };
 
   document.cookie = Object.keys(cookieProperties)
-    .map((key) => {
-      const cookiePropertValue = cookieProperties[key];
+    .map((key: string): string => {
+      const cookiePropertValue: string | number | null = cookieProperties[key];
       if (cookiePropertValue === null) {
         return '';
       }
 
       return `${key}${cookiePropertValue ? `=${cookiePropertValue}` : ''}`;
     })
-    .filter((filterValue) => filterValue !== '')
+    .filter((filterValue: string): boolean => filterValue !== '')
     .join('; ');
 };
 

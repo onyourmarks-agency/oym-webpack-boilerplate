@@ -1,7 +1,7 @@
-const loader = async () => {
-  const fn = await import('formbouncerjs' /* webpackChunkName: "bouncer-validation" */);
+const loader = async (): Promise<void> => {
+  const formbouncerjs = await import('formbouncerjs' /* webpackChunkName: "bouncer-validation" */);
 
-  window.Bouncer = fn.default;
+  window.Bouncer = formbouncerjs.default;
 
   if (typeof window.Bouncer !== 'function') {
     throw Error("Can't load Bouncer...");

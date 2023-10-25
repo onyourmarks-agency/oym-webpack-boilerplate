@@ -1,4 +1,4 @@
-const isTouchDevice = (): boolean => {
+export const isTouchDevice = (): boolean => {
   const msGesture =
     window.navigator && (window as any).navigator.msMaxTouchPoints && (window as any).MSGesture;
 
@@ -9,5 +9,3 @@ const isTouchDevice = (): boolean => {
 
   return !!touch;
 };
-
-export default isTouchDevice;

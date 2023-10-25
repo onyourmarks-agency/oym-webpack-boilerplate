@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const init = (): void => {
+export const imageSlider = (): void => {
   new Swiper('.js-image-slider', {
     modules: [Navigation, Pagination],
     loop: false,
@@ -19,5 +19,3 @@ const init = (): void => {
     },
   });
 };
-
-export default init;

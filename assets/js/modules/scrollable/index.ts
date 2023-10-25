@@ -1,6 +1,5 @@
-// Width of item + the spacing between the items
-const TILE_WIDTH = 374 + 24;
-const UNCENTERED_CLASS = 'uncentered';
+const TILE_WIDTH: number = 374 + 24;
+const UNCENTERED_CLASS: string = 'uncentered';
 
 export enum ScrollableDirection {
   LEFT,
@@ -15,18 +14,15 @@ type DomElementsType = {
   scrollableInner: HTMLElement;
 };
 
-/*
- * Add a class if the cards are visible
- */
-const detectCenteredCards = (dom: DomElementsType) => {
+const detectCenteredCards = (dom: DomElementsType): void => {
   const { children } = dom.scrollableInner;
   const { scrollable } = dom;
 
-  for (let i = 0; i < children.length; i += 1) {
-    const child = children[i];
+  for (let i: number = 0; i < children.length; i += 1) {
+    const child: Element = children[i];
 
-    const aRect = child.getBoundingClientRect();
-    const bRect = scrollable.getBoundingClientRect();
+    const aRect: DOMRect = child.getBoundingClientRect();
+    const bRect: DOMRect = scrollable.getBoundingClientRect();
 
     if (
       aRect.x < bRect.x + bRect.width &&
@@ -41,10 +37,7 @@ const detectCenteredCards = (dom: DomElementsType) => {
   }
 };
 
-/*
- * Check the current scrollposition and
- */
-const handleControls = (dom: DomElementsType) => {
+const handleControls = (dom: DomElementsType): void => {
   dom.left.disabled = false;
   dom.left.dataset.visible = 'true';
   dom.right.disabled = false;
@@ -64,18 +57,13 @@ const handleControls = (dom: DomElementsType) => {
   }
 };
 
-/*
- * When scroll inside the wrapper, check if position is start or end
- */
 const onScroll = (dom: DomElementsType): void => {
   let scrollForControls: boolean;
   let scrollForEvents: boolean;
 
-  // Init on the first time
   handleControls(dom);
 
-  // Check every x seconds for content in here
-  const scrollInterval = setInterval(() => {
+  const scrollInterval: number = setInterval((): void => {
     if (!scrollForControls) {
       return;
     }
@@ -84,12 +72,12 @@ const onScroll = (dom: DomElementsType): void => {
     scrollForControls = false;
   }, 50);
 
-  dom.wrapper.addEventListener('scroll', () => {
+  dom.wrapper.addEventListener('scroll', (): void => {
     if (scrollForEvents) {
       clearTimeout(scrollInterval);
     }
 
-    setTimeout(() => {
+    setTimeout((): void => {
       detectCenteredCards(dom);
     }, 500);
 
@@ -97,15 +85,9 @@ const onScroll = (dom: DomElementsType): void => {
   });
 };
 
-/*
- * Give the new scroll position, based on viewport size and items that fits
- */
 const giveNewScrollPosition = (dom: DomElementsType, direction: ScrollableDirection): number =>
   dom.wrapper.scrollLeft + (direction === ScrollableDirection.LEFT ? TILE_WIDTH * -1 : TILE_WIDTH);
 
-/*
- * Scroll to a direction
- */
 const scroll = (dom: DomElementsType, direction: ScrollableDirection): void => {
   dom.wrapper.scroll({
     top: 0,
@@ -116,13 +98,10 @@ const scroll = (dom: DomElementsType, direction: ScrollableDirection): void => {
 
 const disableScrollSnap = () => /chrome/i.test(navigator.userAgent);
 
-/**
- * Initialize scroll positions
- */
-const init = (): void => {
-  const scrollables = document.querySelectorAll('.js-scrollable');
+export const scrollable = (): void => {
+  const scrollables: NodeListOf<Element> = document.querySelectorAll('.js-scrollable');
 
-  scrollables.forEach((element: Element) => {
+  scrollables.forEach((element: Element): void => {
     const dom: DomElementsType = {
       left: element.querySelector('.js-scrollable-left')!,
       right: element.querySelector('.js-scrollable-right')!,
@@ -137,17 +116,14 @@ const init = (): void => {
 
     detectCenteredCards(dom);
 
-    dom.left.addEventListener('click', () => {
+    dom.left.addEventListener('click', (): void => {
       scroll(dom, ScrollableDirection.LEFT);
     });
 
-    dom.right.addEventListener('click', () => {
+    dom.right.addEventListener('click', (): void => {
       scroll(dom, ScrollableDirection.RIGHT);
     });
 
-    // Manage onscroll
     onScroll(dom);
   });
 };
-
-export default init;
