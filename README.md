@@ -5,7 +5,7 @@ Our own Webpack Boilerplate for new projects.
 ## Requirements
 
 * [Pnpm](https://pnpm.js.org)
-* Node v18.12.0+
+* Node v20+
 
 ## Installation
 

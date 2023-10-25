@@ -4,6 +4,7 @@ const ALIASES = {
   '@tests': 'assets/js/tests',
   '@modules': 'assets/js/modules',
   '@svelte': 'assets/js/svelte',
+  '@translations': 'assets/js/translations',
   '@types': 'assets/js/_types',
 };
 

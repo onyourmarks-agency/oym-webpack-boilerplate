@@ -1,5 +1,5 @@
-// import {isAtLeastOneCheckboxCheckedValidation} from './customvalidations/is-at-least-one-checkbox-checked';
-// import {dateValidation} from './customvalidations/date';
+// import {isAtLeastOneCheckboxCheckedValidation} from '../customvalidations/is-at-least-one-checkbox-checked';
+// import {dateValidation} from '../customvalidations/date';
 import validationMessages from './validation-messages';
 
 export const formClassNames = {

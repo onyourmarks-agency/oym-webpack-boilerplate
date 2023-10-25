@@ -1,6 +1,6 @@
 import loader from './loader';
-import { bouncerDefaultConfig } from './config';
-// import {formatDateField} from './format-date-field';
+import { bouncerDefaultConfig } from './config/config';
+// import {formatDateField} from './helpers/format-date-field';
 
 const formClassSelector: string = '.js-form-validate';
 
