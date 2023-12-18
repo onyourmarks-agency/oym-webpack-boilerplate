@@ -80,7 +80,7 @@ module.exports = function (webpack, config) {
         },
       ],
     }, {
-      test: /\.mjs$/,
+      test: /\.m?js$/,
       resolve: {
         fullySpecified: false // https://github.com/graphql/graphql-js/issues/2721#issuecomment-723008284
       },
