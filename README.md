@@ -1,4 +1,4 @@
-# TDE - Webpack Boilerplate
+# On Your Marks - Webpack Boilerplate
 
 Our own Webpack Boilerplate for new projects.
 
