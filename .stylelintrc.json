@@ -7,11 +7,9 @@
 	"rules": {
 		"at-rule-empty-line-before": null,
 		"at-rule-no-unknown": null,
-		"declaration-colon-newline-after": null,
 		"declaration-empty-line-before": "never",
 		"declaration-no-important": null,
 		"function-url-quotes": "never",
-		"indentation": null,
 		"media-query-no-invalid": null,
 		"no-descending-specificity": [
 			true,
