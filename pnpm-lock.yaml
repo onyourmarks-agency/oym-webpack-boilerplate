@@ -19,13 +19,16 @@ dependencies:
     version: 8.0.1
   outdated-browser-rework:
     specifier: github:tdeNL/outdated-browser-rework
-    version: git@github.com+tdeNL/outdated-browser-rework/475b404f40bc4d7e7091ecad15e0eee899460b10
+    version: git/github.com+tdeNL/outdated-browser-rework/475b404f40bc4d7e7091ecad15e0eee899460b10
   stylelint-config-recommended:
     specifier: ^14.0.0
     version: 14.0.0(stylelint@16.2.1)
   stylelint-config-standard:
     specifier: ^36.0.0
     version: 36.0.0(stylelint@16.2.1)
+  stylelint-scss:
+    specifier: ^6.1.0
+    version: 6.1.0(stylelint@16.2.1)
   stylelint-selector-bem-pattern:
     specifier: ^4.0.0
     version: 4.0.0(@typescript-eslint/eslint-plugin@7.1.0)(eslint@8.57.0)(stylelint@16.2.1)(typescript@5.3.3)
@@ -184,6 +187,9 @@ devDependencies:
   stylelint-config-html:
     specifier: ^1.1.0
     version: 1.1.0(postcss-html@1.6.0)(stylelint@16.2.1)
+  stylelint-config-standard-scss:
+    specifier: ^13.0.0
+    version: 13.0.0(postcss@8.4.35)(stylelint@16.2.1)
   svelte-check:
     specifier: ^3.6.5
     version: 3.6.5(@babel/core@7.24.0)(postcss@8.4.35)(sass@1.71.1)(svelte@4.2.12)
@@ -6230,6 +6236,9 @@ packages:
       - typescript
     dev: true
 
+  /postcss-media-query-parser@0.2.3:
+    resolution: {integrity: sha512-3sOlxmbKcSHMjlUXQZKQ06jOswE7oVkXPxmZdoB1r5l0q6gTFTQSHxNxOrCccElbW7dxNytifNEo8qidX2Vsig==}
+
   /postcss-merge-longhand@6.0.3(postcss@8.4.35):
     resolution: {integrity: sha512-kF/y3DU8CRt+SX3tP/aG+2gkZI2Z7OXDsPU7FgxIJmuyhQQ1EHceIYcsp/alvzCm2P4c37Sfdu8nNrHc+YeyLg==}
     engines: {node: ^14 || ^16 || >=18.0}
@@ -7428,6 +7437,23 @@ packages:
       stylelint: 16.2.1(typescript@5.3.3)
     dev: true
 
+  /stylelint-config-recommended-scss@14.0.0(postcss@8.4.35)(stylelint@16.2.1):
+    resolution: {integrity: sha512-HDvpoOAQ1RpF+sPbDOT2Q2/YrBDEJDnUymmVmZ7mMCeNiFSdhRdyGEimBkz06wsN+HaFwUh249gDR+I9JR7Onw==}
+    engines: {node: '>=18.12.0'}
+    peerDependencies:
+      postcss: ^8.3.3
+      stylelint: ^16.0.2
+    peerDependenciesMeta:
+      postcss:
+        optional: true
+    dependencies:
+      postcss: 8.4.35
+      postcss-scss: 4.0.9(postcss@8.4.35)
+      stylelint: 16.2.1(typescript@5.3.3)
+      stylelint-config-recommended: 14.0.0(stylelint@16.2.1)
+      stylelint-scss: 6.1.0(stylelint@16.2.1)
+    dev: true
+
   /stylelint-config-recommended@14.0.0(stylelint@16.2.1):
     resolution: {integrity: sha512-jSkx290CglS8StmrLp2TxAppIajzIBZKYm3IxT89Kg6fGlxbPiTiyH9PS5YUuVAFwaJLl1ikiXX0QWjI0jmgZQ==}
     engines: {node: '>=18.12.0'}
@@ -7435,7 +7461,22 @@ packages:
       stylelint: ^16.0.0
     dependencies:
       stylelint: 16.2.1(typescript@5.3.3)
-    dev: false
+
+  /stylelint-config-standard-scss@13.0.0(postcss@8.4.35)(stylelint@16.2.1):
+    resolution: {integrity: sha512-WaLvkP689qSYUpJQPCo30TFJSSc3VzvvoWnrgp+7PpVby5o8fRUY1cZcP0sePZfjrFl9T8caGhcKg0GO34VDiQ==}
+    engines: {node: '>=18.12.0'}
+    peerDependencies:
+      postcss: ^8.3.3
+      stylelint: ^16.1.0
+    peerDependenciesMeta:
+      postcss:
+        optional: true
+    dependencies:
+      postcss: 8.4.35
+      stylelint: 16.2.1(typescript@5.3.3)
+      stylelint-config-recommended-scss: 14.0.0(postcss@8.4.35)(stylelint@16.2.1)
+      stylelint-config-standard: 36.0.0(stylelint@16.2.1)
+    dev: true
 
   /stylelint-config-standard@36.0.0(stylelint@16.2.1):
     resolution: {integrity: sha512-3Kjyq4d62bYFp/Aq8PMKDwlgUyPU4nacXsjDLWJdNPRUgpuxALu1KnlAHIj36cdtxViVhXexZij65yM0uNIHug==}
@@ -7445,7 +7486,19 @@ packages:
     dependencies:
       stylelint: 16.2.1(typescript@5.3.3)
       stylelint-config-recommended: 14.0.0(stylelint@16.2.1)
-    dev: false
+
+  /stylelint-scss@6.1.0(stylelint@16.2.1):
+    resolution: {integrity: sha512-kCfK8TQzthGwb4vaZniZgxRsVbCM4ZckmT1b/H5m4FU3I8Dz0id9llKsy1NMp3XXqC8+OPD4rVKtUbSxXlJb5g==}
+    engines: {node: '>=18.12.0'}
+    peerDependencies:
+      stylelint: ^16.0.2
+    dependencies:
+      known-css-properties: 0.29.0
+      postcss-media-query-parser: 0.2.3
+      postcss-resolve-nested-selector: 0.1.1
+      postcss-selector-parser: 6.0.15
+      postcss-value-parser: 4.2.0
+      stylelint: 16.2.1(typescript@5.3.3)
 
   /stylelint-selector-bem-pattern@4.0.0(@typescript-eslint/eslint-plugin@7.1.0)(eslint@8.57.0)(stylelint@16.2.1)(typescript@5.3.3):
     resolution: {integrity: sha512-nPo3Vi/xl5s9yEZ2GEFxsdzeq3GJI0f70Cqc6kwn5zbCDkmb2p0S48Mr1O8F/DrXV6kIbQyPbft3Cmmtk42QMQ==}
@@ -8549,7 +8602,7 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  git@github.com+tdeNL/outdated-browser-rework/475b404f40bc4d7e7091ecad15e0eee899460b10:
+  git/github.com+tdeNL/outdated-browser-rework/475b404f40bc4d7e7091ecad15e0eee899460b10:
     resolution: {commit: 475b404f40bc4d7e7091ecad15e0eee899460b10, repo: git@github.com:tdeNL/outdated-browser-rework.git, type: git}
     name: outdated-browser-rework
     version: 2.11.1

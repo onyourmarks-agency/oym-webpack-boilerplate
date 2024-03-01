@@ -27,6 +27,7 @@
 		"outdated-browser-rework": "github:tdeNL/outdated-browser-rework",
 		"stylelint-config-recommended": "^14.0.0",
 		"stylelint-config-standard": "^36.0.0",
+		"stylelint-scss": "^6.1.0",
 		"stylelint-selector-bem-pattern": "^4.0.0",
 		"svelte": "^4.2.12",
 		"swiper": "^11.0.7"
@@ -81,6 +82,7 @@
 		"sass-loader": "^14.1.1",
 		"stylelint": "^16.2.1",
 		"stylelint-config-html": "^1.1.0",
+		"stylelint-config-standard-scss": "^13.0.0",
 		"svelte-check": "^3.6.5",
 		"svelte-check-plugin": "^1.0.4",
 		"svelte-loader": "^3.1.9",

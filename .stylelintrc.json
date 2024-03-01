@@ -1,15 +1,31 @@
 {
 	"extends": [
 		"stylelint-config-standard",
+		"stylelint-config-standard-scss",
 		"stylelint-config-recommended",
 		"stylelint-config-html/svelte"
 	],
+	"plugins": [
+		"stylelint-scss"
+	],
 	"rules": {
+		"alpha-value-notation": "number",
 		"at-rule-empty-line-before": null,
 		"at-rule-no-unknown": null,
+		"declaration-block-no-redundant-longhand-properties": [
+			true,
+			{
+				"ignoreShorthands": [
+					"flex-flow",
+					"grid-gap",
+					"grid-template"
+				]
+			}
+		],
 		"declaration-empty-line-before": "never",
 		"declaration-no-important": null,
 		"function-url-quotes": "never",
+		"media-feature-range-notation": "prefix",
 		"media-query-no-invalid": null,
 		"no-descending-specificity": [
 			true,
@@ -30,6 +46,7 @@
 			}
 		],
 		"selector-class-pattern": null,
+		"shorthand-property-no-redundant-values": null,
 		"selector-pseudo-class-no-unknown": [
 			true,
 			{
