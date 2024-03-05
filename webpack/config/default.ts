@@ -1,12 +1,14 @@
-const path = require('path');
-const aliases = require('./../../.aliases');
-const aliasHelper = require('./../helpers/aliases');
+import path from 'path';
 
-const BASE_PATH = path.resolve(__dirname, '../..');
+import aliasHelper from './../helpers/aliases';
+import aliases from './../../.aliases';
+import {WebpackApplicationConfiguration} from '../_declaration/config-types';
 
-const PUBLIC_FOLDER = 'public';
+const BASE_PATH: string = path.resolve(__dirname, '../..');
 
-const DEFAULT_CONFIG = {
+const PUBLIC_FOLDER: string = 'public';
+
+const DEFAULT_CONFIG: WebpackApplicationConfiguration = {
   /**
    * Debug mode (true|false). Should be disabled on production builds
    */
@@ -97,4 +99,4 @@ const DEFAULT_CONFIG = {
   },
 };
 
-module.exports = DEFAULT_CONFIG;
+export default DEFAULT_CONFIG;

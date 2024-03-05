@@ -1,13 +1,13 @@
-/* eslint-disable import/no-extraneous-dependencies */
-const TerserPlugin = require('terser-webpack-plugin');
-const preprocess = require('svelte-preprocess');
-const {RetryChunkLoadPlugin} = require('webpack-retry-chunk-load-plugin');
-const SvelteCheckPlugin = require('svelte-check-plugin');
+import {Configuration} from 'webpack';
+import TerserPlugin from 'terser-webpack-plugin';
+import preprocess from 'svelte-preprocess';
+import {RetryChunkLoadPlugin} from 'webpack-retry-chunk-load-plugin';
+import SvelteCheckPlugin from 'svelte-check-plugin';
+import {WebpackApplicationConfiguration} from '../_declaration/config-types';
 
-const scssAliases = (aliases) => {
-  return (url) => {
+const scssAliases = (aliases: Record<string, string>): any => {
+  return (url: string) => {
     for (const [alias, aliasPath] of Object.entries(aliases)) {
-      console.log('test', alias, aliasPath, url, url.indexOf(alias));
       if (url.indexOf(alias) === 0) {
         return {
           file: url.replace(alias, aliasPath),
@@ -19,7 +19,7 @@ const scssAliases = (aliases) => {
 };
 
 
-module.exports = function (webpack, config) {
+export default function (webpack: Configuration, config: WebpackApplicationConfiguration) {
   const babelPresets = [
     [
       '@babel/preset-typescript',
@@ -46,7 +46,7 @@ module.exports = function (webpack, config) {
 
   webpack.module.rules.push(
     {
-      test: /(\.(t|j)s?$)|(\.svelte$)/,
+      test: /(\.([tj])s?$)|(\.svelte$)/,
       exclude: /(node_modules|bower_components)/,
       use: [
         {

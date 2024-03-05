@@ -1,17 +1,18 @@
-/* eslint-disable import/no-dynamic-require,global-require */
-const _ = require('lodash');
+import _ from 'lodash';
+
+import fs from 'node:fs';
+import path from 'path';
+import {Configuration} from 'webpack';
+import {WebpackApplicationConfiguration} from './_declaration/config-types';
 
 const buildType = process.env.NODE_ENV || 'default';
-const config = require(`./config/${buildType.length ? `${buildType}` : ``}`);
-const fs = require('fs');
-const path = require('path');
+const config = (require(`./config/${buildType.length ? `${buildType}` : ``}`)).default as WebpackApplicationConfiguration;
 
 if (!fs.existsSync(config.private)) {
   fs.mkdirSync(config.private);
 }
 
-
-const webpack = {
+const webpack: Configuration = {
   mode: config.debug ? 'development' : 'production',
   plugins: [],
   module: {
@@ -55,8 +56,8 @@ const webpack = {
   },
 };
 
-_.forEach(config.enabledPlugins, (plugin) => {
-  require(`./plugins/${plugin}-plugin`)(webpack, config);
+config.enabledPlugins.forEach((plugin) => {
+  require(`./plugins/${plugin}-plugin`).default(webpack, config);
 });
 
-module.exports = webpack;
+export default webpack;

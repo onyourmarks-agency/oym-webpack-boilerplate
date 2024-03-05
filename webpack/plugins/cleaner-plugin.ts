@@ -1,8 +1,9 @@
-/* eslint-disable import/no-extraneous-dependencies */
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const ExtraneousFileCleanupPlugin = require('webpack-extraneous-file-cleanup-plugin');
+import {CleanWebpackPlugin} from 'clean-webpack-plugin';
+import ExtraneousFileCleanupPlugin from 'webpack-extraneous-file-cleanup-plugin';
+import {Configuration} from 'webpack';
+import {WebpackApplicationConfiguration} from '../_declaration/config-types';
 
-module.exports = function (webpack, config) {
+export default function (webpack: Configuration, config: WebpackApplicationConfiguration) {
   webpack.plugins.push(new CleanWebpackPlugin({
     cleanOnceBeforeBuildPatterns: config.components.cleaner.pattern,
     cleanAfterEveryBuildPatterns: config.components.cleaner.watchPattern,

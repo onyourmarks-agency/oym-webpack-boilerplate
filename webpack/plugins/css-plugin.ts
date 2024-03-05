@@ -1,8 +1,9 @@
-/* eslint-disable import/no-extraneous-dependencies */
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+import {Configuration} from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import {WebpackApplicationConfiguration} from '../_declaration/config-types';
 
-module.exports = function (webpack, config) {
+export default function (webpack: Configuration, config: WebpackApplicationConfiguration) {
   webpack.module.rules.push({
     test: /(\.scss?$)|(\.css)/,
     use: [

@@ -9,8 +9,34 @@ module.exports = {
     target: 'es6',
     module: 'esnext',
     resolveJsonModule: true,
+    esModuleInterop: true,
     paths: aliasHelper.formatTypescriptAliases(aliases),
     verbatimModuleSyntax: false,
     ignoreDeprecations: '5.0',
   },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "es6",
+      "esModuleInterop": true
+    }
+  }
 };
+
+// {
+//   "extends": "@tsconfig/node20/tsconfig.json",
+//   "compilerOptions": {
+//   "module": "commonjs",
+//     "target": "es6",
+//     "esModuleInterop": true,
+//     "resolveJsonModule": true,
+//     "verbatimModuleSyntax": true,
+//     "strict": true,
+//     "skipLibCheck": true,
+//     "forceConsistentCasingInFileNames": true
+// },
+//   "exclude": [
+//   "node_modules",
+//   "babel.config.js"
+// ]
+// }
