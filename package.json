@@ -1,5 +1,5 @@
 {
-	"name": "oym-webpack-boilerplate",
+	"name": "@onyourmarks/webpack-boilerplate",
 	"version": "6.2.0",
 	"main": "app.ts",
 	"license": "MIT",
