@@ -14,9 +14,5 @@ const PROD_CONFIG: Partial<WebpackApplicationConfiguration> = {
   sourceMap: false, // Recommended option when enabled: 'source-map',
 };
 
-const test: Record<string, string> = {
-  key: 'value',
-
-}
 export default _.merge({}, GLOBAL_CONFIG, PROD_CONFIG);
 
