@@ -1,6 +1,6 @@
 {
 	"name": "oym-webpack-boilerplate",
-	"version": "6.1.0",
+	"version": "6.2.0",
 	"main": "app.ts",
 	"license": "MIT",
 	"config": {
