@@ -10,15 +10,16 @@
 		"watch": "node webpack/pre-script.js && webpack --watch --config webpack/webpack.config.ts --stats-children",
 		"pre": "node webpack/pre-script.js",
 		"build": "node  webpack/pre-script.js && NODE_ENV=prod webpack --mode production --config webpack/webpack.config.ts --stats-children",
-		"frontend-cs": "pnpm format && pnpm eslint && pnpm stylelint && pnpm svelte-check",
+		"frontend-cs": "pnpm format && pnpm eslint && pnpm stylelint && pnpm svelte-check && pnpm typescript-check",
 		"lint": "pnpm prettier --cache --check . && pnpm eslint && pnpm stylelint",
 		"eslint": "node webpack/pre-script.js && eslint assets --cache --ext .js,.ts,.svelte",
 		"eslint-fix": "node webpack/pre-script.js && eslint assets --cache --fix --ext .js,.ts,.svelte",
 		"format": "node webpack/pre-script.js && prettier --cache --write .",
 		"stylelint": "stylelint -f verbose --cache 'assets/**/*.{css,scss,svelte}'",
 		"stylelint-fix": "stylelint -f verbose --cache 'assets/**/*.{css,scss,svelte}' --fix",
-		"svelte-check": "svelte-check --no-tsconfig"
-	},
+		"svelte-check": "svelte-check --no-tsconfig",
+		"typescript-check": "tsc --noEmit"
+  },
 	"dependencies": {
 		"@onyourmarks/outdated-browser-rework": "^3.0.0",
 		"bazinga-translator": "^6.0.0",

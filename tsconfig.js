@@ -7,6 +7,7 @@ module.exports = {
   exclude: ['node_modules', 'babel.config.js'],
   compilerOptions: {
     allowJs: true,
+    skipLibCheck: true,
     target: 'es6',
     module: 'esnext',
     resolveJsonModule: true,
