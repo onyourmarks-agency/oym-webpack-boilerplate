@@ -61,7 +61,7 @@ export type WebpackApplicationConfiguration = {
   /**
    * Get aliases from variable imported above
    */
-  aliases: Record<string, string>,
+  aliases: Record<string, string> | {},
 
   /**
    * Components

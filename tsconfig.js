@@ -6,6 +6,7 @@ module.exports = {
   include: ['assets/**/*', '.eslintrc.js'],
   exclude: ['node_modules', 'babel.config.js'],
   compilerOptions: {
+    allowJs: true,
     target: 'es6',
     module: 'esnext',
     resolveJsonModule: true,
@@ -13,30 +14,7 @@ module.exports = {
     paths: aliasHelper.formatTypescriptAliases(aliases),
     verbatimModuleSyntax: false,
     ignoreDeprecations: '5.0',
+    types: [],
+    lib: ['ESNext', 'DOM'],
   },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "commonjs",
-      "target": "es6",
-      "esModuleInterop": true
-    }
-  }
 };
-
-// {
-//   "extends": "@tsconfig/node20/tsconfig.json",
-//   "compilerOptions": {
-//   "module": "commonjs",
-//     "target": "es6",
-//     "esModuleInterop": true,
-//     "resolveJsonModule": true,
-//     "verbatimModuleSyntax": true,
-//     "strict": true,
-//     "skipLibCheck": true,
-//     "forceConsistentCasingInFileNames": true
-// },
-//   "exclude": [
-//   "node_modules",
-//   "babel.config.js"
-// ]
-// }
