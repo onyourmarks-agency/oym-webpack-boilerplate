@@ -17,7 +17,7 @@
 		"format": "node webpack/pre-script.js && prettier --cache --write .",
 		"stylelint": "stylelint -f verbose --cache 'assets/**/*.{css,scss,svelte}'",
 		"stylelint-fix": "stylelint -f verbose --cache 'assets/**/*.{css,scss,svelte}' --fix",
-		"svelte-check": "svelte-check"
+		"svelte-check": "svelte-check --no-tsconfig"
 	},
 	"dependencies": {
 		"@onyourmarks/outdated-browser-rework": "^3.0.0",

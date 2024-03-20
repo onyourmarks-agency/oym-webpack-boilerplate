@@ -14,7 +14,16 @@ module.exports = {
     paths: aliasHelper.formatTypescriptAliases(aliases),
     verbatimModuleSyntax: false,
     ignoreDeprecations: '5.0',
-    types: [],
-    lib: ['ESNext', 'DOM'],
+  },
+  'ts-node': {
+    compilerOptions: {
+      module: 'commonjs',
+      target: 'es6',
+      esModuleInterop: true,
+      allowJs: true,
+      allowSyntheticDefaultImports: true,
+      strict: false,
+      strictNullChecks: false,
+    },
   },
 };
