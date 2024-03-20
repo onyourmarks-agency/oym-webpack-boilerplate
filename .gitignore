@@ -9,4 +9,4 @@ yarn.lock
 /node_modules/
 /public/build/*
 !.gitkeep
-tsconfig.json
+/tsconfig.json
