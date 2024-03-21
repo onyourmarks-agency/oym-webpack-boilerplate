@@ -93,6 +93,10 @@ Use this markup for a hamburger menu trigger. The data element `data-menu-is-act
 <div class="js-hamburger"></div>
 ```
 
+There is a querySelector (.expanded-navigation) for the navigation that wil be targeted when the hamburger become to active. Make sure to change this to the correct class, id, data-attribute etc.
+ 
+<div class="js-hamburger"></div>
+
 ## Scrollable
 Use this markup as a start for a scrollable element. 
 Make sure the items have a height and a width, and don't forget to set these dimensions in the javascript as well.
@@ -164,7 +168,9 @@ By default this opens a fullscreen popup, but you can also specify a type with `
 <button data-popup-content="#popup-content"></button>
 ```
 ```html
-
+<script type="text/x-template" id="popup-content">
+    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+</script>
 ```
 
 ## Scroll-to

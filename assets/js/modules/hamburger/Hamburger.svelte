@@ -1,13 +1,43 @@
 <script lang="ts">
   import { hamburgerIsActive } from '@svelte/store/hamburger-is-active';
 
+  const navigationElement: HTMLElement | null = document.querySelector('.expanded-navigation'); // Change this selector to focus when open hamburger
+  let lastFocus: HTMLElement | null;
+
+  /**
+   * When navigation element is open, set focus to the navigation element
+   * When navigation element is closed, set focus to the last focused element
+   */
+  const setFocusToNavigation = () => {
+    lastFocus = document.activeElement as HTMLElement;
+
+    if ($hamburgerIsActive && navigationElement) {
+      navigationElement.setAttribute('tabindex', '0');
+      navigationElement.focus();
+
+      return;
+    }
+
+    lastFocus.focus();
+  };
+
+  /**
+   * Toggle hamburger menu
+   */
   const toggleHamburgerMenu = (): void => {
     hamburgerIsActive.set($hamburgerIsActive !== true);
     document.body.toggleAttribute('data-hamburger-is-active');
+
+    if (navigationElement) {
+      setFocusToNavigation();
+    }
   };
 </script>
 
-<button class="hamburger" on:click={toggleHamburgerMenu}>
+<button
+  class="hamburger"
+  aria-label={$hamburgerIsActive ? 'Open menu' : 'Sluit menu'}
+  on:click={toggleHamburgerMenu}>
   <span />
   <span />
   <span />
