@@ -1,0 +1,7 @@
+@use '../1-settings' as *;
+
+*:focus-visible {
+  border-radius: var(--outline-border-radius, 4px);
+  outline: var(--outline-color, #{$color-primary}) solid var(--outline-width, 2px);
+  outline-offset: var(--outline-offset, 2px);
+}

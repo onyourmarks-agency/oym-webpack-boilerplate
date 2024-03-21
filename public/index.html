@@ -1,25 +1,46 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="robots" content="index, follow">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="theme-color" content="#ffffff">
-	<title>Default site</title>
-	<script>document.documentElement.className += ' js'; var app = {};</script>
-	<link rel="stylesheet" href="/build/css/css-main.build.css">
-	<link rel="stylesheet" href="/build/css/js-app.build.css">
-	<link rel="stylesheet" href="/build/css/js-outdated-browser.build.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Default site</title>
+    <script>document.documentElement.className += ' js';
+        var app = {};</script>
+    <link rel="stylesheet" href="/build/css/css-main.build.css">
+    <link rel="stylesheet" href="/build/css/js-app.build.css">
+    <link rel="stylesheet" href="/build/css/js-outdated-browser.build.css">
 </head>
 <body>
-	<div class="wrapper-inner">
-		<h1>content</h1>
-	</div>
+<a href="#main" class="skip-to-onfocus">Skip to content</a>
+<a href="#nav" class="skip-to-onfocus">Skip to Navigation</a>
 
-	<div id="outdated"></div>
-	<script src="/build/js/js-outdated-browser.build.js" defer></script>
-	<script src="/build/js/js-app.build.js"></script>
+<div class="wrapper-inner">
+    <nav id="nav">
+        <ul>
+            <li><a href="#link1">Link 1</a></li>
+            <li><a href="#link2">Link 2</a></li>
+            <li><a href="#link3">Link 3</a></li>
+        </ul>
+    </nav>
+
+    <main id="main">
+        <h1>content</h1>
+
+        <p>
+            Donec <a href="#link4">ullamcorper</a> nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget
+            quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+            Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed
+            consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+        </p>
+    </main>
+</div>
+
+<div id="outdated"></div>
+<script src="/build/js/js-outdated-browser.build.js" defer></script>
+<script src="/build/js/js-app.build.js"></script>
 </body>
 </html>

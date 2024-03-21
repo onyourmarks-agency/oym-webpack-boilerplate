@@ -12,6 +12,7 @@ type DomElementsType = {
   wrapper: HTMLElement;
   scrollable: Element;
   scrollableInner: HTMLElement;
+  items: NodeListOf<Element>;
 };
 
 const detectCenteredCards = (dom: DomElementsType): void => {
@@ -108,11 +109,19 @@ export const scrollable = (): void => {
       wrapper: element.querySelector('.js-scrollable-items')!,
       scrollable: element,
       scrollableInner: element.querySelector('.js-scrollable-inner')!,
+      items: element.querySelectorAll('.js-scrollable-inner a')!,
     };
 
     if (disableScrollSnap()) {
       dom.wrapper.classList.add('disable-scroll-snap');
     }
+
+    // Scroll into view on focus
+    dom.items.forEach((item: Element): void => {
+      item.addEventListener('focus', () => {
+        item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      });
+    });
 
     detectCenteredCards(dom);
 

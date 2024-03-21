@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount, onDestroy, afterUpdate, tick } from 'svelte';
   import { fade } from 'svelte/transition';
+  import { translate } from '@translations/index';
 
   export let source: string;
   export let type: string | boolean;
@@ -88,7 +89,7 @@
       on:keydown={handleKeydown} />
     <div class="popup-content" transition:fade={{ delay: 200, duration: 100 }}>
       <button
-        aria-label="Sluiten"
+        aria-label={translate('popup.closebutton.a11y.aria')}
         class="popup-close"
         type="button"
         on:click={() => {
@@ -97,6 +98,14 @@
         <span>x</span>
       </button>
       {@html sourceHTML?.innerHTML}
+      <button
+        class="sr-only-focusable"
+        type="button"
+        on:click={() => {
+          visible = false;
+        }}>
+        <span>{translate('popup.closebutton.a11y.sronly')}</span>
+      </button>
     </div>
   </div>
 {/if}

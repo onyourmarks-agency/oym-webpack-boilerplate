@@ -87,6 +87,22 @@ _Theme 2_
 * `<link rel="stylesheet" href="/build/theme2/css/css-main.build.css">`
 * `<script src="/build/theme2/js/js-app.build.js"></script>`
 
+---
+
+## A11Y
+We've add some basic accessibility features to the boilerplate. For all focusable elements, the focus-visible can be updated on it's own css declaration by updating the following elements
+```css
+--outline-border-radius: 5px;
+--outline-color: green;
+--outline-offset: 5px;
+--outline-width: 12px;
+```
+Two other classnames can be used out of the box;
+`.sr-only` and `.sr-only-focusable`. \
+The first one is hidden for default screens. The second one is hidden for default screens, but visible when focused. 
+
+---
+
 ## Hamburger
 Use this markup for a hamburger menu trigger. The data element `data-menu-is-active` will be added to the body when the hanburger is active. The state wil also be stored in the svelte store.
 ```html
@@ -96,6 +112,8 @@ Use this markup for a hamburger menu trigger. The data element `data-menu-is-act
 There is a querySelector (.expanded-navigation) for the navigation that wil be targeted when the hamburger become to active. Make sure to change this to the correct class, id, data-attribute etc.
  
 <div class="js-hamburger"></div>
+
+---
 
 ## Scrollable
 Use this markup as a start for a scrollable element. 
@@ -113,11 +131,13 @@ Make sure the items have a height and a width, and don't forget to set these dim
     </div>
 
     <div class="scrollable__controls">
-        <button class="scrollable__controls__button js-scrollable-left" type="button"><</button>
-        <button class="scrollable__controls__button js-scrollable-right" type="button">></button>
+        <button class="scrollable__controls__button js-scrollable-left" aria-label="Scroll to left" type="button"><</button>
+        <button class="scrollable__controls__button js-scrollable-right" aria-label="Scroll to right" type="button">></button>
     </div>
 </div>
 ```
+
+---
 
 ## Image slider
 Use this markup as a start for a simple image slider.
@@ -135,11 +155,13 @@ When you import a new module in javascript, dont forget to also include the styl
     <div class="image-slider__pagination"></div>
     
     <div class="image-slider__navigation">
-        <button class="image-slider__button image-slider__button--prev"><</button>
-        <button class="image-slider__button image-slider__button--next">></button>
+        <button class="image-slider__button image-slider__button--prev" aria-label="To left"><</button>
+        <button class="image-slider__button image-slider__button--next" aria-label="To right">></button>
     </div>
 </div>
 ```
+
+---
 
 ## Accordion
 Use this markup as a start for very simple accordion items
@@ -148,7 +170,7 @@ Use this markup as a start for very simple accordion items
 <div class="accordion">
     <div class="accordion__item">
         <input class="accordion__input" type="checkbox" name="accordion1" id="accordion1">
-        <label class="accordion__title" for="accordion1">Accordion item 1</label>
+        <label class="accordion__title" for="accordion1" aria-label="Show content of accordion item 1">Accordion item 1</label>
         <div class="accordion__content">Content for accordion item 1</div>
     </div>
 
@@ -159,6 +181,8 @@ Use this markup as a start for very simple accordion items
     </div>
 </div>
 ```
+
+---
 
 ## Popup
 Add `data-popup-content="#popup-content"` on the trigger to open a popup with the contents of the element with `id="popup-content"`.
@@ -173,11 +197,15 @@ By default this opens a fullscreen popup, but you can also specify a type with `
 </script>
 ```
 
+---
+
 ## Scroll-to
 Add `data-scroll-to="#target"` on the trigger to scroll to element with `id="target"`
 ```html
 <button data-scroll-to="#target"></button>
 ```
+
+---
 
 ## Form example
 Use this markup for the default form styling and validation:

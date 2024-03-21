@@ -1,4 +1,5 @@
 import nl from './nl';
+import en from './en';
 
 export type TranslationMessage = {
   [key: string]: string;
@@ -14,4 +15,5 @@ export type TranslationLanguage = {
 
 export const languages: TranslationLanguage = {
   nl,
+  en,
 };

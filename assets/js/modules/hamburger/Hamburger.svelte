@@ -1,5 +1,6 @@
 <script lang="ts">
   import { hamburgerIsActive } from '@svelte/store/hamburger-is-active';
+  import { translate } from '@translations/index';
 
   const navigationElement: HTMLElement | null = document.querySelector('.expanded-navigation'); // Change this selector to focus when open hamburger
   let lastFocus: HTMLElement | null;
@@ -36,7 +37,9 @@
 
 <button
   class="hamburger"
-  aria-label={$hamburgerIsActive ? 'Open menu' : 'Sluit menu'}
+  aria-label={$hamburgerIsActive
+    ? translate('popup.hamburger.a11y.open')
+    : translate('popup.hamburger.a11y.close')}
   on:click={toggleHamburgerMenu}>
   <span />
   <span />

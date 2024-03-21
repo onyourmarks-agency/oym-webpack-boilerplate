@@ -1,0 +1,19 @@
+.skip-to-onfocus {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 16px;
+  transform: translate(-50%, -100px);
+  border: 2px solid #000;
+  border-radius: 4px;
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+  transition: all 0.2s ease;
+
+  &:focus {
+    z-index: 100;
+    overflow: visible;
+    transform: translate(-50%, 0);
+  }
+}

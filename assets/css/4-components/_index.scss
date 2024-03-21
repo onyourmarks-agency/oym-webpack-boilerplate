@@ -5,6 +5,10 @@
 * Each stylesheet contains all component styles, variations and states of one component
 */
 
+/* A11Y */
+@use 'a11y/skip-to-onfocus';
+@use 'a11y/sr-only';
+
 /* Buttons */
 @use 'buttons/btn';
 @use 'buttons/btn--secondary';
