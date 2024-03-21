@@ -1,7 +1,14 @@
 import Popup from './Popup.svelte';
 
+let popupInstance: Popup | null = null;
+
 const openPopup = (target: string, type: string | boolean): void => {
-  new Popup({
+  // Destroy the previous instance if it exists
+  if (popupInstance) {
+    popupInstance.$destroy();
+  }
+
+  popupInstance = new Popup({
     target: document.body,
     props: {
       source: target,

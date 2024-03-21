@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, onDestroy, afterUpdate, tick } from 'svelte';
   import { fade } from 'svelte/transition';
 
   export let source: string;
@@ -7,11 +7,40 @@
 
   const sourceHTML = document.querySelector(source);
   let visible = false;
+  let popupElement: HTMLElement | null = null;
+  let lastFocus: HTMLElement | null;
 
+  /**
+   * Prevent body scroll when the popup is open
+   */
   const checkBodyScroll = (): void => {
     document.body.style.overflow = visible ? 'hidden' : 'inherit';
   };
 
+  /**
+   * Focus content on opening, focus on the last focused element when the popup is closed
+   */
+  const handleFocus = (): void => {
+    if (visible) {
+      lastFocus = document.activeElement as HTMLElement | null;
+
+      if (popupElement) {
+        popupElement.setAttribute('tabindex', '0');
+        popupElement.focus();
+      }
+
+      return;
+    }
+
+    if (lastFocus) {
+      lastFocus.focus();
+    }
+  };
+
+  /**
+   * Close the popup when the escape key is pressed
+   * @param e
+   */
   const handleKeydown = (e: KeyboardEvent): void => {
     if (!visible) {
       return;
@@ -28,26 +57,38 @@
     }
 
     visible = true;
+
+    window.addEventListener('keydown', handleKeydown);
   });
 
-  $: checkBodyScroll();
+  onDestroy((): void => {
+    window.removeEventListener('keydown', handleKeydown);
+  });
+
+  afterUpdate(async (): Promise<void> => {
+    await tick();
+    handleFocus();
+    checkBodyScroll();
+  });
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
 {#if visible}
-  <div class="popup {type ? `popup--${type}` : ''}" transition:fade>
+  <div
+    role="dialog"
+    class="popup {type ? `popup--${type}` : ''}"
+    bind:this={popupElement}
+    transition:fade>
     <div
       class="popup-background"
-	  role="button"
-	  tabindex="-1"
+      role="button"
+      tabindex="-1"
       on:click|stopPropagation={() => {
         visible = false;
       }}
-	  on:keydown={handleKeydown}
-	/>
+      on:keydown={handleKeydown} />
     <div class="popup-content" transition:fade={{ delay: 200, duration: 100 }}>
       <button
-		aria-label="Sluiten"
+        aria-label="Sluiten"
         class="popup-close"
         type="button"
         on:click={() => {
@@ -77,6 +118,10 @@
 
   .popup {
     overflow: auto;
+  }
+
+  .popup:focus {
+    outline: none;
   }
 
   .popup--small {

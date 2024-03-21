@@ -159,8 +159,12 @@ Use this markup as a start for very simple accordion items
 ## Popup
 Add `data-popup-content="#popup-content"` on the trigger to open a popup with the contents of the element with `id="popup-content"`.
 By default this opens a fullscreen popup, but you can also specify a type with `data-popup-type="small"`. This will add a modifier class: `popup--small` to the popup. You can also add new types.
+
 ```html
 <button data-popup-content="#popup-content"></button>
+```
+```html
+
 ```
 
 ## Scroll-to
