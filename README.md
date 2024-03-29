@@ -236,15 +236,13 @@ Use this markup for the default form styling and validation:
     <div class="form__group">
         <div class="form__item">
             <span class="form__label">field4*</span>
-            <label class="input-radio" for="value1">
-                <input type="radio" id="value1" name="field4" required value="value1">
-                <span class="input-radio__box"></span>
-                <span class="input-radio__label">value1</span>
+            <label>
+                <input type="radio" value="1" name="radio">
+                <span>Radiobutton 1</span>
             </label>
-            <label class="input-radio" for="value2">
-                <input type="radio" id="value2" name="field4" required value="value2">
-                <span class="input-radio__box"></span>
-                <span class="input-radio__label">value2</span>
+            <label>
+                <input type="radio" value="2" name="radio">
+                <span>Radiobutton 2</span>
             </label>
         </div>
     </div>
@@ -253,10 +251,17 @@ Use this markup for the default form styling and validation:
     <div class="form__group">
         <div class="form__item">
             <span class="form__label">field5*</span>
-            <label class="input-checkbox" for="field5">
-                <input type="checkbox" id="field5">
-                <span class="input-checkbox__box"></span>
-                <span class="input-checkbox__label">value 3</span>
+            <label>
+                <input type="checkbox" name="checkbox1">
+                <span>Checkbox 1</span>
+            </label>
+            <label>
+                <input type="checkbox" name="checkbox2">
+                <span>Checkbox 2</span>
+            </label>
+            <label>
+                <input type="checkbox" disabled>
+                <span>Checkbox 3 - disabled</span>
             </label>
         </div>
     </div>
@@ -319,20 +324,17 @@ Make sure `isAtLeastOneCheckboxChecked` is enabled in the `customValidations` in
 <div class="form__group" data-bouncer-at-least-one-checkbox>
     <div class="form__item">
         <span class="form__label">Field 9</span>
-        <label class="input-checkbox" for="field9">
-            <input type="checkbox" id="field9" name="multipleCheckboxes[]" data-bouncer-target="#multipleCheckboxes">
-            <span class="input-checkbox__box"></span>
-            <span class="input-checkbox__label">value 1</span>
+        <label for="field9">
+            <input type="checkbox" value="1" id="field9" name="multipleCheckboxes[]" data-bouncer-target="#multipleCheckboxes">
+            <span>value 1</span>
         </label>
-        <label class="input-checkbox" for="field10">
-            <input type="checkbox" id="field10" name="multipleCheckboxes[]" data-bouncer-target="#multipleCheckboxes">
-            <span class="input-checkbox__box"></span>
-            <span class="input-checkbox__label">value 2</span>
+        <label for="field10">
+            <input type="checkbox" value="2" id="field10" name="multipleCheckboxes[]" data-bouncer-target="#multipleCheckboxes">
+            <span>value 2</span>
         </label>
-        <label class="input-checkbox" for="field11">
-            <input type="checkbox" id="field11" name="multipleCheckboxes[]" data-bouncer-target="#multipleCheckboxes">
-            <span class="input-checkbox__box"></span>
-            <span class="input-checkbox__label">value 3</span>
+        <label for="field11">
+            <input type="checkbox" value="2" id="field11" name="multipleCheckboxes[]" data-bouncer-target="#multipleCheckboxes">
+            <span>value 3</span>
         </label>
         <div id="multipleCheckboxes"></div>
     </div>

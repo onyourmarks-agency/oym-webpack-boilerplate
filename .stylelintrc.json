@@ -22,8 +22,10 @@
 				]
 			}
 		],
-		"declaration-empty-line-before": "never",
 		"declaration-no-important": null,
+		"function-no-unknown": [ true, {
+			"ignoreFunctions": ["url-friendly-color"]
+		}],
 		"function-url-quotes": "never",
 		"media-feature-range-notation": "prefix",
 		"media-query-no-invalid": null,

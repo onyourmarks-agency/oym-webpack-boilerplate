@@ -1,0 +1,38 @@
+@use '../1-settings' as *;
+
+$select-checked-color: $color-black;
+$select-checked-color-disabled: $color-gray-dark;
+
+:root {
+  --select-icon-size: 14px 8px;
+  --select-icon-position-right: 16px;
+  --select-icon-position-top: 50%;
+}
+
+@function icon($givenFill: black) {
+  $fill: url-friendly-color($givenFill);
+
+  /* When change the SVG... Be sure the fill is in a style. Not at a seperate fill="" attribute */
+  $svg: '<svg width="14" height="8" xmlns="http://www.w3.org/2000/svg"><path style="fill: #{$fill}" d="M6.786 7.372a.992.992 0 0 0 .645-.28l5.51-5.399a.96.96 0 0 0-.003-1.375l-.034-.033A1.012 1.012 0 0 0 11.5.282L6.595 5.087 1.729.321A1.009 1.009 0 0 0 .324.323L.291.356a.963.963 0 0 0-.003 1.376l5.51 5.398c.266.26.649.342.988.242Z"/></svg>';
+  @return 'data:image/svg+xml;utf8,' + $svg;
+}
+
+select {
+  appearance: none;
+  background-image: url(icon($select-checked-color));
+  background-position: right var(--select-icon-position-right) top var(--select-icon-position-top);
+  background-size: var(--select-icon-size);
+  background-repeat: no-repeat;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:disabled {
+  background-image: url(icon($select-checked-color-disabled));
+}
+
+select[multiple] {
+  background-image: none;
+}

@@ -1,0 +1,71 @@
+@use '../1-settings' as *;
+
+$checkbox-checked-color: #000;
+$checkbox-checked-color-disabled: $color-gray-dark;
+
+@function check($givenFill: $checkbox-checked-color) {
+  $fill: url-friendly-color($givenFill);
+
+  /* When change the SVG... Be sure the fill is in a style. Not at a seperate attribute */
+  $svg: '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path style="fill: #{$fill}" d="M18.586 5.513a2 2 0 0 1 2.945 2.701l-.117.127-10.77 10.771a2 2 0 0 1-2.702.117l-.127-.117-4.917-4.917a2 2 0 0 1 2.701-2.945l.127.116L9.23 14.87l9.357-9.356Z" fill-rule="nonzero"/></svg>';
+  @return 'data:image/svg+xml;utf8,' + $svg;
+}
+
+label:has(> input[type='checkbox']) {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+input[type='checkbox'] {
+  --input-border-radius: 4px;
+  --input-margin: 2px;
+  --checkbox-sizing: 24px;
+  --checkbox-border-checked: var(--input-border);
+
+  box-sizing: border-box;
+  appearance: none;
+  z-index: 2;
+  position: relative;
+  width: var(--checkbox-sizing);
+  height: var(--checkbox-sizing);
+  padding: 0;
+  outline: none;
+  background-position: center;
+  background-size: 40% 40%;
+  background-repeat: no-repeat;
+  transition: all 0.1s;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@media (hover: hover) {
+  %input-checked-focus-hover {
+    transform: scale(1.05);
+  }
+
+  input[type='checkbox']:not(:disabled):hover {
+    @extend %input-checked-focus-hover;
+  }
+}
+
+input[type='checkbox']:focus-visible {
+  @extend %input-checked-focus-hover;
+}
+
+input[type='checkbox']:checked {
+  border: var(--checkbox-border-checked);
+  background-size: contain;
+}
+
+input[type='checkbox']:disabled:checked {
+  background-image: url(check($checkbox-checked-color-disabled));
+}
+
+input[type='checkbox']:not(:disabled):checked {
+  border: var(--checkbox-border-checked);
+  background-image: url(check($checkbox-checked-color));
+  background-size: 100% 100%;
+}

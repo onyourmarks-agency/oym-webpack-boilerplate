@@ -1,5 +1,23 @@
 @use '../1-settings' as *;
 
+:root {
+  --input-background-color: #{$color-white};
+  --input-background-color-error: #f8d7da;
+  --input-background-color-disabled: #{$color-gray-medium};
+  --input-background-color-hover: rgb(205 216 232 / 0.8);
+  --input-padding: 8px 12px;
+  --input-border: 2px solid #{$color-gray-dark};
+  --input-border-disabled: 2px solid #{$color-gray-dark};
+  --input-border-error: 2px solid #{$color-red};
+  --input-border-radius: 3px;
+  --input-color: #{$color-base-font};
+  --input-outline-width-hover: 6px;
+  --input-opacity-disabled: 0.7;
+  --input-placeholder-color: #{rgba($color-base-font, 0.7)};
+  --input-hover-border: 2px solid #{$color-black};
+  --input-margin: 0;
+}
+
 button {
   appearance: none;
   border: none;
@@ -24,17 +42,6 @@ label {
   vertical-align: top;
 }
 
-select {
-  appearance: none;
-  background-image: url(/images/icons/dropdown.svg);
-  background-position: right 24px top 50%;
-  background-repeat: no-repeat;
-
-  &::-ms-expand {
-    display: none;
-  }
-}
-
 textarea {
   min-height: 160px;
   resize: vertical;
@@ -46,46 +53,59 @@ textarea {
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
-  padding: 12px 24px;
-  border: 1px solid $color-gray-medium;
-  border-radius: 0;
-  background-color: $color-gray-light;
-  color: $color-base-font;
+  margin: var(--input-margin);
+  padding: var(--input-padding);
+  border: var(--input-border);
+  border-radius: var(--input-border-radius);
+  background-color: var(--input-background-color);
+  color: var(--input-color);
   font-size: rem(16);
   line-height: $line-height-base;
   font-family: $font-regular;
   vertical-align: top;
-  transition: border-color 200ms ease;
+  transition: border-color 0.2s ease;
 
   &:focus,
   &:hover {
-    border-color: $color-primary;
-    outline: none;
+    border: var(--input-hover-border);
   }
 
   &:disabled {
+    border: var(--input-border-disabled);
+    background-color: var(--input-background-color-disabled);
     cursor: not-allowed;
-    opacity: 0.5;
-
-    &:hover {
-      border-color: $color-gray-medium;
-    }
+    opacity: var(--input-opacity-disabled);
   }
 
-  &.form-error,
+  &.form__error,
   &:user-invalid {
-    border-color: $color-red;
+    border: var(--input-border-error);
+    background: var(--input-background-color-error);
   }
+}
+
+@media (hover: hover) {
+  %input-focus-hover {
+    z-index: 3;
+    outline: var(--input-outline-width-hover) solid var(--input-background-color-hover);
+    background-color: var(--input-background-color-hover);
+  }
+
+  input:not(:disabled):hover,
+  select:not(:disabled):hover,
+  textarea:not(:disabled):hover {
+    @extend %input-focus-hover;
+  }
+}
+
+input:not(:disabled):focus-visible,
+select:not(:disabled):focus-visible,
+textarea:not(:disabled):focus-visible {
+  @extend %input-focus-hover;
 }
 
 [type='search'] {
   appearance: none;
-}
-
-[type='checkbox'],
-[type='radio'] {
-  display: inline;
-  margin-right: 8px;
 }
 
 [type='file'] {
@@ -93,5 +113,13 @@ textarea {
 }
 
 ::placeholder {
-  color: rgba($color-base-font, 0.7);
+  color: var(--input-placeholder-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  input,
+  select,
+  textarea {
+    transition: none;
+  }
 }

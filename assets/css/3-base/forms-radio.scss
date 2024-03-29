@@ -1,0 +1,71 @@
+@use '../1-settings' as *;
+
+$radio-checked-color: $color-black;
+$radio-checked-color-disabled: $color-gray-medium;
+
+@function bullet($givenFill: $radio-checked-color) {
+  $fill: url-friendly-color($givenFill);
+
+  /* When change the SVG... Be sure the fill is in a style. Not at a seperate attribute */
+  $svg: '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle style="fill: #{$fill}" cx="12" cy="12" r="6" fill-rule="evenodd"/></svg>';
+  @return 'data:image/svg+xml;utf8,' + $svg;
+}
+
+label:has(> input[type='radio']) {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+input[type='radio'] {
+  --input-border-radius: 50%;
+  --input-margin: 2px;
+  --radio-sizing: 24px;
+  --radio-border-checked: var(--input-border);
+
+  box-sizing: border-box;
+  appearance: none;
+  z-index: 2;
+  position: relative;
+  width: var(--radio-sizing);
+  height: var(--radio-sizing);
+  padding: 0;
+  outline: none;
+  background-position: center;
+  background-size: 40% 40%;
+  background-repeat: no-repeat;
+  transition: all 0.1s;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@media (hover: hover) {
+  %input-checked-focus-hover {
+    transform: scale(1.05);
+  }
+
+  input[type='radio']:not(:disabled):hover {
+    @extend %input-checked-focus-hover;
+  }
+}
+
+input[type='radio']:focus-visible {
+  @extend %input-checked-focus-hover;
+}
+
+input[type='radio']:checked {
+  border: var(--radio-border-checked);
+  background-size: contain;
+}
+
+input[type='radio']:disabled:checked {
+  background-image: url(bullet($radio-checked-color-disabled));
+}
+
+input[type='radio']:not(:disabled):checked {
+  border: var(--radio-border-checked);
+  background-image: url(bullet($radio-checked-color));
+  background-size: 100% 100%;
+}
