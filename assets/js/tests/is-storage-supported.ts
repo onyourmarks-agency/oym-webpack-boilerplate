@@ -9,6 +9,7 @@ export const isStorageSupported = (storage: StorageMethodType): boolean => {
     storageObject.removeItem(testKey);
 
     return true;
+    // eslint-disable-next-line no-unused-vars
   } catch (error) {
     return false;
   }

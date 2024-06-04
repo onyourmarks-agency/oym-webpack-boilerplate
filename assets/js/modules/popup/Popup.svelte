@@ -1,12 +1,15 @@
 <script lang="ts">
-  import { onMount, onDestroy, afterUpdate, tick } from 'svelte';
+  import { afterUpdate, onDestroy, onMount, tick } from 'svelte';
   import { fade } from 'svelte/transition';
   import { translate } from '@translations/index';
+  import createDOMPurify from 'dompurify';
 
   export let source: string;
   export let type: string | boolean;
 
   const sourceHTML = document.querySelector(source);
+  const DOMPurify = createDOMPurify(window);
+
   let visible = false;
   let popupElement: HTMLElement | null = null;
   let lastFocus: HTMLElement | null;
@@ -97,7 +100,8 @@
         }}>
         <span>x</span>
       </button>
-      {@html sourceHTML?.innerHTML}
+
+      {@html DOMPurify.sanitize(sourceHTML?.innerHTML || '')}
       <button
         class="sr-only-focusable"
         type="button"
