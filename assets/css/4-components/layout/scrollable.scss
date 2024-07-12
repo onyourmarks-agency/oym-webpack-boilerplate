@@ -1,4 +1,4 @@
-@use '../1-settings' as *;
+@use '../../1-settings/index' as *;
 
 /* This is the max width of the wrapper + the wrappers padding */
 $scrollable-max-width: calc(#{$max-width} + 48px);

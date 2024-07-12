@@ -1,4 +1,9 @@
-@use '../../1-settings' as *;
+@use '../../1-settings/index' as *;
+
+:root {
+  --input-error-border-color: #{$color-red};
+  --input-error-color: #{$color-red};
+}
 
 .form {
   display: flex;
@@ -35,10 +40,10 @@
 }
 
 .form__input--error {
-  border-color: $color-red;
+  border-color: var(--input-error-border-color);
 }
 
 .form__error {
-  color: $color-red;
+  color: var(--input-error-color);
   font-size: rem(14);
 }

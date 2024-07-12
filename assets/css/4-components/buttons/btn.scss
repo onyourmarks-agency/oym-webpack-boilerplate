@@ -22,6 +22,7 @@
     &:hover,
     &:focus {
       background-color: var(--btn-background-color-hover, #{rgba($color-primary, 0.75)});
+      color: var(--btn-color-hover, #{$color-white});
       text-decoration: none;
     }
   }

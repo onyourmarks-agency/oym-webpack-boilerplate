@@ -1,6 +1,6 @@
 @use '../1-settings' as *;
 
-$checkbox-checked-color: #000;
+$checkbox-checked-color: $color-black;
 $checkbox-checked-color-disabled: $color-gray-dark;
 
 @function check($givenFill: $checkbox-checked-color) {
@@ -27,6 +27,7 @@ input[type='checkbox'] {
   appearance: none;
   z-index: 2;
   position: relative;
+  flex-shrink: 0;
   width: var(--checkbox-sizing);
   height: var(--checkbox-sizing);
   padding: 0;

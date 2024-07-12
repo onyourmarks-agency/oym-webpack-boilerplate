@@ -27,6 +27,7 @@ input[type='radio'] {
   appearance: none;
   z-index: 2;
   position: relative;
+  flex-shrink: 0;
   width: var(--radio-sizing);
   height: var(--radio-sizing);
   padding: 0;
