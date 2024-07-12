@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* eslint svelte/no-at-html-tags: "off" */
   import { afterUpdate, onDestroy, onMount, tick } from 'svelte';
   import { fade } from 'svelte/transition';
   import { translate } from '@translations/index';
