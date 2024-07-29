@@ -13,7 +13,7 @@ module.exports = {
     resolveJsonModule: true,
     esModuleInterop: true,
     paths: aliasHelper.formatTypescriptAliases(aliases),
-    verbatimModuleSyntax: true,
+    verbatimModuleSyntax: false,
     ignoreDeprecations: '5.0',
   },
   'ts-node': {

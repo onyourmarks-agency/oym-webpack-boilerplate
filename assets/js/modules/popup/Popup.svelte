@@ -82,7 +82,7 @@
     role="dialog"
     class="popup {type ? `popup--${type}` : ''}"
     bind:this={popupElement}
-    transition:fade>
+    transition:fade|global>
     <div
       class="popup-background"
       role="button"
@@ -91,7 +91,7 @@
         visible = false;
       }}
       on:keydown={handleKeydown} />
-    <div class="popup-content" transition:fade={{ delay: 200, duration: 100 }}>
+    <div class="popup-content" transition:fade|global={{ delay: 200, duration: 100 }}>
       <button
         aria-label={translate('popup.closebutton.a11y.aria')}
         class="popup-close"
