@@ -1,6 +1,6 @@
 {
 	"name": "@onyourmarks/webpack-boilerplate",
-	"version": "6.5.0",
+	"version": "6.6.0",
 	"main": "app.ts",
 	"license": "MIT",
 	"config": {
