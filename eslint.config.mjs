@@ -43,6 +43,13 @@ const ESLINT_IGNORES = [
 ];
 
 const ESLINT_RULES = {
+  '@typescript-eslint/no-unused-vars': [
+    'error',
+    {
+      argsIgnorePattern: '^_',
+      varsIgnorePattern: '^_',
+    },
+  ],
   'compat/compat': 2,
   'import/prefer-default-export': 'off',
   'import/first': 'off',
@@ -72,6 +79,7 @@ const ESLINT_RULES = {
       ignoreStrings: true,
       ignoreTemplateLiterals: true,
       ignoreRegExpLiterals: true,
+      ignorePattern: '.*base64,.*',
     },
   ],
   'no-continue': 0,

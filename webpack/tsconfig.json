@@ -6,6 +6,7 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "strict": false,
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "verbatimModuleSyntax": false
   }
 }
