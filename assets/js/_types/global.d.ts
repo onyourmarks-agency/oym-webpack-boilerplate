@@ -1,3 +1,5 @@
+import type { HeroSlider } from '@js/_types/hero-slider';
+
 export type BreakPointType = 'sm' | 'md' | 'lg' | 'xl' | 'hamburger';
 
 export interface BreakPointConfigInterface {
@@ -21,5 +23,6 @@ declare global {
 
   interface Window {
     Bouncer: any;
+    heroSlider: HeroSlider[];
   }
 }

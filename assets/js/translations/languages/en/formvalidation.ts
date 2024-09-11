@@ -17,8 +17,8 @@ export const formvalidation: TranslationMessage = {
   'formvalidation.patternmismatch.password': 'The password does not meet the requirements.',
   'formvalidation.patternmismatch.default': 'Use the correct format.',
 
-  'formvalidation.outofrange.over': 'Choose a value lower than {max}.',
-  'formvalidation.outoforange.under': 'Choose a value higher than {min}.',
+  'formvalidation.outofrange.over': 'Choose a value with a max of {max}.',
+  'formvalidation.outoforange.under': 'Choose a value higher or equal than {min}.',
 
   'formvalidation.wronglength.over':
     'Sorry. You have used too many characters. You are now using {length} characters and there is a maximum of {maxLength}.',

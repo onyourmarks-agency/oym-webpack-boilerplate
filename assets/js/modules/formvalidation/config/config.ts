@@ -3,8 +3,8 @@
 import validationMessages from './validation-messages';
 
 export const formClassNames = {
-  fieldClass: 'form__error',
-  errorClass: 'form__input--error',
+  fieldClass: 'form__input--error',
+  errorClass: 'form__error',
 };
 
 export const bouncerDefaultConfig = {

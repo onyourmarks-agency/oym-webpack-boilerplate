@@ -6,6 +6,7 @@
   --input-background-color-disabled: #{$color-gray-medium};
   --input-background-color-hover: rgb(205 216 232 / 0.8);
   --input-padding: 8px 12px;
+  --input-border-hover: 2px solid #{$color-black};
   --input-border: 2px solid #{$color-gray-dark};
   --input-border-disabled: 2px solid #{$color-gray-dark};
   --input-border-error: 2px solid #{$color-red};
@@ -14,7 +15,6 @@
   --input-outline-width-hover: 6px;
   --input-opacity-disabled: 0.7;
   --input-placeholder-color: #{rgba($color-base-font, 0.7)};
-  --input-hover-border: 2px solid #{$color-black};
   --input-margin: 0;
 }
 
@@ -67,7 +67,7 @@ textarea {
 
   &:focus,
   &:hover {
-    border: var(--input-hover-border);
+    border: var(--input-border-hover);
   }
 
   &:disabled {
@@ -80,7 +80,7 @@ textarea {
   &.form__error,
   &:user-invalid {
     border: var(--input-border-error);
-    background: var(--input-background-color-error);
+    background-color: var(--input-background-color-error);
   }
 }
 
