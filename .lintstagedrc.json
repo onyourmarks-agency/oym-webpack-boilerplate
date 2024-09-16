@@ -1,0 +1,14 @@
+{
+	"*.{css, scss, svelte}": [
+		"node webpack/pre-script.js",
+		"prettier --cache --check --write .",
+		"stylelint -f verbose --cache 'assets/**/*.{css,scss,svelte}'"
+	],
+	"*.{ts, svelte}": [
+		"node webpack/pre-script.js",
+		"prettier --cache --check --write .",
+		"eslint 'assets/**/*.{js,ts}' --cache",
+		"svelte-check --no-tsconfig",
+		"tsc --noEmit"
+	]
+}
