@@ -1,1 +1,2 @@
+printf "\\n\\e[32m######### Running Lint-staged #########\\e[0m\\n\\n"
 pnpm run lint-staged
