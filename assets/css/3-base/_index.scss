@@ -3,15 +3,26 @@
 * Globally defined tags (body, h1, p, etc.) should also be included
 */
 
-@use 'css-variables';
-@use 'font-face';
-@use 'page';
-@use 'typography';
-@use 'forms';
-@use 'forms-select';
-@use 'forms-checkbox';
-@use 'forms-radio';
-@use 'media';
-@use 'lists';
-@use 'tables';
-@use 'a11y';
+/* CSS Variables */
+@use 'css-variables/font-sizes';
+@use 'css-variables/layouts';
+@use 'css-variables/spacings';
+
+/* Font Faces */
+// @use 'font-faces'
+
+/* Layouts */
+@use 'layouts/lists';
+@use 'layouts/media';
+@use 'layouts/page';
+@use 'layouts/tables';
+@use 'layouts/typography';
+
+/* Forms */
+@use 'forms/forms-default';
+@use 'forms/forms-select';
+@use 'forms/forms-checkbox';
+@use 'forms/forms-radio';
+
+/* A11y */
+@use 'a11y/visibility';

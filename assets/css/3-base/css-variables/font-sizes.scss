@@ -1,0 +1,19 @@
+@use '../../1-settings' as *;
+
+:root {
+  --font-size-24-40: #{rem(24)};
+  --font-size-20-32: #{rem(20)};
+  --font-size-18-24: #{rem(18)};
+
+  @media screen and (min-width: $md-width) {
+    --font-size-24-40: #{rem(32)};
+    --font-size-20-32: #{rem(24)};
+    --font-size-18-24: #{rem(20)};
+  }
+
+  @media screen and (min-width: $lg-width) {
+    --font-size-24-40: #{rem(40)};
+    --font-size-20-32: #{rem(32)};
+    --font-size-18-24: #{rem(24)};
+  }
+}

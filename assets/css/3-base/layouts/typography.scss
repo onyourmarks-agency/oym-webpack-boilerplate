@@ -1,4 +1,4 @@
-@use '../1-settings' as *;
+@use '../../1-settings/index' as *;
 
 body {
   color: $color-base-font;
@@ -14,7 +14,7 @@ h4,
 h5,
 h6 {
   margin: 0 0 16px;
-  font-weight: $font-regular-weight-400;
+  font-weight: $font-heading-weight-400;
   font-size: rem(16);
   line-height: $line-height-heading;
   font-family: $font-heading;
@@ -50,7 +50,7 @@ p {
 
 b,
 strong {
-  font-weight: $font-regular-weight-700;
+  font-weight: $font-heading-weight-700;
 }
 
 a {

@@ -14,10 +14,10 @@
 @use 'buttons/btn--secondary';
 @use 'buttons/btn--small';
 
-/* Layout */
-@use 'layout/grid';
-@use 'layout/scrollable';
-@use 'layout/wrapper-inner';
+/* Layouts */
+@use 'layouts/grid';
+@use 'layouts/scrollable';
+@use 'layouts/wrapper-inner';
 
 /* Misc */
 @use 'misc/accordion';

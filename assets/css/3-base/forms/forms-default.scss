@@ -1,4 +1,4 @@
-@use '../1-settings' as *;
+@use '../../1-settings/index' as *;
 
 :root {
   --input-background-color: #{$color-white};

@@ -3,6 +3,14 @@
 * They have no direct output.
 */
 
-@forward 'sass-variables';
-@forward 'functions';
-@forward 'mixins';
+/* Sass Variables */
+@forward 'sass-variables/breakpoints';
+@forward 'sass-variables/colors';
+@forward 'sass-variables/typography';
+
+/* Functions */
+@forward 'functions/a11y';
+@forward 'functions/typography';
+
+/* Mixins */
+@forward 'mixins/layouts';

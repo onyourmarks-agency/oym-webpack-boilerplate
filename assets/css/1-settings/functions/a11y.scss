@@ -1,11 +1,5 @@
-/* Turn px into rem */
-@use 'sass:math';
 @use 'sass:meta';
 @use 'sass:string';
-
-@function rem($size: 16, $base: 16) {
-  @return math.div($size, $base) * 1rem;
-}
 
 @function url-friendly-color($color) {
   $color-str: meta.inspect($color);
