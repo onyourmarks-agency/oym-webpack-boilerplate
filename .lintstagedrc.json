@@ -7,8 +7,12 @@
 	"assets/**/*.{ts,svelte}": [
 		"node webpack/pre-script.js",
 		"prettier --cache --check --write .",
-		"eslint --cache",
-		"svelte-check --no-tsconfig",
+		"eslint --cache"
+	],
+	"assets/**/*.ts": [
 		"tsc --noEmit"
+	],
+	"assets/**/*.svelte": [
+		"svelte-check --no-tsconfig"
 	]
 }
