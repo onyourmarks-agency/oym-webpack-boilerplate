@@ -41,7 +41,7 @@
     ? translate('popup.hamburger.a11y.open')
     : translate('popup.hamburger.a11y.close')}
   on:click={toggleHamburgerMenu}>
-  <span class="1" />
+  <span />
   <span />
   <span />
 </button>
