@@ -1,6 +1,5 @@
-export type BreakPointType = 'sm' | 'md' | 'lg' | 'xl' | 'hamburger';
-
-export type BreakPointConfigInterface = Record<BreakPointType, number>;
+type BreakPointType = 'sm' | 'md' | 'lg' | 'xl' | 'hamburger';
+type BreakPointConfigInterface = Record<BreakPointType, number>;
 
 export type AppConfigType = {
   breakpoints?: BreakPointConfigInterface;
