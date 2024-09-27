@@ -5,7 +5,7 @@ export const ENVIRONMENT = {
 } as const;
 
 type ObjectValues<T> = T[keyof T];
-export type Environment = ObjectValues<typeof ENVIRONMENT>;
+type Environment = ObjectValues<typeof ENVIRONMENT>;
 
 export const getEnvironment = (): Environment => {
   if (
