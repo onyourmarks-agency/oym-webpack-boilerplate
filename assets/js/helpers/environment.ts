@@ -1,12 +1,16 @@
-export enum ENVIRONMENT {
-  DEVELOPMENT,
-  STAGING,
-  PRODUCTION,
-}
+export const ENVIRONMENT = {
+  DEVELOPMENT: 'development',
+  STAGING: 'staging',
+  PRODUCTION: 'production',
+} as const;
 
-export const getEnvironment = (): ENVIRONMENT => {
+type ObjectValues<T> = T[keyof T];
+export type Environment = ObjectValues<typeof ENVIRONMENT>;
+
+export const getEnvironment = (): Environment => {
   if (
     window.location.host.indexOf('.tdev.team') > -1 ||
+    window.location.host.indexOf('.dev.onyourmarks.tech') > -1 ||
     window.location.host.indexOf('.local') > -1
   ) {
     return ENVIRONMENT.DEVELOPMENT;
