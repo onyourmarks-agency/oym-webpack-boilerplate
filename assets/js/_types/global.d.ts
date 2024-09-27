@@ -1,10 +1,6 @@
-import type { HeroSlider } from '@js/_types/hero-slider';
-
 export type BreakPointType = 'sm' | 'md' | 'lg' | 'xl' | 'hamburger';
 
-export interface BreakPointConfigInterface {
-  [key: BreakPointType]: number;
-}
+export type BreakPointConfigInterface = Record<BreakPointType, number>;
 
 export type AppConfigType = {
   breakpoints?: BreakPointConfigInterface;
@@ -23,6 +19,5 @@ declare global {
 
   interface Window {
     Bouncer: any;
-    heroSlider: HeroSlider[];
   }
 }
