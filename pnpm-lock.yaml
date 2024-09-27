@@ -69,6 +69,9 @@ importers:
       '@onyourmarks/webpack-svg-plugin':
         specifier: ^4.0.0
         version: 4.0.0(webpack@5.94.0(webpack-cli@5.1.4))
+      '@total-typescript/ts-reset':
+        specifier: ^0.6.1
+        version: 0.6.1
       '@tsconfig/node20':
         specifier: ^20.1.4
         version: 20.1.4
@@ -1153,6 +1156,9 @@ packages:
 
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
+
+  '@total-typescript/ts-reset@0.6.1':
+    resolution: {integrity: sha512-cka47fVSo6lfQDIATYqb/vO1nvFfbPw7uWLayIXIhGETj0wcOOlrlkobOMDNQOFr9QOafegUPq13V2+6vtD7yg==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -5953,6 +5959,8 @@ snapshots:
   '@rtsao/scc@1.1.0': {}
 
   '@sinclair/typebox@0.27.8': {}
+
+  '@total-typescript/ts-reset@0.6.1': {}
 
   '@trysound/sax@0.2.0': {}
 
