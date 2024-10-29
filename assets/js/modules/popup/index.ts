@@ -1,14 +1,15 @@
+import { mount, unmount } from 'svelte';
 import Popup from './Popup.svelte';
 
-let popupInstance: Popup | null = null;
+let popupInstance: Record<string, any> | null = null;
 
 const openPopup = (target: string, type: string | boolean): void => {
   // Destroy the previous instance if it exists
   if (popupInstance) {
-    popupInstance.$destroy();
+    unmount(popupInstance);
   }
 
-  popupInstance = new Popup({
+  popupInstance = mount(Popup, {
     target: document.body,
     props: {
       source: target,

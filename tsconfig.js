@@ -4,7 +4,7 @@ const aliasHelper = require('./webpack/helpers/aliases');
 module.exports = {
   extends: '@tsconfig/svelte/tsconfig.json',
   include: ['assets/**/*', '.eslintrc.js'],
-  exclude: ['node_modules', 'babel.config.js'],
+  exclude: ['node_modules'],
   compilerOptions: {
     allowJs: true,
     skipLibCheck: true,

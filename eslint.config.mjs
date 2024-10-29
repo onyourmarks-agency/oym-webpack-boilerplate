@@ -1,7 +1,7 @@
-import js from '@eslint/js';
+import eslint from '@eslint/js';
 import globals from 'globals';
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
+import tsEslint from '@typescript-eslint/eslint-plugin';
+import tsEslintParser from '@typescript-eslint/parser';
 import compat from 'eslint-plugin-compat';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -19,8 +19,8 @@ const __dirname = path.dirname(__filename);
 
 const flatCompat = new FlatCompat({
   baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
+  recommendedConfig: eslint.configs.recommended,
+  allConfig: eslint.configs.all,
 });
 
 const ESLINT_IGNORES = [
@@ -109,7 +109,7 @@ const ESLINT_SETTINGS = {
 };
 
 const ESLINT_LANGUAGE_OPTIONS = {
-  parser: tsParser,
+  parser: tsEslintParser,
   parserOptions: {
     requireConfigFile: false,
     project: './tsconfig.json',
@@ -121,14 +121,14 @@ export default [
   ...eslintPluginSvelte.configs['flat/recommended'],
   ...flatCompat.extends('airbnb-base', 'airbnb-typescript/base', 'prettier'),
   eslintPluginPrettierRecommended,
-  js.configs.recommended,
+  eslint.configs.recommended,
   {
     ignores: ESLINT_IGNORES,
   },
   {
     plugins: {
       compat,
-      '@typescript-eslint': typescriptEslint,
+      '@typescript-eslint': tsEslint,
     },
     languageOptions: {
       ...ESLINT_LANGUAGE_OPTIONS,
@@ -150,14 +150,14 @@ export default [
   {
     plugins: {
       compat,
-      '@typescript-eslint': typescriptEslint,
+      '@typescript-eslint': tsEslint,
     },
     files: ['**/*.svelte'],
     languageOptions: {
       ...ESLINT_LANGUAGE_OPTIONS,
       parser: svelteParser,
       parserOptions: {
-        parser: tsParser,
+        parser: tsEslintParser,
       },
     },
     settings: {

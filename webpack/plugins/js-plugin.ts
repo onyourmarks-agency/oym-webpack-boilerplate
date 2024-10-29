@@ -18,7 +18,6 @@ const scssAliases = (aliases: Record<string, string>): any => {
   };
 };
 
-
 export default function (webpack: Configuration, config: WebpackApplicationConfiguration) {
   const babelPresets = [
     [
@@ -63,28 +62,23 @@ export default function (webpack: Configuration, config: WebpackApplicationConfi
       ],
     },
     {
-      test: /\.svelte$/,
-      exclude: /node_modules\/@babel/,
-      use: [
-        {
-          loader: 'svelte-loader',
-          options: {
-              preprocess: preprocess({
-                scss: {
-                  importer: [scssAliases(config.aliases)],
-                },
-              }),
-
-            emitCss: true,
+      test: /\.svelte|svelte$/,
+      use: {
+        loader: 'svelte-loader',
+        options: {
+          compilerOptions: {
+            dev: true
           },
-        },
-      ],
-    }, {
-      test: /\.m?js$/,
-      resolve: {
-        fullySpecified: false // https://github.com/graphql/graphql-js/issues/2721#issuecomment-723008284
-      },
-    });
+          preprocess: require('svelte-preprocess')(),
+        }
+      }
+    },
+    {
+      test: /\.ts$/,
+      use: 'ts-loader',
+      exclude: /node_modules/
+    },
+  );
 
   webpack.optimization.minimizer.push(
     new TerserPlugin({

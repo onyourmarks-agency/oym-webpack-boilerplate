@@ -1,18 +1,17 @@
 <script lang="ts">
   /* eslint svelte/no-at-html-tags: "off" */
-  import { afterUpdate, onDestroy, onMount, tick } from 'svelte';
+  import { onDestroy, onMount, tick } from 'svelte';
   import { fade } from 'svelte/transition';
   import { translate } from '@translations/index';
   import createDOMPurify from 'dompurify';
 
-  export let source: string;
-  export let type: string | boolean;
+  const { source, type }: { source: string; type: string | boolean } = $props();
 
   const sourceHTML = document.querySelector(source);
   const DOMPurify = createDOMPurify(window);
 
-  let visible = false;
-  let popupElement: HTMLElement | null = null;
+  let visible = $state(false);
+  let popupElement: HTMLElement | null = $state(null);
   let lastFocus: HTMLElement | null;
 
   /**
@@ -70,10 +69,12 @@
     window.removeEventListener('keydown', handleKeydown);
   });
 
-  afterUpdate(async (): Promise<void> => {
-    await tick();
-    handleFocus();
-    checkBodyScroll();
+  $effect(() => {
+    (async (): Promise<void> => {
+      await tick();
+      handleFocus();
+      checkBodyScroll();
+    })();
   });
 </script>
 
@@ -87,16 +88,18 @@
       class="popup-background"
       role="button"
       tabindex="-1"
-      on:click|stopPropagation={() => {
+      onclick={(e) => {
+        e.stopPropagation();
         visible = false;
       }}
-      on:keydown={handleKeydown} />
+      onkeydown={handleKeydown}>
+    </div>
     <div class="popup-content" transition:fade|global={{ delay: 200, duration: 100 }}>
       <button
         aria-label={translate('popup.closebutton.a11y.aria')}
         class="popup-close"
         type="button"
-        on:click={() => {
+        onclick={() => {
           visible = false;
         }}>
         <span>x</span>
@@ -106,7 +109,7 @@
       <button
         class="sr-only-focusable"
         type="button"
-        on:click={() => {
+        onclick={() => {
           visible = false;
         }}>
         <span>{translate('popup.closebutton.a11y.sronly')}</span>
