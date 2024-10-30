@@ -1,6 +1,5 @@
 import {Configuration} from 'webpack';
 import TerserPlugin from 'terser-webpack-plugin';
-import preprocess from 'svelte-preprocess';
 import {RetryChunkLoadPlugin} from 'webpack-retry-chunk-load-plugin';
 import SvelteCheckPlugin from 'svelte-check-plugin';
 import {WebpackApplicationConfiguration} from '../_declaration/config-types';
@@ -62,16 +61,23 @@ export default function (webpack: Configuration, config: WebpackApplicationConfi
       ],
     },
     {
-      test: /\.svelte|svelte$/,
-      use: {
-        loader: 'svelte-loader',
-        options: {
-          compilerOptions: {
-            dev: true
+      test: /\.svelte$/,
+      exclude: /node_modules\/@babel/,
+      use: [
+        {
+          loader: 'svelte-loader',
+          options: {
+            preprocess: require('svelte-preprocess')(
+              {
+                scss: {
+                  importer: [scssAliases(config.aliases)],
+                },
+              }
+            ),
+            emitCss: true,
           },
-          preprocess: require('svelte-preprocess')(),
-        }
-      }
+        },
+      ],
     },
     {
       test: /\.ts$/,
