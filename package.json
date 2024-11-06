@@ -4,7 +4,7 @@
 	"main": "app.ts",
 	"license": "MIT",
 	"config": {
-		"node": "20"
+		"node": "22"
 	},
 	"scripts": {
 		"pre": "node webpack/pre-script.js",

@@ -5,7 +5,7 @@ Our own Webpack Boilerplate for new projects.
 ## Requirements
 
 * [Pnpm](https://pnpm.js.org)
-* Node v20+
+* Node v22+
 
 ## Installation
 
@@ -20,7 +20,7 @@ To install, follow these instructions.
     cd /path/to/project
         
 4: Use the correct nvm version:
-```nvm use 20```
+```nvm use 22```
 
 5: Run Pnpm to install all of the packages:
 
