@@ -1,16 +1,12 @@
 {
-	"assets/**/*.{css,scss,svelte}": [
-		"node webpack/pre-script.js",
-		"prettier --cache --check --write .",
-		"stylelint -f verbose --cache"
+	"assets/**/*.{js,ts,css,scss,svelte}": [
+		"prettier --cache --check --write ."
 	],
-	"assets/**/*.{ts,svelte}": [
-		"node webpack/pre-script.js",
-		"prettier --cache --check --write .",
+	"assets/**/*.{js,ts,svelte}": [
 		"eslint --cache"
 	],
-	"assets/**/*.ts": [
-		"tsc --noEmit"
+	"assets/**/*.{css,scss,svelte}": [
+		"stylelint -f verbose --cache"
 	],
 	"assets/**/*.svelte": [
 		"svelte-check --no-tsconfig"

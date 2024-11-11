@@ -1,2 +1,15 @@
-printf "\\n\\e[32m######### Running Lint-staged #########\\e[0m\\n\\n"
+### Configuration
+GREEN="\e[32m"
+YELLOW="\e[33m"
+RED="\e[31m"
+NC="\e[0m"
+EOL="\n"
+
+### Linters
+# Run TypeScript Check
+printf "${GREEN}######### Running Typescript Check #########${NC}${EOL}"
+pnpm typescript-check
+
+# Run Lint-staged
+printf "${GREEN}######### Running Lint-staged #########${NC}${EOL}"
 pnpm run lint-staged
