@@ -85,7 +85,7 @@
     }
   }
 
-  :global([data-hamburger-is-active]) {
+  :global([data-hamburger-is-active]) .hamburger > * {
     &:nth-child(1) {
       transform: translateY($h-icon-height) rotate(45deg);
     }
