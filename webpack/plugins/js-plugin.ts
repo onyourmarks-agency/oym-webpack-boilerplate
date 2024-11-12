@@ -44,7 +44,7 @@ export default function (webpack: Configuration, config: WebpackApplicationConfi
 
   webpack.module.rules.push(
     {
-      test: /(\.([tj])s?$)|(\.svelte$)/,
+      test: /\.js$/,
       exclude: /(node_modules|bower_components)/,
       use: [
         {
@@ -61,7 +61,7 @@ export default function (webpack: Configuration, config: WebpackApplicationConfi
       ],
     },
     {
-      test: /\.svelte$/,
+      test: /\.(svelte|svelte\.js)$/,
       exclude: /node_modules\/@babel/,
       use: [
         {
@@ -80,10 +80,21 @@ export default function (webpack: Configuration, config: WebpackApplicationConfi
       ],
     },
     {
-      test: /\.ts$/,
-      use: 'ts-loader',
-      exclude: /node_modules/
+      test: /\.svelte\.ts$/,
+      use: ['svelte-loader', 'ts-loader'],
+      exclude: /node_modules/,
     },
+    {
+      test: /(?<!\.svelte)\.ts$/,
+      use: 'ts-loader',
+      exclude: /node_modules/,
+    },
+    {
+      test: /node_modules\/svelte\/.*\.mjs$/,
+      resolve: {
+        fullySpecified: false
+      }
+    }
   );
 
   webpack.optimization.minimizer.push(
