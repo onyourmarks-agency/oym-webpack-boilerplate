@@ -40,10 +40,10 @@
   aria-label={$hamburgerIsActive
     ? translate('popup.hamburger.a11y.open')
     : translate('popup.hamburger.a11y.close')}
-  on:click={toggleHamburgerMenu}>
-  <span />
-  <span />
-  <span />
+  onclick={toggleHamburgerMenu}>
+  <span></span>
+  <span></span>
+  <span></span>
 </button>
 
 <style lang="scss">
@@ -83,19 +83,19 @@
     &:nth-child(3) {
       transform: translateY($h-icon-space);
     }
+  }
 
-    [data-hamburger-is-active] & {
-      &:nth-child(1) {
-        transform: translateY($h-icon-height) rotate(45deg);
-      }
+  :global([data-hamburger-is-active]) .hamburger > * {
+    &:nth-child(1) {
+      transform: translateY($h-icon-height) rotate(45deg);
+    }
 
-      &:nth-child(2) {
-        opacity: 0;
-      }
+    &:nth-child(2) {
+      opacity: 0;
+    }
 
-      &:nth-child(3) {
-        transform: translateY(-$h-icon-height) rotate(-45deg);
-      }
+    &:nth-child(3) {
+      transform: translateY(-$h-icon-height) rotate(-45deg);
     }
   }
 </style>

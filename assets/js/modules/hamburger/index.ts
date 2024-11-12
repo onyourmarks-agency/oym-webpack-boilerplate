@@ -1,3 +1,4 @@
+import { mount } from 'svelte';
 import Hamburger from './Hamburger.svelte';
 
 export const hamburger = (): void => {
@@ -7,7 +8,7 @@ export const hamburger = (): void => {
     return;
   }
 
-  new Hamburger({
+  mount(Hamburger, {
     target: hamburgerElement,
   });
 };

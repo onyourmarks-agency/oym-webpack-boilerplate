@@ -1,6 +1,5 @@
 import {Configuration} from 'webpack';
 import TerserPlugin from 'terser-webpack-plugin';
-import preprocess from 'svelte-preprocess';
 import {RetryChunkLoadPlugin} from 'webpack-retry-chunk-load-plugin';
 import SvelteCheckPlugin from 'svelte-check-plugin';
 import {WebpackApplicationConfiguration} from '../_declaration/config-types';
@@ -17,7 +16,6 @@ const scssAliases = (aliases: Record<string, string>): any => {
     return url;
   };
 };
-
 
 export default function (webpack: Configuration, config: WebpackApplicationConfiguration) {
   const babelPresets = [
@@ -46,7 +44,7 @@ export default function (webpack: Configuration, config: WebpackApplicationConfi
 
   webpack.module.rules.push(
     {
-      test: /(\.([tj])s?$)|(\.svelte$)/,
+      test: /\.js$/,
       exclude: /(node_modules|bower_components)/,
       use: [
         {
@@ -63,28 +61,41 @@ export default function (webpack: Configuration, config: WebpackApplicationConfi
       ],
     },
     {
-      test: /\.svelte$/,
+      test: /\.(svelte|svelte\.js)$/,
       exclude: /node_modules\/@babel/,
       use: [
         {
           loader: 'svelte-loader',
           options: {
-              preprocess: preprocess({
+            preprocess: require('svelte-preprocess')(
+              {
                 scss: {
                   importer: [scssAliases(config.aliases)],
                 },
-              }),
-
+              }
+            ),
             emitCss: true,
           },
         },
       ],
-    }, {
-      test: /\.m?js$/,
+    },
+    {
+      test: /\.svelte\.ts$/,
+      use: ['svelte-loader', 'ts-loader'],
+      exclude: /node_modules/,
+    },
+    {
+      test: /(?<!\.svelte)\.ts$/,
+      use: 'ts-loader',
+      exclude: /node_modules/,
+    },
+    {
+      test: /node_modules\/svelte\/.*\.mjs$/,
       resolve: {
-        fullySpecified: false // https://github.com/graphql/graphql-js/issues/2721#issuecomment-723008284
-      },
-    });
+        fullySpecified: false
+      }
+    }
+  );
 
   webpack.optimization.minimizer.push(
     new TerserPlugin({

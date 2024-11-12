@@ -1,5 +1,4 @@
 import fs from 'node:fs';
-import path from 'path';
 import {Configuration} from 'webpack';
 import {WebpackApplicationConfiguration} from './_declaration/config-types';
 
@@ -25,13 +24,10 @@ const webpack: Configuration = {
   },
   resolve: {
     alias: {
-      ...{
-        svelte: path.resolve('node_modules', 'svelte/src/runtime'),
-      },
       ...config.aliases
     },
-    conditionNames: ['svelte', 'node', 'require'],
-    extensions: ['.js', '.ts', '.svelte', '.mjs'],
+    extensions: ['.ts', '.mjs', '.js', '.svelte'],
+    conditionNames: ['svelte', 'browser', 'import', 'require', 'default'],
     mainFields: ['svelte', 'browser', 'module', 'main'],
   },
   optimization: {
